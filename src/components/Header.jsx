@@ -81,14 +81,8 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Mobile Action Buttons (Menu Toggle & Book) */}
+        {/* Mobile Action Buttons (Menu Toggle) */}
         <div className="flex xl:hidden items-center gap-2 shrink-0">
-          <a
-            className="inline-flex items-center px-4 py-2 rounded-full bg-[#8f4900] hover:bg-[#b35e08] text-white font-semibold text-[11px] tracking-wider uppercase transition-all shadow-md active:scale-95"
-            href="#quick-booking"
-          >
-            {t('book_experience')}
-          </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="w-10 h-10 rounded-full bg-[#faf2ee] border border-[#e9e1dd] flex items-center justify-center text-[#1e1b19] shadow-sm active:scale-95 transition-transform cursor-pointer"
@@ -142,11 +136,19 @@ export default function Header() {
                 ))}
               </nav>
               
-              {/* Mobile Call CTA */}
-              <div className="max-w-sm mx-auto mt-6">
+              {/* Mobile Call & Book CTAs */}
+              <div className="flex flex-col gap-3 max-w-sm mx-auto mt-6">
+                <a
+                  href="#quick-booking"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-[#8f4900] text-white font-bold text-sm uppercase tracking-wider shadow-md active:scale-95 transition-transform"
+                >
+                  <span className="material-symbols-outlined">book_online</span>
+                  {t('book_experience')}
+                </a>
                 <a
                   href="tel:0619017615"
-                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-[#f4ece8] border border-[#e9e1dd] text-[#1e1b19] font-bold text-sm shadow-sm"
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-[#f4ece8] border border-[#e9e1dd] text-[#1e1b19] font-bold text-sm shadow-sm active:scale-95 transition-transform"
                 >
                   <span className="material-symbols-outlined text-[#8f4900]">call</span>
                   CALL: 0619017615
