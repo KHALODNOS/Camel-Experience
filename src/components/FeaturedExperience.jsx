@@ -81,7 +81,7 @@ export default function FeaturedExperience() {
                 </div>
                 <div className="text-right">
                   <span className="font-sans text-2xl font-bold text-[#8f4900]">€10</span>
-                  <span className="block text-xs text-[#554337]">/ person</span>
+                  <span className="block text-xs text-[#554337]">{t('per_person')}</span>
                 </div>
               </div>
 
@@ -90,7 +90,7 @@ export default function FeaturedExperience() {
               </p>
 
               <ul className="space-y-2 text-xs sm:text-sm text-[#1e1b19]">
-                {['Hotel pickup & drop-off included', 'Moroccan mint tea & fresh pastry pause', 'Professional local guide assistance'].map((item, i) => (
+                {[t('feat_pkg10_b1'), t('feat_pkg10_b2'), t('feat_pkg10_b3')].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[#8f4900] text-[16px]">done</span>
                     <span>{item}</span>
@@ -127,7 +127,7 @@ export default function FeaturedExperience() {
 
               <div className="flex items-baseline gap-2">
                 <span className="font-sans text-2xl font-bold text-[#9e421f]">€15</span>
-                <span className="text-xs text-[#554337]">/ person (All-Inclusive)</span>
+                <span className="text-xs text-[#554337]">{t('per_person_all')}</span>
               </div>
 
               <p className="text-xs sm:text-sm text-[#554337] font-light">
@@ -135,7 +135,7 @@ export default function FeaturedExperience() {
               </p>
 
               <ul className="space-y-2 text-xs sm:text-sm text-[#1e1b19]">
-                {['All 2-hour sunset trek inclusions', 'Fresh clay-pot Berber Tagine dinner', 'Desert campfire & starry sky relaxation'].map((item, i) => (
+                {[t('feat_pkg15_b1'), t('feat_pkg15_b2'), t('feat_pkg15_b3')].map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[#9e421f] text-[16px]">done_all</span>
                     <span>{item}</span>

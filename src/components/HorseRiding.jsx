@@ -20,10 +20,10 @@ export default function HorseRiding() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#33302d]/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
                 <span className="text-xs font-semibold text-[#ffdcc5] uppercase tracking-wider block">
-                  Arabian-Barb Stables
+                  {t('horse_stables')}
                 </span>
                 <p className="font-serif text-base sm:text-lg italic">
-                  "The bond between rider, dunes, and the Atlantic breeze is pure poetry."
+                  {t('horse_quote')}
                 </p>
               </div>
             </div>
@@ -34,8 +34,8 @@ export default function HorseRiding() {
                 <span className="material-symbols-outlined text-[20px]">sports_score</span>
               </div>
               <div>
-                <span className="block font-bold text-sm text-[#1e1b19]">All Levels</span>
-                <span className="text-xs text-[#554337]">Beginner to Advanced</span>
+                <span className="block font-bold text-sm text-[#1e1b19]">{t('horse_levels')}</span>
+                <span className="text-xs text-[#554337]">{t('horse_levels_sub')}</span>
               </div>
             </div>
           </div>
@@ -81,13 +81,13 @@ export default function HorseRiding() {
               {/* Option 1: 10 EUR */}
               <div className="p-5 rounded-2xl bg-white border border-[#e9e1dd] shadow-sm flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">Ride Only</span>
+                  <span className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">{t('horse_pkg10_label')}</span>
                   <div className="flex items-baseline justify-between mt-1">
                     <h3 className="font-serif text-base font-bold text-[#1e1b19]">{t('horse_10')}</h3>
                     <span className="font-sans text-xl font-bold text-[#8f4900]">€10</span>
                   </div>
                   <p className="text-xs text-[#554337] mt-2 font-light">
-                    Includes hotel pickup, helmet, trail guide, and refreshing mint tea.
+                    {t('horse_pkg10_desc')}
                   </p>
                 </div>
                 <a
@@ -103,13 +103,13 @@ export default function HorseRiding() {
               {/* Option 2: 15 EUR */}
               <div className="p-5 rounded-2xl bg-white border border-[#9e421f] shadow-sm flex flex-col justify-between relative overflow-hidden">
                 <div>
-                  <span className="text-xs font-semibold text-[#9e421f] uppercase tracking-wider block">Ride &amp; Feast</span>
+                  <span className="text-xs font-semibold text-[#9e421f] uppercase tracking-wider block">{t('horse_pkg15_label')}</span>
                   <div className="flex items-baseline justify-between mt-1">
                     <h3 className="font-serif text-base font-bold text-[#1e1b19]">{t('horse_15')}</h3>
                     <span className="font-sans text-xl font-bold text-[#9e421f]">€15</span>
                   </div>
                   <p className="text-xs text-[#554337] mt-2 font-light">
-                    Includes ride, transfers, and a complete evening Moroccan tagine dinner.
+                    {t('horse_pkg15_desc')}
                   </p>
                 </div>
                 <a

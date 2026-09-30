@@ -22,9 +22,9 @@ export default function ContactCTA() {
     emailjs
       .sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(
-        (result) => {
+        () => {
           setLoading(false);
-          setStatusMessage({ type: 'success', text: 'Thank you! Your message has been sent successfully. We will get back to you shortly.' });
+          setStatusMessage({ type: 'success', text: t('form_success') });
           confetti({
             particleCount: 120,
             spread: 80,
@@ -35,7 +35,7 @@ export default function ContactCTA() {
         (error) => {
           setLoading(false);
           console.error('EmailJS Error:', error);
-          setStatusMessage({ type: 'error', text: 'Failed to send message. Please try calling or WhatsApp directly.' });
+          setStatusMessage({ type: 'error', text: t('form_error') });
         }
       );
   };
@@ -66,10 +66,15 @@ export default function ContactCTA() {
               <span>Direct Phone &amp; WhatsApp: 0619017615</span>
             </a>
             <span className="hidden sm:inline text-[#dbc2b2]">|</span>
-            <span className="flex items-center gap-2 text-[#554337]">
+            <a
+              href="https://www.instagram.com/agadir_camel_experience"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-[#554337] hover:text-[#8f4900] hover:underline transition-colors"
+            >
               <span className="material-symbols-outlined text-[20px]">photo_camera</span>
-              <span>Instagram: @AgadirCamelExperience</span>
-            </span>
+              <span>Instagram: @agadir_camel_experience</span>
+            </a>
           </div>
         </div>
 
@@ -83,10 +88,10 @@ export default function ContactCTA() {
         >
           <div className="text-center space-y-1">
             <h3 className="font-serif text-2xl font-bold text-[#1e1b19]">
-              Send Us a Direct Message
+              {t('contact_form_title')}
             </h3>
             <p className="text-xs sm:text-sm text-[#554337]">
-              Fill in your details below to request a pickup or inquire about custom tours.
+              {t('contact_form_sub')}
             </p>
           </div>
 
@@ -95,13 +100,13 @@ export default function ContactCTA() {
               {/* User Name */}
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">
-                  Full Name *
+                  {t('form_full_name')}
                 </label>
                 <input
                   type="text"
                   name="user_name"
                   required
-                  placeholder="e.g. John Doe"
+                  placeholder={t('form_name_placeholder')}
                   className="w-full h-12 px-4 rounded-xl bg-[#faf2ee] font-semibold text-sm text-[#1e1b19] focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all border border-[#e9e1dd]"
                 />
               </div>
@@ -109,13 +114,13 @@ export default function ContactCTA() {
               {/* User Email */}
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">
-                  Email Address *
+                  {t('form_email')}
                 </label>
                 <input
                   type="email"
                   name="user_email"
                   required
-                  placeholder="john@example.com"
+                  placeholder={t('form_email_placeholder')}
                   className="w-full h-12 px-4 rounded-xl bg-[#faf2ee] font-semibold text-sm text-[#1e1b19] focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all border border-[#e9e1dd]"
                 />
               </div>
@@ -125,7 +130,7 @@ export default function ContactCTA() {
               {/* User Phone */}
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">
-                  Phone / WhatsApp
+                  {t('form_phone')}
                 </label>
                 <input
                   type="tel"
@@ -138,7 +143,7 @@ export default function ContactCTA() {
               {/* Select Experience */}
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">
-                  Interested Experience
+                  {t('form_experience')}
                 </label>
                 <div className="relative">
                   <select
@@ -163,13 +168,13 @@ export default function ContactCTA() {
             {/* Message Body */}
             <div className="space-y-1.5">
               <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">
-                Your Message / Special Requests *
+                {t('form_message')}
               </label>
               <textarea
                 name="message"
                 required
                 rows="4"
-                placeholder="Let us know your hotel location, preferred date, and number of travelers..."
+                placeholder={t('form_message_placeholder')}
                 className="w-full p-4 rounded-xl bg-[#faf2ee] font-medium text-sm text-[#1e1b19] focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all border border-[#e9e1dd]"
               ></textarea>
             </div>
@@ -196,11 +201,11 @@ export default function ContactCTA() {
               className="w-full h-13 rounded-xl bg-[#8f4900] hover:bg-[#b35e08] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_8px_24px_-2px_rgba(194,106,24,0.35)] cursor-pointer disabled:opacity-60"
             >
               {loading ? (
-                <span>SENDING MESSAGE...</span>
+                <span>{t('form_sending')}</span>
               ) : (
                 <>
                   <span className="material-symbols-outlined text-[20px]">send</span>
-                  <span>SEND MESSAGE VIA EMAIL</span>
+                  <span>{t('form_send_btn')}</span>
                 </>
               )}
             </motion.button>
@@ -208,14 +213,14 @@ export default function ContactCTA() {
 
           {/* Quick WhatsApp Alternative */}
           <div className="pt-2 text-center">
-            <span className="text-xs text-[#554337]">Or prefer instant messaging? </span>
+            <span className="text-xs text-[#554337]">{t('form_whatsapp_alt')} </span>
             <a
               href="https://wa.me/212619017615?text=Hello%21%20I%20would%20like%20to%20reserve%20an%20Agadir%20experience."
               target="_blank"
               rel="noreferrer"
               className="text-[#8f4900] font-bold text-xs hover:underline inline-flex items-center gap-1"
             >
-              <span className="material-symbols-outlined text-[16px]">chat</span> Chat on WhatsApp
+              <span className="material-symbols-outlined text-[16px]">chat</span> {t('form_whatsapp_link')}
             </a>
           </div>
         </motion.div>

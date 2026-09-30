@@ -1,13 +1,43 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [adventure, setAdventure] = useState('Camel Sunset Trek (2h) — €10');
+  const [adventure, setAdventure] = useState('camel_10');
   const [date, setDate] = useState('2025-05-18');
   const [travelers, setTravelers] = useState('2');
+  
+  const [isAdvOpen, setIsAdvOpen] = useState(false);
+  const [isTravOpen, setIsTravOpen] = useState(false);
+
+  const advRef = useRef();
+  const travRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (advRef.current && !advRef.current.contains(e.target)) setIsAdvOpen(false);
+      if (travRef.current && !travRef.current.contains(e.target)) setIsTravOpen(false);
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const adventures = [
+    { id: 'camel_10', title: t('opt_camel_10'), fakePrice: t('price_10_fake'), realPrice: t('price_10_real') },
+    { id: 'camel_15', title: t('opt_camel_15'), fakePrice: t('price_15_fake'), realPrice: t('price_15_real') },
+    { id: 'horse_10', title: t('opt_horse_10'), fakePrice: t('price_10_fake'), realPrice: t('price_10_real') },
+    { id: 'horse_15', title: t('opt_horse_15'), fakePrice: t('price_15_fake'), realPrice: t('price_15_real') },
+  ];
+
+  const travelerOptions = [
+    { id: '1', label: t('person_1') },
+    { id: '2', label: t('person_2') },
+    { id: '3', label: t('person_3') },
+    { id: '4', label: t('person_4') },
+    { id: '5+ Family', label: t('person_5') },
+  ];
 
   const handleBookingSubmit = (e) => {
     e.preventDefault();
@@ -16,10 +46,11 @@ export default function Hero() {
       spread: 70,
       origin: { y: 0.6 }
     });
+    const selectedAdv = adventures.find(a => a.id === adventure);
     const message = `Hello! I would like to check availability for:
-- Adventure: ${adventure}
+- Adventure: ${selectedAdv.title} (${selectedAdv.realPrice})
 - Date: ${date}
-- Guests: ${travelers}`;
+- Guests: ${travelerOptions.find(t => t.id === travelers)?.label || travelers}`;
     const whatsappUrl = `https://wa.me/212619017615?text=${encodeURIComponent(message)}`;
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
@@ -27,24 +58,35 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden min-h-[85vh] lg:min-h-[920px] flex flex-col justify-end pt-20">
-      {/* Background Image using real guest photo */}
-      <motion.div
-        initial={{ scale: 1.15, opacity: 0.8 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.8, ease: 'easeOut' }}
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('/images/WhatsApp Image 2026-09-30 at 16.14.09.jpeg')`
-        }}
-      ></motion.div>
+    <section className="relative w-full min-h-[85vh] lg:min-h-[920px] flex flex-col justify-end pt-20">
+      
+      {/* Background layers wrapper to contain scaled image */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Background Image using real guest photo */}
+        <motion.div
+          initial={{ scale: 1.08, opacity: 0.85 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2.2, ease: 'easeOut' }}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('/images/WhatsApp Image 2026-09-30 at 16.14.10 (1).jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 30%',
+            backgroundRepeat: 'no-repeat',
+          }}
+        ></motion.div>
 
-      {/* Scrim Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#33302d] via-[#33302d]/50 to-transparent opacity-90"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#b35e08]/25 via-transparent to-[#9e421f]/25 mix-blend-soft-light"></div>
+        {/* Cinematic Scrim Overlays — 3-layer depth */}
+        {/* Bottom-to-top dark gradient for text area */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1410] via-[#1a1410]/65 to-transparent"></div>
+        {/* Top fade for sky softening */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent"></div>
+        {/* Warm amber tint overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#8f4900]/20 via-transparent to-[#c26a18]/15"></div>
+      </div>
 
       {/* Main Hero Banner Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full pt-28 pb-16 sm:pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full pt-28 pb-16 sm:pb-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,76 +154,129 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Docked Booking Widget */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full -mb-12 sm:-mb-10" id="quick-booking">
+      {/* Docked Booking Widget - Dark Glassmorphism */}
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full -mb-16 sm:-mb-12" id="quick-booking">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-2xl shadow-[0_20px_50px_-6px_rgba(142,70,0,0.22)] p-4 sm:p-6 border border-[#e9e1dd]"
+          className="bg-[#1a1410]/80 backdrop-blur-xl rounded-3xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.5)] p-5 sm:p-7 border border-white/10 relative overflow-visible"
         >
-          <form onSubmit={handleBookingSubmit} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
-            {/* Experience Selection */}
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#8f4900] text-[16px]">location_on</span>
+          {/* Glowing amber accent behind the card */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#8f4900] to-[#ffb77d] opacity-20 blur-2xl rounded-[3rem] -z-10 pointer-events-none"></div>
+
+          {/* Flash Sale Badge */}
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-[#c26a18] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-widest py-1 px-4 rounded-full shadow-lg border border-red-400/30 flex items-center gap-1.5 whitespace-nowrap z-30">
+            <span className="material-symbols-outlined text-[14px]">local_fire_department</span>
+            {t('special_discount')}
+          </div>
+
+          <form onSubmit={handleBookingSubmit} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-end">
+            
+            {/* Experience Selection (Custom Dropdown) */}
+            <div className="space-y-2 relative" ref={advRef}>
+              <label className="text-[11px] font-semibold text-[#ffb77d] uppercase tracking-wider flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[16px]">location_on</span>
                 {t('form_adventure')}
               </label>
-              <div className="relative">
-                <select
-                  value={adventure}
-                  onChange={(e) => setAdventure(e.target.value)}
-                  className="w-full h-12 pl-3.5 pr-10 rounded-xl bg-[#faf2ee] font-semibold text-sm text-[#1e1b19] focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all appearance-none cursor-pointer border border-[#e9e1dd]"
-                >
-                  <option value="Camel Sunset Trek (2h) — €10">Camel Sunset Trek (2h) — €10</option>
-                  <option value="Camel + Moroccan Tagine (2h) — €15">Camel + Moroccan Tagine (2h) — €15</option>
-                  <option value="Arabian Horse Riding (2h) — €10">Arabian Horse Riding (2h) — €10</option>
-                  <option value="Horse Riding + Dinner (2h) — €15">Horse Riding + Dinner (2h) — €15</option>
-                  <option value="Quad Dune Safari (2h) — €25">Quad Dune Safari (2h) — €25</option>
-                  <option value="Paradise Valley Excursion — €15">Paradise Valley Excursion — €15</option>
-                </select>
-                <span className="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-[#554337] text-[18px]">
+              <div 
+                className="w-full h-14 px-4 rounded-xl bg-white/5 hover:bg-white/10 font-medium text-sm text-[#faf2ee] border border-white/10 transition-all cursor-pointer flex items-center justify-between"
+                onClick={() => setIsAdvOpen(!isAdvOpen)}
+              >
+                <div className="truncate flex-1 flex flex-col justify-center">
+                  <span className="block truncate">{adventures.find(a => a.id === adventure)?.title}</span>
+                </div>
+                <div className="flex flex-col items-end flex-shrink-0 mr-3">
+                  <span className="text-[10px] text-white/40 line-through decoration-red-500/70 leading-none mb-0.5">{adventures.find(a => a.id === adventure)?.fakePrice}</span>
+                  <span className="text-[13px] font-bold text-[#ffb77d] leading-none">{adventures.find(a => a.id === adventure)?.realPrice}</span>
+                </div>
+                <span className={`material-symbols-outlined text-white/50 text-[20px] transition-transform duration-300 ${isAdvOpen ? 'rotate-180' : ''}`}>
                   expand_more
                 </span>
               </div>
+
+              <AnimatePresence>
+                {isAdvOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-[calc(100%+8px)] left-0 w-full lg:w-[130%] bg-[#221a15]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden"
+                  >
+                    {adventures.map((adv) => (
+                      <div
+                        key={adv.id}
+                        onClick={() => { setAdventure(adv.id); setIsAdvOpen(false); }}
+                        className={`px-4 py-3 cursor-pointer hover:bg-white/10 transition-colors flex items-center justify-between border-b border-white/5 last:border-0 ${adventure === adv.id ? 'bg-white/5' : ''}`}
+                      >
+                        <span className="text-sm text-[#faf2ee] font-medium mr-2">{adv.title}</span>
+                        <div className="flex flex-col items-end flex-shrink-0">
+                          <span className="text-[11px] text-white/40 line-through decoration-red-500/70">{adv.fakePrice}</span>
+                          <span className="text-[13px] font-bold text-[#ffb77d]">{adv.realPrice}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Date Selection */}
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#8f4900] text-[16px]">calendar_today</span>
+            <div className="space-y-2">
+              <label className="text-[11px] font-semibold text-[#ffb77d] uppercase tracking-wider flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[16px]">calendar_today</span>
                 {t('form_date')}
               </label>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="w-full h-12 px-3.5 rounded-xl bg-[#faf2ee] font-semibold text-sm text-[#1e1b19] focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all cursor-pointer border border-[#e9e1dd]"
-              />
+              <div className="relative">
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="w-full h-14 px-4 rounded-xl bg-white/5 hover:bg-white/10 font-medium text-sm text-[#faf2ee] border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all cursor-pointer [color-scheme:dark]"
+                />
+              </div>
             </div>
 
-            {/* Guests Selection */}
-            <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#8f4900] text-[16px]">group</span>
+            {/* Guests Selection (Custom Dropdown) */}
+            <div className="space-y-2 relative" ref={travRef}>
+              <label className="text-[11px] font-semibold text-[#ffb77d] uppercase tracking-wider flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[16px]">group</span>
                 {t('form_travelers')}
               </label>
-              <div className="relative">
-                <select
-                  value={travelers}
-                  onChange={(e) => setTravelers(e.target.value)}
-                  className="w-full h-12 pl-3.5 pr-10 rounded-xl bg-[#faf2ee] font-semibold text-sm text-[#1e1b19] focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all appearance-none cursor-pointer border border-[#e9e1dd]"
-                >
-                  <option value="1">{t('person_1')}</option>
-                  <option value="2">{t('person_2')}</option>
-                  <option value="3">{t('person_3')}</option>
-                  <option value="4">{t('person_4')}</option>
-                  <option value="5+ Family">{t('person_5')}</option>
-                </select>
-                <span className="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-[#554337] text-[18px]">
+              <div 
+                className="w-full h-14 px-4 rounded-xl bg-white/5 hover:bg-white/10 font-medium text-sm text-[#faf2ee] border border-white/10 transition-all cursor-pointer flex items-center justify-between"
+                onClick={() => setIsTravOpen(!isTravOpen)}
+              >
+                <div className="truncate flex-1 flex flex-col justify-center">
+                  <span className="block truncate">{travelerOptions.find(t => t.id === travelers)?.label}</span>
+                </div>
+                <span className={`material-symbols-outlined text-white/50 text-[20px] transition-transform duration-300 ${isTravOpen ? 'rotate-180' : ''}`}>
                   expand_more
                 </span>
               </div>
+
+              <AnimatePresence>
+                {isTravOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-[calc(100%+8px)] left-0 w-full bg-[#221a15]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden"
+                  >
+                    {travelerOptions.map((opt) => (
+                      <div
+                        key={opt.id}
+                        onClick={() => { setTravelers(opt.id); setIsTravOpen(false); }}
+                        className={`px-4 py-3 cursor-pointer hover:bg-white/10 transition-colors flex items-center border-b border-white/5 last:border-0 ${travelers === opt.id ? 'bg-white/5' : ''}`}
+                      >
+                        <span className="text-sm text-[#faf2ee] font-medium">{opt.label}</span>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Check Availability Trigger */}
@@ -189,9 +284,9 @@ export default function Hero() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full h-12 rounded-xl bg-[#8f4900] hover:bg-[#b35e08] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_8px_20px_-2px_rgba(194,106,24,0.3)] cursor-pointer"
+              className="w-full h-14 rounded-xl bg-gradient-to-r from-[#8f4900] to-[#c26a18] hover:from-[#a65500] hover:to-[#d97820] text-white font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(194,106,24,0.4)] cursor-pointer border border-white/10"
             >
-              <span className="material-symbols-outlined text-[18px]">check_circle</span>
+              <span className="material-symbols-outlined text-[20px]">check_circle</span>
               <span>{t('btn_check_availability')}</span>
             </motion.button>
           </form>
@@ -200,3 +295,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -55,7 +55,7 @@ export default function SunsetGallery() {
           </div>
           <a
             className="inline-flex items-center gap-2 text-[#8f4900] font-semibold text-sm hover:underline"
-            href="https://instagram.com"
+            href="https://www.instagram.com/agadir_camel_experience"
             target="_blank"
             rel="noreferrer"
           >

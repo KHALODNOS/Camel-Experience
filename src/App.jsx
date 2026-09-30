@@ -9,8 +9,10 @@ import HorseRiding from './components/HorseRiding';
 import MoreAdventures from './components/MoreAdventures';
 import DayTours from './components/DayTours';
 import SunsetGallery from './components/SunsetGallery';
+import AboutUs from './components/AboutUs';
 import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
+import FloatingSocials from './components/FloatingSocials';
 
 export default function App() {
   return (
@@ -29,11 +31,15 @@ export default function App() {
           <MoreAdventures />
           <DayTours />
           <SunsetGallery />
+          <AboutUs />
           <ContactCTA />
         </main>
 
         {/* Footer */}
         <Footer />
+        
+        {/* Fixed Floating Icons */}
+        <FloatingSocials />
       </div>
     </LanguageProvider>
   );

@@ -3,83 +3,83 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import Card3D from './Card3D';
 
-const activities = [
-  {
-    title: 'Quad Biking Safari',
-    duration: '2 Hours',
-    price: '€25',
-    desc: 'Conquer the coastal sand dunes and eucalyptus forest tracks with high-performance 250cc ATVs.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDpBHBBwSc0o95A6xjmhKxo6ZDN4adKyjfZ3laOf8A3-vQLgPI4pETUvUfV6pmZcF7T_dWzG-IIeHpDGcke8VvXfa67QeFF0OxpFH4Jj2vrRp9RVhVeQzD8i9fl6EEz3wi-LnYwnn5wMBCyKtg-zhXPu-_yTF53mnuJZkNWolHI0TP94yt9xzM5txGK0iIHD37VfZfL79bAjG0CGTzBNsuMenqu6PGrjiPCZff_8D-zvcRNPLEywvc',
-    alt: 'Quad biking safari on sand dunes',
-    msg: 'Quad Biking Safari'
-  },
-  {
-    title: 'Buggy Safari',
-    duration: '2 Hours',
-    price: '€45',
-    desc: 'High adrenaline tandem dune buggies, perfect for couples and thrill seekers across Takkat sands.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB135cU_2dyULKP8bGX0nSm0P-5GoqCaO2hnGnb58PlSWIFXJwGhcY_G6V7NykwWhv1KrG5vUbklEYEVsUTu-kPNLVdEzAWjeHRcXm3qP5TKZs3dY3yLYa9xmi1yel0_VVCeoxRqujgr5NzhjM40WDhbkjy5uKIarhFEia7kiUof42-JShCWJT6OdfVzePHm-4XcYZfVXsCQFE8E8MCa-jcLZi_CtLdA6UqPsUxHeRW3Dv4C9LRyEw',
-    alt: 'Buggy safari on dunes',
-    msg: 'Buggy Safari'
-  },
-  {
-    title: 'Surf & Ocean Waves',
-    duration: 'Half Day',
-    price: '€20',
-    desc: 'Learn to surf in world-renowned Taghazout & Anza swells. Equipment and certified coaching included.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2fEVH3HhoJfXQzwAT7yJ6W6rDcoT02Xy2TvPBCzxjluSzTcl6dUkabHpWU1uCN7pNMxKKw-E_3RUVRgTKpW3OED5ZfvidI5qzXVJkHmzrkKFRS8BJptHkOjb8e-bcReFFq3UoJ1VS5vMHJl2hkNFVJo-3qYZ5FcZzxUiiewgIfzZ-U-JpPQUX0mo_s4fj8zMzfowLUKjbYxG9UVuune5DQrxEyOUR1NU3g5-Uo7MzdtdNJQtojSU',
-    alt: 'Surfer catching ocean wave in Taghazout',
-    msg: 'Surf Lessons'
-  },
-  {
-    title: 'Jet Ski Marina Thrill',
-    duration: '30 Mins',
-    price: '€35',
-    desc: 'Skim across the warm calm waters of Agadir bay facing the historic Kasbah mountain.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6KBQrVL3TNqoJcZKoh4ZTriVp8iqQ3X_pHT1nvW-LKYdQV7UV8aoppJjLBqYTdl_1g1mmJnioEZzz6x8pNT7qiXOw_xn2K_PC7i3bwaJKh0Fg6kfMWvc0-NvNKkZvKzNXm3w4ss-YHYGIDID7cPq4e8bPHs5tnErnXalaCNCKgnxDbe8i7KJ4YHgZaFVwcFvDfbFR1oL33LVSuRDvG_WLGJlmZkEjGJwVDA2rMm0GNXOWDneaVKU',
-    alt: 'Jet ski in Agadir bay',
-    msg: 'Jet Ski Marina Thrill'
-  },
-  {
-    title: 'Boat Cruise & Fishing',
-    duration: 'Half Day',
-    price: '€30',
-    desc: 'Relax on the open ocean with rod fishing, swimming stops, and fresh grilled fish lunch onboard.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbz_BydzhiXVmiTYN94hYaHHhdU2DMxjIyuOVSxIVuqs9cMHlLzlX4aL0A0hjqP5EZkBPE9PBBZHY1Zq37AQS61qK2FZkKayfD8Ew8LGi_PGgugSG7htaPvQH2kQ1m5FJun3sldgzxo43ovgHcfTa0_fFIEV7uv1tqkrQDRREmelvxJvyQe5nMEISrcQt6OhgMaPM8QLybtpjNk7EGWVPvQ72KjGLwQBzswozLkei-o7oZ7sR6-Zw',
-    alt: 'Boat cruise in Agadir ocean',
-    msg: 'Boat Cruise & Fishing'
-  },
-  {
-    title: 'Agadir City Tour',
-    duration: '3 Hours',
-    price: '€15',
-    desc: 'Visit the historic Kasbah Oufella, buzzing Souk El Had market, and an authentic Argan oil cooperative.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAc_2kqN9mVtWhc_kEmwasBqN2bNnissxltElMcF7-38N_0IpX6FicAfDPY9PtZI-ROhZ4WP9C2Zm_42leqbB435QtxBi08fkqIS4j_ExAY0a3PmVUMp3FCLfd9zZvuFRTqXnRlrIykPcmG0mvvbuTiJnWCqrqEEqDgajQHPOb-UJXptgvp8ImatXDO-h47AaboaDBo_zThW4PLKtJtspwR4UU2yiIDAB8Gc_HXjjaLbQGGj35VxS0',
-    alt: 'Agadir Kasbah Oufella viewpoint',
-    msg: 'Agadir City Tour'
-  },
-  {
-    title: 'Berber Country Tour',
-    duration: '4 Hours',
-    price: '€20',
-    desc: 'Explore rustic countryside hamlets, traditional honey apiaries, and rural foothill landscapes.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC33li4q5wZWPKBau-d-icLb2GuDopCujA9W4WBK5AtGhGtnBfs3Vha9lYkEoSbpRLUm3g2oiJTH2NVRo0LspKikyT2S6b-3U0t-U0h2pmi8cZo25SfR2U1ATtS9YBp1slHv0UwNSZLPVdUYDqalCvcssMTsRJTpOF-CaztkylWsyufgd1CbWyHOJvsOmqW4rQ8sQxSp-dylqhL1GzFtSH7-kiqzBCbt8gShl5cMJVOKv0Q0E1xddQ',
-    alt: 'Berber mountain countryside village',
-    msg: 'Berber Country Tour'
-  },
-  {
-    title: 'Bicycle & E-Bike',
-    duration: 'Full Day',
-    price: '€10',
-    desc: "Cruise Agadir's 10km paved seaside corniche at your leisure with premium city bikes and helmets.",
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCUiBAr0f7-sEmB6SorVygqLKpgePytbDL3X_wvigCQhRMNakgkNEbJIQd8k1MBfCHUEZCwF1yBgutmr5c2PjdLUFQrXECOwlEBgbG2qeipBJl3fUFeQJKgRakYv9uf39h6if0nhplvgFnxLMx8KFWriTNHmYDuBFVXaNmETzUqZM9I3heZ_MfEx1mRB_UEQnr_0YFJYXEFlgqlnEewSE2hap8-0lxCBHwNW6SRHN9LxqUe4Bl0SSA',
-    alt: 'Traveler riding e-bike on Agadir beach corniche',
-    msg: 'Bicycle & E-Bike Rental'
-  }
-];
-
 export default function MoreAdventures() {
   const { t } = useLanguage();
+
+  const activities = [
+    {
+      titleKey: 'act_quad_title',
+      durationKey: 'act_quad_duration',
+      price: '€25',
+      descKey: 'act_quad_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDpBHBBwSc0o95A6xjmhKxo6ZDN4adKyjfZ3laOf8A3-vQLgPI4pETUvUfV6pmZcF7T_dWzG-IIeHpDGcke8VvXfa67QeFF0OxpFH4Jj2vrRp9RVhVeQzD8i9fl6EEz3wi-LnYwnn5wMBCyKtg-zhXPu-_yTF53mnuJZkNWolHI0TP94yt9xzM5txGK0iIHD37VfZfL79bAjG0CGTzBNsuMenqu6PGrjiPCZff_8D-zvcRNPLEywvc',
+      alt: 'Quad biking safari on sand dunes',
+      msg: 'Quad Biking Safari'
+    },
+    {
+      titleKey: 'act_buggy_title',
+      durationKey: 'act_buggy_duration',
+      price: '€45',
+      descKey: 'act_buggy_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB135cU_2dyULKP8bGX0nSm0P-5GoqCaO2hnGnb58PlSWIFXJwGhcY_G6V7NykwWhv1KrG5vUbklEYEVsUTu-kPNLVdEzAWjeHRcXm3qP5TKZs3dY3yLYa9xmi1yel0_VVCeoxRqujgr5NzhjM40WDhbkjy5uKIarhFEia7kiUof42-JShCWJT6OdfVzePHm-4XcYZfVXsCQFE8E8MCa-jcLZi_CtLdA6UqPsUxHeRW3Dv4C9LRyEw',
+      alt: 'Buggy safari on dunes',
+      msg: 'Buggy Safari'
+    },
+    {
+      titleKey: 'act_surf_title',
+      durationKey: 'act_surf_duration',
+      price: '€20',
+      descKey: 'act_surf_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2fEVH3HhoJfXQzwAT7yJ6W6rDcoT02Xy2TvPBCzxjluSzTcl6dUkabHpWU1uCN7pNMxKKw-E_3RUVRgTKpW3OED5ZfvidI5qzXVJkHmzrkKFRS8BJptHkOjb8e-bcReFFq3UoJ1VS5vMHJl2hkNFVJo-3qYZ5FcZzxUiiewgIfzZ-U-JpPQUX0mo_s4fj8zMzfowLUKjbYxG9UVuune5DQrxEyOUR1NU3g5-Uo7MzdtdNJQtojSU',
+      alt: 'Surfer catching ocean wave in Taghazout',
+      msg: 'Surf Lessons'
+    },
+    {
+      titleKey: 'act_jetski_title',
+      durationKey: 'act_jetski_duration',
+      price: '€35',
+      descKey: 'act_jetski_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6KBQrVL3TNqoJcZKoh4ZTriVp8iqQ3X_pHT1nvW-LKYdQV7UV8aoppJjLBqYTdl_1g1mmJnioEZzz6x8pNT7qiXOw_xn2K_PC7i3bwaJKh0Fg6kfMWvc0-NvNKkZvKzNXm3w4ss-YHYGIDID7cPq4e8bPHs5tnErnXalaCNCKgnxDbe8i7KJ4YHgZaFVwcFvDfbFR1oL33LVSuRDvG_WLGJlmZkEjGJwVDA2rMm0GNXOWDneaVKU',
+      alt: 'Jet ski in Agadir bay',
+      msg: 'Jet Ski Marina Thrill'
+    },
+    {
+      titleKey: 'act_boat_title',
+      durationKey: 'act_boat_duration',
+      price: '€30',
+      descKey: 'act_boat_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbz_BydzhiXVmiTYN94hYaHHhdU2DMxjIyuOVSxIVuqs9cMHlLzlX4aL0A0hjqP5EZkBPE9PBBZHY1Zq37AQS61qK2FZkKayfD8Ew8LGi_PGgugSG7htaPvQH2kQ1m5FJun3sldgzxo43ovgHcfTa0_fFIEV7uv1tqkrQDRREmelvxJvyQe5nMEISrcQt6OhgMaPM8QLybtpjNk7EGWVPvQ72KjGLwQBzswozLkei-o7oZ7sR6-Zw',
+      alt: 'Boat cruise in Agadir ocean',
+      msg: 'Boat Cruise & Fishing'
+    },
+    {
+      titleKey: 'act_city_title',
+      durationKey: 'act_city_duration',
+      price: '€15',
+      descKey: 'act_city_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAc_2kqN9mVtWhc_kEmwasBqN2bNnissxltElMcF7-38N_0IpX6FicAfDPY9PtZI-ROhZ4WP9C2Zm_42leqbB435QtxBi08fkqIS4j_ExAY0a3PmVUMp3FCLfd9zZvuFRTqXnRlrIykPcmG0mvvbuTiJnWCqrqEEqDgajQHPOb-UJXptgvp8ImatXDO-h47AaboaDBo_zThW4PLKtJtspwR4UU2yiIDAB8Gc_HXjjaLbQGGj35VxS0',
+      alt: 'Agadir Kasbah Oufella viewpoint',
+      msg: 'Agadir City Tour'
+    },
+    {
+      titleKey: 'act_berber_title',
+      durationKey: 'act_berber_duration',
+      price: '€20',
+      descKey: 'act_berber_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC33li4q5wZWPKBau-d-icLb2GuDopCujA9W4WBK5AtGhGtnBfs3Vha9lYkEoSbpRLUm3g2oiJTH2NVRo0LspKikyT2S6b-3U0t-U0h2pmi8cZo25SfR2U1ATtS9YBp1slHv0UwNSZLPVdUYDqalCvcssMTsRJTpOF-CaztkylWsyufgd1CbWyHOJvsOmqW4rQ8sQxSp-dylqhL1GzFtSH7-kiqzBCbt8gShl5cMJVOKv0Q0E1xddQ',
+      alt: 'Berber mountain countryside village',
+      msg: 'Berber Country Tour'
+    },
+    {
+      titleKey: 'act_bike_title',
+      durationKey: 'act_bike_duration',
+      price: '€10',
+      descKey: 'act_bike_desc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCUiBAr0f7-sEmB6SorVygqLKpgePytbDL3X_wvigCQhRMNakgkNEbJIQd8k1MBfCHUEZCwF1yBgutmr5c2PjdLUFQrXECOwlEBgbG2qeipBJl3fUFeQJKgRakYv9uf39h6if0nhplvgFnxLMx8KFWriTNHmYDuBFVXaNmETzUqZM9I3heZ_MfEx1mRB_UEQnr_0YFJYXEFlgqlnEewSE2hap8-0lxCBHwNW6SRHN9LxqUe4Bl0SSA',
+      alt: 'Traveler riding e-bike on Agadir beach corniche',
+      msg: 'Bicycle & E-Bike Rental'
+    }
+  ];
 
   return (
     <section className="w-full bg-[#faf2ee] py-20 sm:py-24 border-t border-[#e9e1dd]" id="activities">
@@ -126,22 +126,22 @@ export default function MoreAdventures() {
                         alt={act.alt}
                       />
                       <span className="absolute top-3 right-3 bg-[#33302d]/85 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
-                        {act.duration}
+                        {t(act.durationKey)}
                       </span>
                     </div>
                     <div className="p-5 space-y-2">
                       <h3 className="font-serif text-lg font-bold text-[#1e1b19] group-hover:text-[#8f4900] transition-colors">
-                        {act.title}
+                        {t(act.titleKey)}
                       </h3>
                       <p className="text-xs sm:text-sm text-[#554337] leading-relaxed font-light">
-                        {act.desc}
+                        {t(act.descKey)}
                       </p>
                     </div>
                   </div>
 
                   <div className="p-5 pt-0 flex items-center justify-between mt-auto">
                     <div>
-                      <span className="text-[10px] text-[#554337] uppercase tracking-wider block font-semibold">From</span>
+                      <span className="text-[10px] text-[#554337] uppercase tracking-wider block font-semibold">{t('act_from')}</span>
                       <span className="font-sans text-xl font-bold text-[#8f4900]">{act.price}</span>
                     </div>
                     <a

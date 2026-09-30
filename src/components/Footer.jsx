@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-xs sm:text-sm text-[#e9e1dd] leading-relaxed font-light">
-              Discover Agadir. Live the authentic Moroccan experience with desert sunset treks, scenic dunes, and coastal ocean paths.
+              {t('footer_tagline')}
             </p>
             <div className="pt-2 space-y-2 text-[#e9e1dd] text-xs sm:text-sm">
               <div className="flex items-center gap-2">
@@ -37,7 +37,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#ffdcc3] text-[18px]">photo_camera</span>
-                <span className="hover:text-[#ffb782] transition-colors">@AgadirCamelExperience</span>
+                <a
+                  href="https://www.instagram.com/agadir_camel_experience"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#ffb782] transition-colors flex items-center gap-1"
+                >
+                  @agadir_camel_experience
+                </a>
               </div>
             </div>
           </div>
@@ -45,51 +52,51 @@ export default function Footer() {
           {/* Col 2: Core Experiences */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-[#ffdcc5] uppercase tracking-wider">
-              Core Experiences
+              {t('footer_col2_title')}
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-[#e9e1dd]">
-              <li><a href="#experiences" className="hover:text-white transition-colors">Camel Sunset Experience</a></li>
-              <li><a href="#experiences" className="hover:text-white transition-colors">Moroccan Dinner Trek</a></li>
-              <li><a href="#horse-riding" className="hover:text-white transition-colors">Horse Riding Forest &amp; Beach</a></li>
-              <li><a href="#experiences" className="hover:text-white transition-colors">Sunrise Camel Tour</a></li>
+              <li><a href="#experiences" className="hover:text-white transition-colors">{t('footer_link_camel_sunset')}</a></li>
+              <li><a href="#experiences" className="hover:text-white transition-colors">{t('footer_link_dinner_trek')}</a></li>
+              <li><a href="#horse-riding" className="hover:text-white transition-colors">{t('footer_link_horse_beach')}</a></li>
+              <li><a href="#experiences" className="hover:text-white transition-colors">{t('footer_link_sunrise')}</a></li>
             </ul>
           </div>
 
           {/* Col 3: Adventures */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-[#ffdcc5] uppercase tracking-wider">
-              Adventures &amp; Excursions
+              {t('footer_col3_title')}
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-[#e9e1dd]">
-              <li><a href="#activities" className="hover:text-white transition-colors">Quad &amp; Buggy Safari</a></li>
-              <li><a href="#activities" className="hover:text-white transition-colors">Surf &amp; Ocean Sports</a></li>
-              <li><a href="#tours" className="hover:text-white transition-colors">Paradise Valley Day Trip</a></li>
-              <li><a href="#tours" className="hover:text-white transition-colors">Essaouira Coastal Tour</a></li>
-              <li><a href="#tours" className="hover:text-white transition-colors">Marrakech Heritage Excursion</a></li>
+              <li><a href="#activities" className="hover:text-white transition-colors">{t('footer_link_quad')}</a></li>
+              <li><a href="#activities" className="hover:text-white transition-colors">{t('footer_link_surf')}</a></li>
+              <li><a href="#tours" className="hover:text-white transition-colors">{t('footer_link_paradise')}</a></li>
+              <li><a href="#tours" className="hover:text-white transition-colors">{t('footer_link_essaouira')}</a></li>
+              <li><a href="#tours" className="hover:text-white transition-colors">{t('footer_link_marrakech')}</a></li>
             </ul>
           </div>
 
           {/* Col 4: Trust & Assurance */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-[#ffdcc5] uppercase tracking-wider">
-              Trust &amp; Assurance
+              {t('footer_col4_title')}
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#e9e1dd]">
               <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-[#ffdcc3] text-[18px] shrink-0 mt-0.5">verified</span>
-                <span>Free Hotel Pickup in Agadir &amp; Taghazout</span>
+                <span>{t('footer_trust_1')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-[#ffdcc3] text-[18px] shrink-0 mt-0.5">verified</span>
-                <span>Professional Local Guides</span>
+                <span>{t('footer_trust_2')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-[#ffdcc3] text-[18px] shrink-0 mt-0.5">verified</span>
-                <span>No Advance Deposit Required</span>
+                <span>{t('footer_trust_3')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-[#ffdcc3] text-[18px] shrink-0 mt-0.5">verified</span>
-                <span>100% Authentic Moroccan Hospitality</span>
+                <span>{t('footer_trust_4')}</span>
               </li>
             </ul>
           </div>
@@ -101,7 +108,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4 rounded-xl bg-white/5 px-6 text-xs sm:text-sm text-[#e9e1dd] border border-white/5">
           <div className="flex flex-wrap items-center gap-6">
             <span className="text-[#ffb77d] font-semibold">{t('daily_ops')}</span>
-            <span>Direct WhatsApp &amp; Reservation Desk Active</span>
+            <span>{t('footer_wa_desk')}</span>
           </div>
           <div className="flex items-center gap-4">
             <a className="inline-flex items-center gap-1.5 text-white hover:text-[#ffb77d] transition-colors" href="tel:0619017615">
@@ -115,11 +122,11 @@ export default function Footer() {
 
         {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[#887365] text-xs">
-          <p>© 2025 Agadir Camel Experience. All rights reserved. Souss-Massa, Morocco.</p>
+          <p>{t('footer_copyright')}</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Pickup Locations</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer_privacy')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer_terms')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footer_pickup')}</a>
           </div>
         </div>
       </div>
