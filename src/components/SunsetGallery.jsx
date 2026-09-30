@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import Card3D from './Card3D';
 
 const photos = [
   {
@@ -46,16 +48,26 @@ export default function SunsetGallery() {
           </a>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid with 3D Tilt */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {photos.map((item, idx) => (
-            <div key={idx} className="rounded-2xl overflow-hidden aspect-square shadow-sm bg-[#eee7e3] border border-[#e9e1dd] group">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                src={item.src}
-                alt={item.alt}
-              />
-            </div>
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.85 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <Card3D>
+                <div className="rounded-2xl overflow-hidden aspect-square shadow-sm bg-[#eee7e3] border border-[#e9e1dd] group cursor-pointer">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    src={item.src}
+                    alt={item.alt}
+                  />
+                </div>
+              </Card3D>
+            </motion.div>
           ))}
         </div>
       </div>

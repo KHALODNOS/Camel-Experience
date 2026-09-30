@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import Card3D from './Card3D';
 
 const activities = [
   {
@@ -107,46 +109,53 @@ export default function MoreAdventures() {
         {/* Activity Mosaic Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {activities.map((act, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between border border-[#e9e1dd] group"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: (i % 4) * 0.1 }}
             >
-              <div>
-                <div className="h-48 w-full overflow-hidden relative bg-[#eee7e3]">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    src={act.img}
-                    alt={act.alt}
-                  />
-                  <span className="absolute top-3 right-3 bg-[#33302d]/85 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
-                    {act.duration}
-                  </span>
-                </div>
-                <div className="p-5 space-y-2">
-                  <h3 className="font-serif text-lg font-bold text-[#1e1b19] group-hover:text-[#8f4900] transition-colors">
-                    {act.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#554337] leading-relaxed font-light">
-                    {act.desc}
-                  </p>
-                </div>
-              </div>
+              <Card3D className="h-full">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between border border-[#e9e1dd] group h-full cursor-pointer">
+                  <div>
+                    <div className="h-48 w-full overflow-hidden relative bg-[#eee7e3]">
+                      <img
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        src={act.img}
+                        alt={act.alt}
+                      />
+                      <span className="absolute top-3 right-3 bg-[#33302d]/85 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+                        {act.duration}
+                      </span>
+                    </div>
+                    <div className="p-5 space-y-2">
+                      <h3 className="font-serif text-lg font-bold text-[#1e1b19] group-hover:text-[#8f4900] transition-colors">
+                        {act.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#554337] leading-relaxed font-light">
+                        {act.desc}
+                      </p>
+                    </div>
+                  </div>
 
-              <div className="p-5 pt-0 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] text-[#554337] uppercase tracking-wider block font-semibold">From</span>
-                  <span className="font-sans text-xl font-bold text-[#8f4900]">{act.price}</span>
+                  <div className="p-5 pt-0 flex items-center justify-between mt-auto">
+                    <div>
+                      <span className="text-[10px] text-[#554337] uppercase tracking-wider block font-semibold">From</span>
+                      <span className="font-sans text-xl font-bold text-[#8f4900]">{act.price}</span>
+                    </div>
+                    <a
+                      className="px-4 py-2 rounded-xl bg-[#f4ece8] hover:bg-[#8f4900] hover:text-white text-[#1e1b19] text-xs font-semibold transition-all border border-[#e9e1dd]"
+                      href={`https://wa.me/212619017615?text=${encodeURIComponent(`Hello, I want to inquire about ${act.msg}`)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('discover')}
+                    </a>
+                  </div>
                 </div>
-                <a
-                  className="px-4 py-2 rounded-xl bg-[#f4ece8] hover:bg-[#8f4900] hover:text-white text-[#1e1b19] text-xs font-semibold transition-all border border-[#e9e1dd]"
-                  href={`https://wa.me/212619017615?text=${encodeURIComponent(`Hello, I want to inquire about ${act.msg}`)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t('discover')}
-                </a>
-              </div>
-            </div>
+              </Card3D>
+            </motion.div>
           ))}
         </div>
       </div>

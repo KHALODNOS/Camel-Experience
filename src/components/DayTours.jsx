@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import Card3D from './Card3D';
 
 const tours = [
   {
@@ -74,48 +76,55 @@ export default function DayTours() {
         {/* Excursion Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tours.map((tour, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#e9e1dd] flex flex-col justify-between"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: (idx % 3) * 0.15 }}
             >
-              <div>
-                <div className="h-60 w-full overflow-hidden relative bg-[#eee7e3]">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    src={tour.img}
-                    alt={tour.alt}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#33302d]/70 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-white">
-                    <h3 className="font-serif text-xl font-bold">{tour.title}</h3>
-                    <span className="font-sans text-xl font-bold text-[#ffdcc5]">
-                      {tour.price} <span className="text-xs font-normal text-white/80">/ person</span>
+              <Card3D className="h-full">
+                <div className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-[#e9e1dd] flex flex-col justify-between h-full cursor-pointer">
+                  <div>
+                    <div className="h-60 w-full overflow-hidden relative bg-[#eee7e3]">
+                      <img
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        src={tour.img}
+                        alt={tour.alt}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#33302d]/70 via-transparent to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-white">
+                        <h3 className="font-serif text-xl font-bold">{tour.title}</h3>
+                        <span className="font-sans text-xl font-bold text-[#ffdcc5]">
+                          {tour.price} <span className="text-xs font-normal text-white/80">/ person</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-6 space-y-3">
+                      <p className="text-xs sm:text-sm text-[#554337] leading-relaxed font-light">
+                        {tour.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-6 pt-0 flex items-center justify-between text-[#554337] text-xs font-medium border-t border-[#e9e1dd]/50 mt-2">
+                    <span className="flex items-center gap-1.5 pt-3">
+                      <span className="material-symbols-outlined text-[#8f4900] text-[18px]">schedule</span>
+                      {tour.timing}
                     </span>
+                    <a
+                      className="text-[#8f4900] font-bold hover:underline pt-3 group-hover:translate-x-1 transition-transform"
+                      href={`https://wa.me/212619017615?text=${encodeURIComponent(`Hello, I want to book ${tour.title}`)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {t('reserve_tour')}
+                    </a>
                   </div>
                 </div>
-
-                <div className="p-6 space-y-3">
-                  <p className="text-xs sm:text-sm text-[#554337] leading-relaxed font-light">
-                    {tour.desc}
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-6 pt-0 flex items-center justify-between text-[#554337] text-xs font-medium border-t border-[#e9e1dd]/50 mt-2">
-                <span className="flex items-center gap-1.5 pt-3">
-                  <span className="material-symbols-outlined text-[#8f4900] text-[18px]">schedule</span>
-                  {tour.timing}
-                </span>
-                <a
-                  className="text-[#8f4900] font-bold hover:underline pt-3"
-                  href={`https://wa.me/212619017615?text=${encodeURIComponent(`Hello, I want to book ${tour.title}`)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t('reserve_tour')}
-                </a>
-              </div>
-            </div>
+              </Card3D>
+            </motion.div>
           ))}
         </div>
       </div>

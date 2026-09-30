@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import Card3D from './Card3D';
 
 export default function WhyUs() {
   const { t } = useLanguage();
@@ -51,7 +53,13 @@ export default function WhyUs() {
     <section className="w-full bg-[#faf2ee] pt-28 pb-20 mt-8 sm:mt-12 border-b border-[#e9e1dd]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-12">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto space-y-3"
+        >
           <span className="text-xs font-bold text-[#8f4900] uppercase tracking-widest block">
             {t('why_badge')}
           </span>
@@ -61,34 +69,41 @@ export default function WhyUs() {
           <p className="text-sm sm:text-base text-[#554337] leading-relaxed">
             {t('why_desc')}
           </p>
-        </div>
+        </motion.div>
 
-        {/* 4 Pillars Cards Grid */}
+        {/* 4 Pillars Cards Grid with 3D Tilt */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white p-7 rounded-2xl shadow-sm hover:shadow-md transition-all group flex flex-col justify-between border border-[#e9e1dd]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              <div className="space-y-4">
-                <div
-                  className={`w-14 h-14 rounded-xl ${item.bgColor} ${item.textColor} ${item.hoverBg} ${item.hoverText} flex items-center justify-center transition-colors shadow-sm`}
-                >
-                  <span className="material-symbols-outlined text-[30px]">{item.icon}</span>
-                </div>
-                <h3 className="font-serif text-xl font-semibold text-[#1e1b19]">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#554337] leading-relaxed font-light">
-                  {item.desc}
-                </p>
-              </div>
+              <Card3D className="h-full">
+                <div className="bg-white p-7 rounded-2xl shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between border border-[#e9e1dd] h-full cursor-pointer">
+                  <div className="space-y-4">
+                    <div
+                      className={`w-14 h-14 rounded-xl ${item.bgColor} ${item.textColor} ${item.hoverBg} ${item.hoverText} flex items-center justify-center transition-all duration-300 shadow-sm group-hover:rotate-6 group-hover:scale-110`}
+                    >
+                      <span className="material-symbols-outlined text-[30px]">{item.icon}</span>
+                    </div>
+                    <h3 className="font-serif text-xl font-semibold text-[#1e1b19] group-hover:text-[#8f4900] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#554337] leading-relaxed font-light">
+                      {item.desc}
+                    </p>
+                  </div>
 
-              <div className={`pt-6 flex items-center gap-2 ${item.textColor} text-xs font-semibold uppercase tracking-wider`}>
-                <span>{item.tag}</span>
-                <span className="material-symbols-outlined text-[16px]">north_east</span>
-              </div>
-            </div>
+                  <div className={`pt-6 flex items-center gap-2 ${item.textColor} text-xs font-semibold uppercase tracking-wider`}>
+                    <span>{item.tag}</span>
+                    <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+                  </div>
+                </div>
+              </Card3D>
+            </motion.div>
           ))}
         </div>
       </div>
