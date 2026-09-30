@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const activities = [
   {
@@ -76,6 +77,8 @@ const activities = [
 ];
 
 export default function MoreAdventures() {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full bg-[#faf2ee] py-20 sm:py-24 border-t border-[#e9e1dd]" id="activities">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-12">
@@ -83,20 +86,20 @@ export default function MoreAdventures() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-xl">
             <span className="text-xs font-bold text-[#8f4900] uppercase tracking-widest block">
-              Agadir Thrills &amp; Water
+              {t('adv_badge')}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1e1b19]">
-              MORE OUTDOOR ADVENTURES
+              {t('adv_title')}
             </h2>
             <p className="text-sm sm:text-base text-[#554337]">
-              Combine your camel sunset with quad biking adrenaline, Taghazout surf breaks, or scenic ocean boat excursions.
+              {t('adv_desc')}
             </p>
           </div>
           <a
             className="inline-flex items-center gap-2 text-[#8f4900] font-semibold text-sm hover:underline shrink-0"
             href="tel:0619017615"
           >
-            <span>Need custom multi-activity packages? Call us</span>
+            <span>{t('custom_pkg')}</span>
             <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
           </a>
         </div>
@@ -140,7 +143,7 @@ export default function MoreAdventures() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Discover
+                  {t('discover')}
                 </a>
               </div>
             </div>

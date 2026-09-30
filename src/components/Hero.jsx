@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
-  const [adventure, setAdventure] = useState('camel-sunset');
+  const { t } = useLanguage();
+  const [adventure, setAdventure] = useState('Camel Sunset Trek (2h) — €10');
   const [date, setDate] = useState('2025-05-18');
   const [travelers, setTravelers] = useState('2');
 
@@ -36,24 +38,24 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-[#ffdcc5] shadow-sm border border-white/20">
             <span className="material-symbols-outlined text-[#ffdcc5] text-[18px]">wb_twilight</span>
             <span className="font-semibold text-[11px] sm:text-xs tracking-widest uppercase">
-              Moroccan Desert &amp; Coastal Adventures
+              {t('hero_badge')}
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.08] drop-shadow-md">
-            EXPERIENCE AGADIR <br />
-            <span className="italic font-normal text-[#ffb77d]">DIFFERENTLY</span>
+            {t('hero_title_1')} <br />
+            <span className="italic font-normal text-[#ffb77d]">{t('hero_title_2')}</span>
           </h1>
 
           {/* Paragraph */}
           <p className="text-base sm:text-lg text-[#faf2ee]/95 max-w-2xl leading-relaxed font-light">
-            Authentic camel rides, ocean sunset adventures, and coastal equestrian trails. Glide through eucalyptus groves and estuary dunes under Morocco's golden hour.
+            {t('hero_desc')}
           </p>
 
           {/* Chips */}
           <div className="flex flex-wrap items-center gap-2 pt-1">
-            {['Camel Experiences', 'Horse Riding', 'Atlantic Sunset', 'Souss Valley Tours', 'Desert Safaris'].map((chip, index) => (
+            {[t('hero_chip_1'), t('hero_chip_2'), t('hero_chip_3'), t('hero_chip_4'), t('hero_chip_5')].map((chip, index) => (
               <React.Fragment key={chip}>
                 {index > 0 && <span className="text-[#ffb77d] text-xs">•</span>}
                 <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs font-medium border border-white/10">
@@ -69,7 +71,7 @@ export default function Hero() {
               className="inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#8f4900] hover:bg-[#b35e08] text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-[0_12px_32px_-4px_rgba(194,106,24,0.45)] hover:-translate-y-0.5"
               href="#quick-booking"
             >
-              <span>BOOK YOUR EXPERIENCE</span>
+              <span>{t('btn_book')}</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </a>
             <a
@@ -77,7 +79,7 @@ export default function Hero() {
               href="#activities"
             >
               <span className="material-symbols-outlined text-[18px]">explore</span>
-              <span>EXPLORE ACTIVITIES</span>
+              <span>{t('btn_explore')}</span>
             </a>
           </div>
         </div>
@@ -91,7 +93,7 @@ export default function Hero() {
             <div className="space-y-1.5">
               <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[#8f4900] text-[16px]">location_on</span>
-                Choose Adventure
+                {t('form_adventure')}
               </label>
               <div className="relative">
                 <select
@@ -116,7 +118,7 @@ export default function Hero() {
             <div className="space-y-1.5">
               <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[#8f4900] text-[16px]">calendar_today</span>
-                Select Date
+                {t('form_date')}
               </label>
               <input
                 type="date"
@@ -130,7 +132,7 @@ export default function Hero() {
             <div className="space-y-1.5">
               <label className="text-xs font-semibold text-[#554337] uppercase tracking-wider flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[#8f4900] text-[16px]">group</span>
-                Travelers
+                {t('form_travelers')}
               </label>
               <div className="relative">
                 <select
@@ -138,11 +140,11 @@ export default function Hero() {
                   onChange={(e) => setTravelers(e.target.value)}
                   className="w-full h-12 pl-3.5 pr-10 rounded-xl bg-[#faf2ee] font-semibold text-sm text-[#1e1b19] focus:outline-none focus:ring-2 focus:ring-[#8f4900] transition-all appearance-none cursor-pointer border border-[#e9e1dd]"
                 >
-                  <option value="1">1 Person (Private or Group)</option>
-                  <option value="2">2 Travelers</option>
-                  <option value="3">3 Travelers</option>
-                  <option value="4">4 Travelers</option>
-                  <option value="5+ Family">Family Group (5+)</option>
+                  <option value="1">{t('person_1')}</option>
+                  <option value="2">{t('person_2')}</option>
+                  <option value="3">{t('person_3')}</option>
+                  <option value="4">{t('person_4')}</option>
+                  <option value="5+ Family">{t('person_5')}</option>
                 </select>
                 <span className="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-[#554337] text-[18px]">
                   expand_more
@@ -156,7 +158,7 @@ export default function Hero() {
               className="w-full h-12 rounded-xl bg-[#8f4900] hover:bg-[#b35e08] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_8px_20px_-2px_rgba(194,106,24,0.3)] active:scale-[0.99] cursor-pointer"
             >
               <span className="material-symbols-outlined text-[18px]">check_circle</span>
-              <span>Check Availability</span>
+              <span>{t('btn_check_availability')}</span>
             </button>
           </form>
         </div>

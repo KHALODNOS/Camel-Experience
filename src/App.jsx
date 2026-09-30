@@ -1,4 +1,5 @@
 import React from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhyUs from './components/WhyUs';
@@ -13,25 +14,27 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#1e1b19] font-sans antialiased selection:bg-[#8f4900] selection:text-white flex flex-col">
-      {/* Sticky Header Navigation */}
-      <Header />
+    <LanguageProvider>
+      <div className="min-h-screen bg-[#fff8f5] text-[#1e1b19] font-sans antialiased selection:bg-[#8f4900] selection:text-white flex flex-col">
+        {/* Sticky Header Navigation */}
+        <Header />
 
-      {/* Main Content Area */}
-      <main className="flex-1 w-full">
-        <Hero />
-        <WhyUs />
-        <FeaturedExperience />
-        <RouteTimeline />
-        <HorseRiding />
-        <MoreAdventures />
-        <DayTours />
-        <SunsetGallery />
-        <ContactCTA />
-      </main>
+        {/* Main Content Area */}
+        <main className="flex-1 w-full">
+          <Hero />
+          <WhyUs />
+          <FeaturedExperience />
+          <RouteTimeline />
+          <HorseRiding />
+          <MoreAdventures />
+          <DayTours />
+          <SunsetGallery />
+          <ContactCTA />
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

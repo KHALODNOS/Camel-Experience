@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
+  const { lang, toggleLanguage, t } = useLanguage();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#fff8f5]/90 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(180,83,9,0.07)] border-b border-[#e9e1dd]/60">
       <div className="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4">
@@ -24,46 +27,57 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center gap-1 bg-[#faf2ee] px-3 py-1.5 rounded-full shadow-inner border border-[#e9e1dd]/50">
           <a href="#" className="px-4 py-1.5 bg-[#b35e08] text-white font-semibold text-xs tracking-wider rounded-full shadow-sm">
-            HOME
+            {t('nav_home')}
           </a>
           <a href="#experiences" className="px-4 py-1.5 rounded-full text-xs font-semibold text-[#554337] hover:bg-[#eee7e3] hover:text-[#1e1b19] transition-all">
-            EXPERIENCES
+            {t('nav_experiences')}
           </a>
           <a href="#activities" className="px-4 py-1.5 rounded-full text-xs font-semibold text-[#554337] hover:bg-[#eee7e3] hover:text-[#1e1b19] transition-all">
-            ACTIVITIES
+            {t('nav_activities')}
           </a>
           <a href="#tours" className="px-4 py-1.5 rounded-full text-xs font-semibold text-[#554337] hover:bg-[#eee7e3] hover:text-[#1e1b19] transition-all">
-            TOURS
+            {t('nav_tours')}
           </a>
           <a href="#gallery" className="px-4 py-1.5 rounded-full text-xs font-semibold text-[#554337] hover:bg-[#eee7e3] hover:text-[#1e1b19] transition-all">
-            GALLERY
+            {t('nav_gallery')}
           </a>
           <a href="#about" className="px-4 py-1.5 rounded-full text-xs font-semibold text-[#554337] hover:bg-[#eee7e3] hover:text-[#1e1b19] transition-all">
-            ABOUT US
+            {t('nav_about')}
           </a>
           <a href="#contact" className="px-4 py-1.5 rounded-full text-xs font-semibold text-[#554337] hover:bg-[#eee7e3] hover:text-[#1e1b19] transition-all">
-            CONTACT
+            {t('nav_contact')}
           </a>
         </nav>
 
-        {/* Action Buttons */}
+        {/* Action Buttons & Language Switcher */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Language Switcher Button */}
+          <button
+            onClick={toggleLanguage}
+            title={lang === 'en' ? 'Switch to French' : 'Passer en Anglais'}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#faf2ee] hover:bg-[#eee7e3] border border-[#e9e1dd] text-[#1e1b19] text-xs font-bold transition-all shadow-sm cursor-pointer"
+          >
+            <span className="material-symbols-outlined text-[#8f4900] text-[18px]">language</span>
+            <span className="uppercase tracking-wider">{lang === 'en' ? 'EN' : 'FR'}</span>
+            <span className="text-[10px] text-[#554337] font-semibold bg-[#e9e1dd] px-1.5 py-0.5 rounded-full">
+              {lang === 'en' ? 'FR' : 'EN'}
+            </span>
+          </button>
+
           <a
             className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#f4ece8] text-xs font-semibold text-[#1e1b19] hover:bg-[#eee7e3] transition-colors shadow-sm border border-[#e9e1dd]"
             href="tel:0619017615"
           >
-            <span class="material-symbols-outlined text-[#8f4900] text-[18px]">call</span>
+            <span className="material-symbols-outlined text-[#8f4900] text-[18px]">call</span>
             <span>0619017615</span>
           </a>
+
           <a
             className="inline-flex items-center px-3.5 sm:px-5 py-2.5 rounded-full bg-[#8f4900] hover:bg-[#b35e08] text-white font-semibold text-[11px] sm:text-xs tracking-wider uppercase transition-all shadow-[0_8px_24px_-2px_rgba(194,106,24,0.35)] hover:shadow-lg active:scale-95"
             href="#quick-booking"
           >
-            BOOK EXPERIENCE
+            {t('book_experience')}
           </a>
-          <div className="w-8 h-8 rounded-full bg-[#8f4900] flex items-center justify-center shrink-0 text-white shadow-sm">
-            <span class="material-symbols-outlined text-[18px]">person</span>
-          </div>
         </div>
       </div>
     </header>

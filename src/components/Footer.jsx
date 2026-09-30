@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="w-full bg-[#33302d] text-[#f7efeb] pt-16 pb-12 relative overflow-hidden border-t border-[#887365]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -95,15 +98,15 @@ export default function Footer() {
         {/* Operating Hours Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4 rounded-xl bg-white/5 px-6 text-xs sm:text-sm text-[#e9e1dd] border border-white/5">
           <div className="flex flex-wrap items-center gap-6">
-            <span className="text-[#ffb77d] font-semibold">Daily Operations: 7:00 AM - 9:00 PM</span>
+            <span className="text-[#ffb77d] font-semibold">{t('daily_ops')}</span>
             <span>Direct WhatsApp &amp; Reservation Desk Active</span>
           </div>
           <div className="flex items-center gap-4">
             <a className="inline-flex items-center gap-1.5 text-white hover:text-[#ffb77d] transition-colors" href="tel:0619017615">
-              <span className="material-symbols-outlined text-[16px]">call</span> Call Desk
+              <span className="material-symbols-outlined text-[16px]">call</span> {t('call_desk')}
             </a>
             <a className="inline-flex items-center gap-1.5 text-white hover:text-[#ffb77d] transition-colors" href="https://wa.me/212619017615" target="_blank" rel="noreferrer">
-              <span className="material-symbols-outlined text-[16px]">chat</span> WhatsApp Chat
+              <span className="material-symbols-outlined text-[16px]">chat</span> {t('whatsapp_chat')}
             </a>
           </div>
         </div>

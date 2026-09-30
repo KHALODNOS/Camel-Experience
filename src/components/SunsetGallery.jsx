@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const photos = [
   {
@@ -20,16 +21,18 @@ const photos = [
 ];
 
 export default function SunsetGallery() {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full bg-[#faf2ee]/70 py-20 border-t border-[#e9e1dd]" id="gallery">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <span className="text-xs font-bold text-[#8f4900] uppercase tracking-widest block">
-              Real Guests, Real Magic
+              {t('gallery_badge')}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1e1b19]">
-              SUNSET GALLERY PREVIEW
+              {t('gallery_title')}
             </h2>
           </div>
           <a
@@ -39,7 +42,7 @@ export default function SunsetGallery() {
             rel="noreferrer"
           >
             <span className="material-symbols-outlined text-[20px]">photo_camera</span>
-            <span>Follow @AgadirCamelExperience</span>
+            <span>{t('insta_follow')}</span>
           </a>
         </div>
 

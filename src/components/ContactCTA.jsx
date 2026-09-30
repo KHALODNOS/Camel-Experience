@@ -1,20 +1,23 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactCTA() {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full py-20 sm:py-24 bg-[#faf2ee] relative overflow-hidden border-t border-[#e9e1dd]" id="contact">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center space-y-8 relative z-10">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffdcc5] text-[#8f4900] text-xs font-semibold uppercase tracking-widest border border-[#e9e1dd]">
           <span className="material-symbols-outlined text-[16px]">bolt</span>
-          Instant Confirmation
+          {t('instant_confirm')}
         </span>
 
         <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1e1b19] tracking-tight max-w-3xl mx-auto">
-          READY FOR YOUR AGADIR ADVENTURE?
+          {t('ready_title')}
         </h2>
 
         <p className="text-base sm:text-lg text-[#554337] max-w-2xl mx-auto font-light leading-relaxed">
-          Reserve in 2 minutes. No advance payment required — pay comfortably on pickup. Call, WhatsApp, or request pickup right here.
+          {t('ready_desc')}
         </p>
 
         {/* Direct Contact Box */}
@@ -39,14 +42,14 @@ export default function ContactCTA() {
             rel="noreferrer"
           >
             <span className="material-symbols-outlined text-[20px]">chat</span>
-            <span>BOOK NOW VIA WHATSAPP</span>
+            <span>{t('book_whatsapp')}</span>
           </a>
           <a
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white hover:bg-[#f4ece8] text-[#1e1b19] font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-sm border border-[#e9e1dd]"
             href="#quick-booking"
           >
             <span className="material-symbols-outlined text-[20px]">edit_calendar</span>
-            <span>BOOK ONLINE FORM</span>
+            <span>{t('book_online')}</span>
           </a>
         </div>
       </div>

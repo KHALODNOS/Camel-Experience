@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HorseRiding() {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full py-20 sm:py-24 bg-[#fff8f5]" id="horse-riding">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -40,35 +43,35 @@ export default function HorseRiding() {
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ffdbcf] text-[#380c00] text-xs uppercase tracking-widest font-semibold">
               <span className="material-symbols-outlined text-[16px] text-[#9e421f]">wb_sunny</span>
-              Coastal Equestrian Excursions
+              {t('horse_badge')}
             </div>
 
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1e1b19] tracking-tight leading-tight">
-              HORSE RIDING IN AGADIR
+              {t('horse_title')}
             </h2>
 
             <p className="text-base sm:text-lg text-[#554337] leading-relaxed font-light">
-              Experience the thrill of riding spirited yet calm Arabian-Barb horses through sandy trails, fragrant eucalyptus woods, and open ocean shorelines. Whether you are stepping onto a stirrup for the first time or longing to gallop down Moroccan sands, our equestrian masters tailor every stride.
+              {t('horse_desc')}
             </p>
 
             {/* 3 Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div className="p-4 rounded-xl bg-[#faf2ee] border border-[#e9e1dd] space-y-1">
                 <span className="material-symbols-outlined text-[#8f4900] text-[24px]">verified_user</span>
-                <h3 className="font-serif text-base font-bold text-[#1e1b19]">Safety First</h3>
-                <p className="text-xs text-[#554337]">Helmets &amp; safety briefing for every guest.</p>
+                <h3 className="font-serif text-base font-bold text-[#1e1b19]">{t('safety_first')}</h3>
+                <p className="text-xs text-[#554337]">{t('safety_desc')}</p>
               </div>
 
               <div className="p-4 rounded-xl bg-[#faf2ee] border border-[#e9e1dd] space-y-1">
                 <span className="material-symbols-outlined text-[#8f4900] text-[24px]">workspace_premium</span>
-                <h3 className="font-serif text-base font-bold text-[#1e1b19]">Purebred Horses</h3>
-                <p className="text-xs text-[#554337]">Well-cared-for, responsive Moroccan steeds.</p>
+                <h3 className="font-serif text-base font-bold text-[#1e1b19]">{t('purebred')}</h3>
+                <p className="text-xs text-[#554337]">{t('purebred_desc')}</p>
               </div>
 
               <div className="p-4 rounded-xl bg-[#faf2ee] border border-[#e9e1dd] space-y-1">
                 <span className="material-symbols-outlined text-[#8f4900] text-[24px]">support_agent</span>
-                <h3 className="font-serif text-base font-bold text-[#1e1b19]">Guide Escort</h3>
-                <p className="text-xs text-[#554337]">Dedicated escort riding alongside you.</p>
+                <h3 className="font-serif text-base font-bold text-[#1e1b19]">{t('guide_escort')}</h3>
+                <p className="text-xs text-[#554337]">{t('guide_desc')}</p>
               </div>
             </div>
 
@@ -79,7 +82,7 @@ export default function HorseRiding() {
                 <div>
                   <span className="text-xs font-semibold text-[#554337] uppercase tracking-wider block">Ride Only</span>
                   <div className="flex items-baseline justify-between mt-1">
-                    <h3 className="font-serif text-base font-bold text-[#1e1b19]">2 Hours Horse Riding</h3>
+                    <h3 className="font-serif text-base font-bold text-[#1e1b19]">{t('horse_10')}</h3>
                     <span className="font-sans text-xl font-bold text-[#8f4900]">€10</span>
                   </div>
                   <p className="text-xs text-[#554337] mt-2 font-light">
@@ -92,7 +95,7 @@ export default function HorseRiding() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Book for €10
+                  {t('book_for_10')}
                 </a>
               </div>
 
@@ -101,7 +104,7 @@ export default function HorseRiding() {
                 <div>
                   <span className="text-xs font-semibold text-[#9e421f] uppercase tracking-wider block">Ride &amp; Feast</span>
                   <div className="flex items-baseline justify-between mt-1">
-                    <h3 className="font-serif text-base font-bold text-[#1e1b19]">2 Hours + Tagine Dinner</h3>
+                    <h3 className="font-serif text-base font-bold text-[#1e1b19]">{t('horse_15')}</h3>
                     <span className="font-sans text-xl font-bold text-[#9e421f]">€15</span>
                   </div>
                   <p className="text-xs text-[#554337] mt-2 font-light">
@@ -114,7 +117,7 @@ export default function HorseRiding() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Book for €15
+                  {t('book_for_15')}
                 </a>
               </div>
             </div>
