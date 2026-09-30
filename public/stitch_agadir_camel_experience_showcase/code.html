@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "on-tertiary-fixed": "#2f1500", "surface-container-high": "#eee7e3", "error": "#ba1a1a", "secondary": "#9e421f", "on-tertiary": "#ffffff", "primary-fixed": "#ffdcc5", "on-tertiary-fixed-variant": "#6e3900", "on-secondary": "#ffffff", "secondary-fixed-dim": "#ffb59c", "surface-container-highest": "#e9e1dd", "on-error-container": "#93000a", "on-primary-container": "#fffbff", "primary": "#8f4900", "surface-tint": "#934b00", "background": "#fff8f5", "on-primary-fixed": "#301400", "on-secondary-fixed": "#380c00", "primary-fixed-dim": "#ffb782", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#703800", "inverse-primary": "#ffb782", "on-background": "#1e1b19", "secondary-container": "#fe8c63", "surface-dim": "#e0d8d5", "secondary-fixed": "#ffdbcf", "on-primary": "#ffffff", "error-container": "#ffdad6", "inverse-on-surface": "#f7efeb", "outline": "#887365", "surface-variant": "#e9e1dd", "on-surface-variant": "#554337", "on-tertiary-container": "#fffbff", "tertiary-fixed": "#ffdcc3", "surface-container": "#f4ece8", "surface-bright": "#fff8f5", "outline-variant": "#dbc2b2", "inverse-surface": "#33302d", "surface-container-low": "#faf2ee", "on-secondary-container": "#742402", "tertiary-fixed-dim": "#ffb77d", "on-surface": "#1e1b19", "primary-container": "#b35e08", "on-secondary-fixed-variant": "#7e2b09", "tertiary": "#8d4b00", "surface": "#fff8f5", "tertiary-container": "#b15f00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "2rem", "space-lg": "1.5rem", "margin-mobile": "1.25rem", "gutter-mobile": "1rem", "gutter": "1.5rem", "space-2xl": "4rem", "margin": "4rem", "space-md": "1rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem" }, "fontFamily": { "label-price": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "label-lg": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "title-lg": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Playfair Display" ], "body-sm": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Playfair Display" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ], "headline-xl": [ "Playfair Display" ], "display-lg": [ "Playfair Display" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "label-price": [ "22px", { "lineHeight": "26px", "fontWeight": "700" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "title-md": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "title-lg": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "display-lg-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(180,83,9,0.07)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-3 shrink-0"><img alt="Agadir Camel Experience Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD7gHw7vFgWaIijxlf9blF_fSx8m1-aZ9jo__ECUb6DZOm1pnCBQsDofCjN8751_fqa5STOQUyzsW-X0ibdD8r0vlEadhuw_0-7ypjY1ehM3SgiR9tT9wcJ2ehO1kVk8tnuk-iox5Ngp0sfluc-SmrYK70LOkjQSwoHPaxAXEdesg54rlWqZeifzmOS64SaRbemE4Wup2LMtP1IpQSaTK880_fPSll3RxDdx8MhMYaV_RWnVV6zBU"/><div class="flex flex-col"><span class="font-headline-md text-title-md text-on-surface tracking-tight leading-tight">Agadir Camel Experience</span><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Est. Agadir, Morocco</span></div></div><nav class="hidden xl:flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-full shadow-inner" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full"><a aria-current="page" class="px-3.5 py-1.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-full" data-path="home" href="#">HOME</a><a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="experiences" href="#">EXPERIENCES</a><a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="activities" href="#">ACTIVITIES</a><a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tours" href="#">TOURS</a><a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="gallery" href="#">GALLERY</a><a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="about-us" href="#">ABOUT US</a><a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="contact" href="#">CONTACT</a></nav><div class="flex items-center gap-3 shrink-0"><a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-lg text-label-lg text-on-surface hover:bg-surface-container-high transition-colors shadow-sm" href="tel:0619017615"><span class="material-symbols-outlined text-primary text-[18px]">call</span><span>0619017615</span></a><a class="inline-flex items-center px-5 py-2.5 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg tracking-wide uppercase transition-all shadow-[0_8px_24px_-2px_rgba(194,106,24,0.35)]" data-path="booking" href="#">BOOK YOUR EXPERIENCE</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="w-full" id="content"><div class="flex flex-col w-full">
+<!-- 1. Hero Section -->
+<section class="relative w-full -mt-20 overflow-hidden min-h-[942px] flex flex-col justify-end">
+<!-- Atmospheric Visual Background -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105" data-alt="Cinematic aerial panoramic view of a traditional camel caravan riding across golden coastal sand dunes at Agadir Morocco during a warm ethereal sunset with pastel pink and amber skies reflecting on Atlantic tidal flats." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeHxH2hKGfCluEWWudOlnViajg3WXqchPnpXG9MboGq3OBi8IDVCoiwxVdTWVsRPXTKRvMe6mfy_wESlQkSBTtBNw2PAc0X1cTz_QOHI6sdBlerXd0iD_rZ003ChrRzc-GqK-y5hoankQ2oidTeMAGw42kJ_dLn2KTFRjKc5HipTR5aFJO4PXhQEHK6QlXkGtiBMh63pT5tYZWGXGFPWStVKO77FWKqIvTNOmcCIQIvF2Ig8Zul5c')"></div>
+<!-- Sun-drenched Scrim Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent opacity-95"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/20 via-transparent to-secondary/20 mix-blend-soft-light"></div>
+<!-- Hero Content Container -->
+<div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-44 pb-16">
+<div class="max-w-3xl space-y-6">
+<!-- Tagline Pill -->
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-container-lowest/15 backdrop-blur-md text-primary-fixed shadow-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">wb_twilight</span>
+<span class="font-label-lg text-label-lg tracking-widest uppercase">Moroccan Desert &amp; Coastal Adventures</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-display-lg text-surface-container-lowest tracking-tight leading-[1.08] drop-shadow-sm">
+          EXPERIENCE AGADIR <br/><span class="italic font-normal text-tertiary-fixed">DIFFERENTLY</span>
+</h1>
+<!-- Subheadline -->
+<p class="font-body-lg text-body-lg text-surface-container-low/95 max-w-2xl leading-relaxed">
+          Authentic camel rides, ocean sunset adventures, and coastal equestrian trails. Glide through eucalyptus groves and estuary dunes under Morocco's golden hour.
+        </p>
+<!-- Information Chips Row -->
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<span class="px-3.5 py-1 rounded-full bg-surface-container-lowest/10 backdrop-blur-sm text-surface-bright font-label-md text-label-md">Camel Experiences</span>
+<span class="text-tertiary-fixed-dim">•</span>
+<span class="px-3.5 py-1 rounded-full bg-surface-container-lowest/10 backdrop-blur-sm text-surface-bright font-label-md text-label-md">Horse Riding</span>
+<span class="text-tertiary-fixed-dim">•</span>
+<span class="px-3.5 py-1 rounded-full bg-surface-container-lowest/10 backdrop-blur-sm text-surface-bright font-label-md text-label-md">Atlantic Sunset</span>
+<span class="text-tertiary-fixed-dim">•</span>
+<span class="px-3.5 py-1 rounded-full bg-surface-container-lowest/10 backdrop-blur-sm text-surface-bright font-label-md text-label-md">Souss Valley Tours</span>
+<span class="text-tertiary-fixed-dim">•</span>
+<span class="px-3.5 py-1 rounded-full bg-surface-container-lowest/10 backdrop-blur-sm text-surface-bright font-label-md text-label-md">Desert Safaris</span>
+</div>
+<!-- Dual Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<a class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg tracking-wider uppercase transition-all shadow-[0_12px_32px_-4px_rgba(194,106,24,0.45)] hover:-translate-y-0.5" href="#quick-booking">
+<span>BOOK YOUR EXPERIENCE</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 backdrop-blur-md text-surface-container-lowest font-label-lg text-label-lg tracking-wider uppercase transition-all" href="#activities">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+<span>EXPLORE ACTIVITIES</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Quick Booking Bar Docked Under Hero -->
+<div class="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 w-full -mb-10" id="quick-booking">
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_16px_40px_-6px_rgba(142,70,0,0.14)] p-4 lg:p-6">
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end" onsubmit="event.preventDefault();">
+<!-- Experience Selector -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">location_on</span>
+              Choose Adventure
+            </label>
+<div class="relative">
+<select class="w-full h-12 pl-3.5 pr-10 rounded-xl bg-surface-container-low font-title-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-all appearance-none cursor-pointer">
+<option value="camel-sunset">Camel Sunset Trek (2h) — €10</option>
+<option value="camel-dinner">Camel + Moroccan Tagine (2h) — €15</option>
+<option value="horse-sunset">Arabian Horse Riding (2h) — €10</option>
+<option value="horse-dinner">Horse Riding + Dinner (2h) — €15</option>
+<option value="quad">Quad Dune Safari (2h)</option>
+<option value="paradise">Paradise Valley Excursion</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Date Selector -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">calendar_today</span>
+              Select Date
+            </label>
+<input class="w-full h-12 px-3.5 rounded-xl bg-surface-container-low font-title-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-all cursor-pointer" type="date" value="2025-05-18"/>
+</div>
+<!-- Guests Selector -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider block flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">group</span>
+              Travelers
+            </label>
+<div class="relative">
+<select class="w-full h-12 pl-3.5 pr-10 rounded-xl bg-surface-container-low font-title-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-all appearance-none cursor-pointer">
+<option value="1">1 Person (Private or Group)</option>
+<option selected="" value="2">2 Travelers</option>
+<option value="3">3 Travelers</option>
+<option value="4">4 Travelers</option>
+<option value="family">Family Group (5+)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- CTA Trigger -->
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-[0_8px_20px_-2px_rgba(194,106,24,0.3)]" type="submit">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Check Availability</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+<!-- 2. "Why Choose Us" Section -->
+<section class="w-full bg-surface-container-low pt-28 pb-20 mt-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto space-y-3">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest font-semibold block">The Trusted Agadir Difference</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">WHY TRAVELERS LOVE AGADIR CAMEL EXPERIENCE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Curated desert encounters with genuine Berber warmth, reliable hotel door-to-door transit, and no hidden surprises.</p>
+</div>
+<!-- 4 Pillars Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest p-7 rounded-2xl shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[30px]">nature_people</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Authentic Experiences</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              True Berber hospitality, traditional handcrafted leather saddles, and scenic uncrowded trails along coastal dunes and the serene Souss River.
+            </p>
+</div>
+<div class="pt-6 flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider">
+<span>Berber Heritage</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest p-7 rounded-2xl shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-14 h-14 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[30px]">airport_shuttle</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Hotel Pickup Included</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Complimentary air-conditioned transfer directly from your Agadir or Taghazout hotel reception, returning you safely right after the ride.
+            </p>
+</div>
+<div class="pt-6 flex items-center gap-2 text-secondary font-label-md text-label-md uppercase tracking-wider">
+<span>Agadir &amp; Taghazout</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest p-7 rounded-2xl shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-14 h-14 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[30px]">favorite</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Friendly Local Team</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Experienced, multilingual camel handlers who treat travelers like family, capturing photos and sharing stories of the Souss region.
+            </p>
+</div>
+<div class="pt-6 flex items-center gap-2 text-tertiary font-label-md text-label-md uppercase tracking-wider">
+<span>Local Guides</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-container-lowest p-7 rounded-2xl shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed-dim/50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[30px]">wb_twilight</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Unforgettable Sunsets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Carefully timed departures that place you beside the Atlantic dunes exactly when the sky blushes amber, rose, and burnished gold.
+            </p>
+</div>
+<div class="pt-6 flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider">
+<span>Golden Hour</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Featured Experience: "CAMEL SUNSET EXPERIENCE" (Main Highlight) -->
+<section class="w-full py-24 max-w-7xl mx-auto px-6 lg:px-12" id="experiences">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Storytelling Left Column (7 cols) -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md uppercase tracking-widest font-semibold">
+<span class="material-symbols-outlined text-[16px]">star</span>
+          Most Iconic Journey
+        </div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+          CAMEL SUNSET EXPERIENCE
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Embark on our signature 2-hour coastal odyssey. You will gentle-trot through the aromatic eucalyptus forest, trace the outer perimeter of the Moroccan Royal Palace and manicured fairways, before breaking through the rolling sand dunes of the Souss River estuary where migratory pink flamingos congregate in the setting sun.
+        </p>
+<!-- Highlights List -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+<div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Free Agadir &amp; Taghazout Pickups</span>
+</div>
+<div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Eucalyptus &amp; Beach Sand Dunes</span>
+</div>
+<div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Flamingo Sanctuary at River Souss</span>
+</div>
+<div class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Moroccan Mint Tea &amp; Sweet Biscuits</span>
+</div>
+</div>
+<div class="pt-4 flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-wider transition-all shadow-[0_8px_24px_-2px_rgba(194,106,24,0.35)]" href="#quick-booking">
+<span>DISCOVER THE EXPERIENCE</span>
+<span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_right</span>
+</a>
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+            No prepayment required • Pay on pickup
+          </span>
+</div>
+</div>
+<!-- Pricing Cards Right Column (5 cols) -->
+<div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+<!-- Card 1: 2 Hours - 10 EUR -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0_4px_20px_-2px_rgba(180,83,9,0.07)] hover:shadow-md transition-all space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Sunset Standard</span>
+<h4 class="font-title-lg text-title-lg text-on-surface">2 Hours Ride</h4>
+</div>
+<div class="text-right">
+<span class="font-label-price text-label-price text-primary">€10</span>
+<span class="block font-label-md text-label-md text-on-surface-variant">/ person</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Full 2-hour guided camel sunset journey without dinner. Ideal for couples, solo travelers, and light afternoon itineraries.
+          </p>
+<ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Hotel pickup &amp; drop-off included</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Moroccan mint tea &amp; fresh pastry pause</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Professional local guide assistance</span>
+</li>
+</ul>
+<a class="w-full py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors" href="https://wa.me/212619017615?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Camel%20Sunset%202h%20at%2010%E2%82%AC">
+<span>Select €10 Package</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2: 2 Hours - 15 EUR (Most Popular) -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-[0_12px_32px_-4px_rgba(194,106,24,0.18)] relative overflow-hidden space-y-4">
+<!-- Most Popular Badge -->
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary px-4 py-1 rounded-bl-xl font-label-md text-label-md uppercase tracking-wider font-semibold">
+            MOST POPULAR
+          </div>
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Gourmet Sunset &amp; Feast</span>
+<h4 class="font-title-lg text-title-lg text-on-surface">2 Hours + Moroccan Dinner</h4>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-label-price text-label-price text-secondary">€15</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ person (All-Inclusive)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Our premier evening. Full 2-hour sunset trek followed by an authentic Moroccan chicken/meat tagine dinner, fresh bread, and seasonal fruits under the Berber tent.
+          </p>
+<ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">done_all</span>
+<span>All 2-hour sunset trek inclusions</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">done_all</span>
+<span>Fresh clay-pot Berber Tagine dinner</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">done_all</span>
+<span>Desert campfire &amp; starry sky relaxation</span>
+</li>
+</ul>
+<a class="w-full py-2.5 rounded-xl bg-secondary hover:bg-secondary-container text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors shadow-sm" href="https://wa.me/212619017615?text=Hello%2C%20I%20would%20like%20to%20book%20the%20Camel%20Sunset%20%2B%20Dinner%20at%2015%E2%82%AC">
+<span>Select €15 Dinner Package</span>
+<span class="material-symbols-outlined text-[16px]">dinner_dining</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Experience Route Visual Timeline -->
+<section class="w-full bg-surface-container-high/40 py-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+<div class="max-w-2xl space-y-2">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest font-semibold">The 8-Step Itinerary</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">HOW YOUR SUNSET JOURNEY UNFOLDS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Every minute is planned so you relax, savor the coastal air, and capture stunning portraits.</p>
+</div>
+<!-- Horizontal Step Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center text-sm">01</span>
+<span class="material-symbols-outlined text-primary text-[22px]">car_rental</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Hotel Pickup</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Air-conditioned Mercedes van collects you directly from your hotel lobby.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-primary font-semibold">15–20 Mins Prior</span>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center text-sm">02</span>
+<span class="material-symbols-outlined text-primary text-[22px]">pets</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Camel Station</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Meet our friendly gentle camels, safety briefing &amp; comfortable saddle mounting.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-primary font-semibold">Ranch Arrival</span>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center text-sm">03</span>
+<span class="material-symbols-outlined text-primary text-[22px]">forest</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Eucalyptus Forest</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Serene quiet ride through scented tall trees sheltering you from Atlantic winds.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-primary font-semibold">First 30 Mins</span>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center text-sm">04</span>
+<span class="material-symbols-outlined text-primary text-[22px]">fort</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Royal Palace Views</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Glance at the majestic Moroccan architectural gates and manicured gardens.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-primary font-semibold">Mid-Route</span>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary font-bold flex items-center justify-center text-sm">05</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">sports_golf</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Golf Dunes Path</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lush green contrasts against coastal golden sands as the trail widens toward the ocean.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-secondary font-semibold">Hour 1.0</span>
+</div>
+<!-- Step 6 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary font-bold flex items-center justify-center text-sm">06</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">water</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Souss Estuary</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Observe migratory wild flamingos feeding calmly in the shallow coastal waters.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-secondary font-semibold">Hour 1.3</span>
+</div>
+<!-- Step 7 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary font-bold flex items-center justify-center text-sm">07</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">wb_twilight</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Golden Sunset</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Watch the blazing sun melt into the Atlantic while mounted high on your camel.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-secondary font-semibold">Peak Magic</span>
+</div>
+<!-- Step 8 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary font-bold flex items-center justify-center text-sm">08</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">photo_camera</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface">Photos &amp; Tea / Dinner</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Berber tea celebration, memorable silhouette photos, and optional hot tagine.</p>
+</div>
+<span class="pt-4 font-label-md text-label-md text-secondary font-semibold">Return &amp; Feast</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. "HORSE RIDING IN AGADIR" Section -->
+<section class="w-full py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Visual Left (5 cols) -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="A smiling woman with Moroccan headscarf riding an elegant dappled grey Arabian-Barb horse cantering along a scenic sand trail through eucalyptus trees overlooking the Atlantic ocean at golden sunset." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADOA33HKhec1NO_Ow2M8xL7e6gMPLtpBW0DqFYoA8FbbkDb072Z9SI2lO0K1OBVW4Mzm7WZT2G-k8tQE_QvstGT2uTv00J4PADa0unut5lDF_Fhie80w7-t-GqyMJGKcGwFpRCMfKGhdCePld8NVgH2AnlgpsRtKKZkYpQzaJxPFmxFijqKKxugj_5g5_AUvhm-dvuUQza95pJ7jMpmOwMneioGzmuu0CyATst5sZCANJzgu0sy48"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 text-surface-container-lowest">
+<span class="font-label-md text-label-md text-primary-fixed uppercase tracking-wider block mb-1">Arabian-Barb Stables</span>
+<p class="font-title-md text-title-md font-serif">"The bond between rider, dunes, and the Atlantic breeze is pure poetry."</p>
+</div>
+</div>
+<!-- Accent Floating Pill -->
+<div class="absolute -top-4 -right-4 bg-surface-container-lowest p-4 rounded-2xl shadow-lg flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sports_score</span>
+</div>
+<div>
+<span class="block font-title-md text-title-md font-bold text-on-surface">All Levels</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Beginner to Advanced</span>
+</div>
+</div>
+</div>
+<!-- Story & Pricing Right (7 cols) -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md uppercase tracking-widest font-semibold">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+            Coastal Equestrian Excursions
+          </div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+            HORSE RIDING IN AGADIR
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Experience the thrill of riding spirited yet calm Arabian-Barb horses through sandy trails, fragrant eucalyptus woods, and open ocean shorelines. Whether you are stepping onto a stirrup for the first time or longing to gallop down Moroccan sands, our equestrian masters tailor every stride.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-primary text-[24px]">verified_user</span>
+<h5 class="font-title-md text-title-md text-on-surface">Safety First</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Helmets &amp; safety briefing for every guest.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-primary text-[24px]">workspace_premium</span>
+<h5 class="font-title-md text-title-md text-on-surface">Purebred Horses</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Well-cared-for, responsive Moroccan steeds.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
+<h5 class="font-title-md text-title-md text-on-surface">Guide Accompaniment</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dedicated escort riding alongside you.</p>
+</div>
+</div>
+<!-- Pricing Options -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Ride Only</span>
+<div class="flex items-baseline justify-between mt-1">
+<h4 class="font-title-md text-title-md text-on-surface">2 Hours Horse Riding</h4>
+<span class="font-label-price text-label-price text-primary">€10</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Includes hotel pickup, helmet, trail guide, and refreshing mint tea.</p>
+</div>
+<a class="mt-4 w-full py-2 text-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-colors" href="https://wa.me/212619017615?text=Hello%2C%20I%20would%20like%20to%20book%20Horse%20Riding%202h%20at%2010%E2%82%AC">
+                Book for €10
+              </a>
+</div>
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Ride &amp; Feast</span>
+<div class="flex items-baseline justify-between mt-1">
+<h4 class="font-title-md text-title-md text-on-surface">2 Hours + Tagine Dinner</h4>
+<span class="font-label-price text-label-price text-secondary">€15</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Includes ride, transfers, and a complete evening Moroccan tagine dinner.</p>
+</div>
+<a class="mt-4 w-full py-2 text-center rounded-xl bg-secondary hover:bg-secondary-container text-on-secondary font-label-md text-label-md font-semibold transition-colors" href="https://wa.me/212619017615?text=Hello%2C%20I%20would%20like%20to%20book%20Horse%20Riding%20%2B%20Dinner%20at%2015%E2%82%AC">
+                Book for €15
+              </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. "MORE ADVENTURES" Grid -->
+<section class="w-full bg-surface-container-low py-24" id="activities">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2 max-w-xl">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest font-semibold">Agadir Thrills &amp; Water</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">MORE OUTDOOR ADVENTURES</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Combine your camel sunset with quad biking adrenaline, Taghazout surf breaks, or scenic ocean boat excursions.</p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg hover:underline" href="tel:0619017615">
+<span>Need custom multi-activity packages? Call us</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Activity Cards Mosaic -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Quad Biking -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="An adrenaline quad bike rider carving through golden Moroccan sand dunes near Agadir with dust kick and warm sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpBHBBwSc0o95A6xjmhKxo6ZDN4adKyjfZ3laOf8A3-vQLgPI4pETUvUfV6pmZcF7T_dWzG-IIeHpDGcke8VvXfa67QeFF0OxpFH4Jj2vrRp9RVhVeQzD8i9fl6EEz3wi-LnYwnn5wMBCyKtg-zhXPu-_yTF53mnuJZkNWolHI0TP94yt9xzM5txGK0iIHD37VfZfL79bAjG0CGTzBNsuMenqu6PGrjiPCZff_8D-zvcRNPLEywvc"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">2 Hours</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Quad Biking Safari</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Conquer the coastal sand dunes and eucalyptus forest tracks with high-performance 250cc ATVs.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€25</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Quad%20Biking">Discover</a>
+</div>
+</div>
+<!-- Buggy Safari -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="A two-seater desert buggy driving fast on coastal sands of Agadir Morocco with blue sky and dramatic sand dunes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB135cU_2dyULKP8bGX0nSm0P-5GoqCaO2hnGnb58PlSWIFXJwGhcY_G6V7NykwWhv1KrG5vUbklEYEVsUTu-kPNLVdEzAWjeHRcXm3qP5TKZs3dY3yLYa9xmi1yel0_VVCeoxRqujgr5NzhjM40WDhbkjy5uKIarhFEia7kiUof42-JShCWJT6OdfVzePHm-4XcYZfVXsCQFE8E8MCa-jcLZi_CtLdA6UqPsUxHeRW3Dv4C9LRyEw"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">2 Hours</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Buggy Safari</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High adrenaline tandem dune buggies, perfect for couples and thrill seekers across Takkat sands.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€45</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Buggy%20Safari">Discover</a>
+</div>
+</div>
+<!-- Surf Lessons -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="Surfer catching an Atlantic ocean wave in Taghazout bay near Agadir Morocco with glowing morning sun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2fEVH3HhoJfXQzwAT7yJ6W6rDcoT02Xy2TvPBCzxjluSzTcl6dUkabHpWU1uCN7pNMxKKw-E_3RUVRgTKpW3OED5ZfvidI5qzXVJkHmzrkKFRS8BJptHkOjb8e-bcReFFq3UoJ1VS5vMHJl2hkNFVJo-3qYZ5FcZzxUiiewgIfzZ-U-JpPQUX0mo_s4fj8zMzfowLUKjbYxG9UVuune5DQrxEyOUR1NU3g5-Uo7MzdtdNJQtojSU"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">Half Day</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Surf &amp; Ocean Waves</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Learn to surf in world-renowned Taghazout &amp; Anza swells. Equipment and certified coaching included.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€20</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Surf%20Lessons">Discover</a>
+</div>
+</div>
+<!-- Jet Ski -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="A jet ski speeding on the clear blue ocean waters of Agadir bay with the Kasbah mountain in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KBQrVL3TNqoJcZKoh4ZTriVp8iqQ3X_pHT1nvW-LKYdQV7UV8aoppJjLBqYTdl_1g1mmJnioEZzz6x8pNT7qiXOw_xn2K_PC7i3bwaJKh0Fg6kfMWvc0-NvNKkZvKzNXm3w4ss-YHYGIDID7cPq4e8bPHs5tnErnXalaCNCKgnxDbe8i7KJ4YHgZaFVwcFvDfbFR1oL33LVSuRDvG_WLGJlmZkEjGJwVDA2rMm0GNXOWDneaVKU"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">30 Mins</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Jet Ski Marina Thrill</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Skim across the warm calm waters of Agadir bay facing the historic Kasbah mountain.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€35</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Jet%20Ski">Discover</a>
+</div>
+</div>
+<!-- Boat Trips & Fishing -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="A leisure yacht boat cruising along the Atlantic coast of Agadir with travelers fishing and dining under sun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbz_BydzhiXVmiTYN94hYaHHhdU2DMxjIyuOVSxIVuqs9cMHlLzlX4aL0A0hjqP5EZkBPE9PBBZHY1Zq37AQS61qK2FZkKayfD8Ew8LGi_PGgugSG7htaPvQH2kQ1m5FJun3sldgzxo43ovgHcfTa0_fFIEV7uv1tqkrQDRREmelvxJvyQe5nMEISrcQt6OhgMaPM8QLybtpjNk7EGWVPvQ72KjGLwQBzswozLkei-o7oZ7sR6-Zw"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">Half Day</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Boat Cruise &amp; Fishing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Relax on the open ocean with rod fishing, swimming stops, and fresh grilled fish lunch onboard.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€30</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Boat%20Trip">Discover</a>
+</div>
+</div>
+<!-- Agadir City Tour -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="The panoramic viewpoint of Agadir Oufella Kasbah ruins overlooking Agadir bay and city with warm stone walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc_2kqN9mVtWhc_kEmwasBqN2bNnissxltElMcF7-38N_0IpX6FicAfDPY9PtZI-ROhZ4WP9C2Zm_42leqbB435QtxBi08fkqIS4j_ExAY0a3PmVUMp3FCLfd9zZvuFRTqXnRlrIykPcmG0mvvbuTiJnWCqrqEEqDgajQHPOb-UJXptgvp8ImatXDO-h47AaboaDBo_zThW4PLKtJtspwR4UU2yiIDAB8Gc_HXjjaLbQGGj35VxS0"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">3 Hours</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Agadir City Tour</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visit the historic Kasbah Oufella, buzzing Souk El Had market, and an authentic Argan oil cooperative.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€15</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Agadir%20City%20Tour">Discover</a>
+</div>
+</div>
+<!-- Country Tour & Berber Villages -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="A peaceful Berber mountain village surrounded by almond and argan trees in the Atlas foothills near Agadir." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC33li4q5wZWPKBau-d-icLb2GuDopCujA9W4WBK5AtGhGtnBfs3Vha9lYkEoSbpRLUm3g2oiJTH2NVRo0LspKikyT2S6b-3U0t-U0h2pmi8cZo25SfR2U1ATtS9YBp1slHv0UwNSZLPVdUYDqalCvcssMTsRJTpOF-CaztkylWsyufgd1CbWyHOJvsOmqW4rQ8sQxSp-dylqhL1GzFtSH7-kiqzBCbt8gShl5cMJVOKv0Q0E1xddQ"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">4 Hours</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Berber Country Tour</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Explore rustic countryside hamlets, traditional honey apiaries, and rural foothill landscapes.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€20</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Country%20Tour">Discover</a>
+</div>
+</div>
+<!-- Bicycle & E-Bike Rentals -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="h-48 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" data-alt="A traveler riding an e-bike down the wide palm-lined seaside promenade of Agadir beach during late afternoon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUiBAr0f7-sEmB6SorVygqLKpgePytbDL3X_wvigCQhRMNakgkNEbJIQd8k1MBfCHUEZCwF1yBgutmr5c2PjdLUFQrXECOwlEBgbG2qeipBJl3fUFeQJKgRakYv9uf39h6if0nhplvgFnxLMx8KFWriTNHmYDuBFVXaNmETzUqZM9I3heZ_MfEx1mRB_UEQnr_0YFJYXEFlgqlnEewSE2hap8-0lxCBHwNW6SRHN9LxqUe4Bl0SSA"/>
+<span class="absolute top-3 right-3 bg-inverse-surface/80 text-surface-container-lowest font-label-md text-label-md px-2.5 py-1 rounded-full">Full Day</span>
+</div>
+<div class="p-5 space-y-2">
+<h3 class="font-title-lg text-title-lg text-on-surface">Bicycle &amp; E-Bike</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cruise Agadir's 10km paved seaside corniche at your leisure with premium city bikes and helmets.</p>
+</div>
+</div>
+<div class="p-5 pt-0 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">From</span>
+<span class="font-label-price text-label-price text-primary">€10</span>
+</div>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20inquire%20about%20Bicycle%20Rental">Discover</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. "DISCOVER MOROCCO — TOURS & EXCURSIONS" -->
+<section class="w-full py-24 bg-surface" id="tours">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto space-y-3">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest font-semibold block">Full &amp; Half-Day Day Trips</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">DISCOVER MOROCCO — TOURS &amp; EXCURSIONS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Step beyond Agadir. Venture to emerald mountain pools, red sandstone sea arches, and ancient walled medinas.</p>
+</div>
+<!-- Excursion Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Paradise Valley -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<div class="h-60 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Turquoise natural rock swimming pools surrounded by palm trees and dramatic High Atlas mountain cliffs in Paradise Valley Morocco." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTUFvLz1oOVT6MAMTe7TZWE6VYXkwRtH81uX9v0lRwIDZbuHR9H4A7_qNctEx_uEcc8iwM4FGZs-MA3Qy57dF6ZVi44ez4NGYulewl2iw-DwOMUxxQamw9zf5Pqme83guEhj4d_Lqxg0y05wmsHlU-8g6Qevb9QpJAm96HQwHTtrcIa9b9QoxcRHmD4RZshMeRlxyrnogeoAH-dksRFGyuJ1gH6YlCJB5Nz_-IxBwYZClkikdWxLA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end text-surface-container-lowest">
+<span class="font-title-lg text-title-lg font-serif">Paradise Valley</span>
+<span class="font-label-price text-label-price text-primary-fixed">€15 <span class="text-xs font-normal">/ person</span></span>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Trek through the Immouzzer foothills, swim in natural turquoise limestone pools, and relax at sunlit riverside cafes.
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span> 8:30 AM – 2:00 PM</span>
+<a class="text-primary font-semibold hover:underline" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20book%20Paradise%20Valley">Reserve Tour →</a>
+</div>
+</div>
+</div>
+<!-- Massa & Tiznit -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<div class="h-60 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The red earthen fortress walls and silver souk alleyways of Tiznit Morocco with desert landscape and wild dunes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0EdmbhB87aUbJJrHOlGNP0fDGwQ8-BnEzpBpe-2_9dtZ4JCSD1dnP1ejwpbsAfZFRFv3NMBxPUynkJFD6X82OS8809IG-0_yrVEbnPJiEZLiM56SKpXnjCDn2y5Gd5Q_wW6AD7DzmGIlrv0_hdqz8WKLSlzHl_HNDBiuSSKp1Zm3NgeyPMCJiI2sPPAkz0vMSlodwFK2CkUhAh4pEo4xP5nhYiM87-z8SxU4W1UjbZdWyTNmXKpw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end text-surface-container-lowest">
+<span class="font-title-lg text-title-lg font-serif">Massa &amp; Tiznit</span>
+<span class="font-label-price text-label-price text-primary-fixed">€25 <span class="text-xs font-normal">/ person</span></span>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Explore the Massa National Bird Park, fisherman cave dwellings at Sidi Rbat, and Tiznit’s renowned Berber silver medina.
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span> Full Day Excursion</span>
+<a class="text-primary font-semibold hover:underline" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20book%20Massa%20Tiznit%20Tour">Reserve Tour →</a>
+</div>
+</div>
+</div>
+<!-- Tiout & Taroudant -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<div class="h-60 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The monumental mud brick ramparts of Taroudant Morocco with snow capped High Atlas peaks in far horizon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQDVP01rTKL3wWdjZry5Oa-nTZOaRt-QBvYCOiO2ECuMoKWHvs1sjrKglv4UNaFqdIqlaS-22JC2lla4vWN7EBF4dUcu0NVA1j070NCb7Fc1LitiZJOGUwjlN5ocEvafG6U54F5PCv9mjF7QiDSDh7AbKK_9maWvj-59Mwp8OVk29AnbMxTlOENtDuWxRs4Q4DL-cYCSuBDhH_9L0AKXtxjdQNRiL8L9IxunywQI-6DrUMjs6a-Zg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end text-surface-container-lowest">
+<span class="font-title-lg text-title-lg font-serif">Tiout &amp; Taroudant</span>
+<span class="font-label-price text-label-price text-primary-fixed">€25 <span class="text-xs font-normal">/ person</span></span>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              "Little Marrakech"—witness 6km of intact adobe ramparts, lively Berber craft markets, and the sprawling palm oasis of Tiout.
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span> Full Day with Lunch</span>
+<a class="text-primary font-semibold hover:underline" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20book%20Taroudant%20Tour">Reserve Tour →</a>
+</div>
+</div>
+</div>
+<!-- Essaouira -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<div class="h-60 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Blue wooden fishing boats in the harbor of Essaouira Mogador with fortified sea wall ramparts and seagulls in flight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFURuSiaUFn3RZhz-D6b55s7MD6i8n8c5w5brrx2q1oACECCXbHG3m5599vXBK0FRGnYl0TYaS8Wfa5HuH_R-gvqLUVYAZpi8ZGIIwSjhrTAjALt1VrT4tWzE8qCm904r7hUVX_0pivAs1kiElGzJx887yQadfpFcd0mmJaEhLYZqD96adk7sqUqjX_k00WnShyR8UFoF2WRoBTvskBUxuKsRlhIxVQwwQR6StOFZJ8bexga_XyxA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end text-surface-container-lowest">
+<span class="font-title-lg text-title-lg font-serif">Essaouira (Mogador)</span>
+<span class="font-label-price text-label-price text-primary-fixed">€30 <span class="text-xs font-normal">/ person</span></span>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              UNESCO World Heritage coastal citadel with whitewashed alleyways, blue shutters, artisan thuya wood shops, and fresh seafood.
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span> Full Day Departure</span>
+<a class="text-primary font-semibold hover:underline" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20book%20Essaouira%20Tour">Reserve Tour →</a>
+</div>
+</div>
+</div>
+<!-- Marrakech Day Trip -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<div class="h-60 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The bustling Jemaa el-Fnaa square of Marrakech at twilight with glowing food stalls, Koutoubia minaret in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEdmxOWc4-9kGm0FWe6hCWGwpQNwVv6hIx-7DIaa44vKLJRg8OjX0-XhVpo1iWfYbyIwOTtbyy5OC_Y7BXPmvs5n06iW-lM4Ny3YB7FTUh5vZU5GL2A0zOncfJI8EiIHEmrhwp88izOUdjGhSWGgf2FMgz4iyEEIpNmSV2H4JobhSAk5zMQdIbsNZQ5--7Qr8EpC2FZs13ZfD_SlQxl424W8VL6gu1YxAZmCI2Z7C01-R3JGfAKVU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end text-surface-container-lowest">
+<span class="font-title-lg text-title-lg font-serif">Marrakech Day Trip</span>
+<span class="font-label-price text-label-price text-primary-fixed">€35 <span class="text-xs font-normal">/ person</span></span>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              The Red City: Visit the majestic Bahia Palace, Koutoubia gardens, the bustling souks of the Medina, and mythical Jemaa el-Fnaa.
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span> 7:00 AM – 8:00 PM</span>
+<a class="text-primary font-semibold hover:underline" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20book%20Marrakech%20Day%20Trip">Reserve Tour →</a>
+</div>
+</div>
+</div>
+<!-- Legzira Beach -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+<div class="h-60 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="The famous natural red sandstone sea arch of Legzira Beach Morocco with Atlantic waves crashing underneath." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxITOd1XMhD2wDDWAIs8VWjOCNWn_v4HEBHs7kSUs04Ih86WW0TTVcrjTAMVf7-gMvTacUVz2K-moVQw7CQxeuSS9shUJdt99Yv9UTSnnzhIzqwu48x-xPVWmRA9MOSq96771_2rXAapXxcRr-nCWLo3sFz1NkRu5DoG-Zir5n6unJSBJmvMjGeznQR3cjjmfevb0Yk8Hjdg_gd6YUeBIwelN5odKpT5a36kFXovm4WclBJebNUyg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end text-surface-container-lowest">
+<span class="font-title-lg text-title-lg font-serif">Legzira Sea Arches</span>
+<span class="font-label-price text-label-price text-primary-fixed">€35 <span class="text-xs font-normal">/ person</span></span>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Morocco’s most photographed wild ocean beach, known for immense red stone arches sculpted by tides, followed by fresh grilled fish.
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span> Full Day Coastal</span>
+<a class="text-primary font-semibold hover:underline" href="https://wa.me/212619017615?text=Hello%20I%20want%20to%20book%20Legzira%20Tour">Reserve Tour →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Sunset Gallery Preview -->
+<section class="w-full bg-surface-container-high/30 py-20" id="gallery">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-8">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest font-semibold block">Real Guests, Real Magic</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">SUNSET GALLERY PREVIEW</h2>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg hover:underline" href="https://instagram.com">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+<span>Follow @AgadirCamelExperience</span>
+</a>
+</div>
+<!-- Masonry Grid Style -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Close up silhouette of a camel leader and caravan moving across sunset wet sands in Agadir with violet and gold horizon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwZDarksyVVJIk04sMc58TmyxpY-v3-10zdcPig988WoOT1sSOEN3guTPxTpXfkAx1fsyyPz5UzggBJazL9M0QzfltKMl-7H-wMbAJG7sGHrNiN2i1PO_IkjkhBqAwddqgc1PJz1EhInscfoBmSSG-4Rxrg6h9bGKlyx9O19EzAIIe3Zpe7XO-VTZtHyATtUPP1Q-OgYNwNYQlm7BiJdCSc25qvamLPk1_pJ0uibmbc7JjW8YirlQ"/>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="A couple smiling mounted together on camels on the Agadir beach at golden hour with warm sunset glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT4fHLXW6tb9GP6NDFj3Pd09mY4QUkTBclLiwC33LBb899-Ni2kVsn4IhQHRGxFSEzIOT2zgDAeZdL85jvarjbCWoSJbMzUS8KzvJ-oQowqfwCS53zKsOCGaU-W-04pLXPf0m33uomeI03QszirkNSYUQvOmb3gFk2eaavHpO8aEV8nnI_ty3rwOF7jvL1MimHcPAX9vzwOcjVs9H5hUKvqoU9fEPE21eEWkDKXXMhno22h-WzGrA"/>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Traditional Moroccan mint tea being poured into ornate glasses next to a plate of almond pastries under sunset light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKylWppBCKglwYLXxnZIIrEmoFs4DHe2Mvi0_nZG7PJUpo0xT7l4yrh4OJUpAavLPNOGc229FDFPMx84pVFDRBcQ1nAVdN3fZx80eY6lCysX9vP56_jxerYyzHd6R1DMovEJMlwaYFbCA4saiH-MbQZqZwTRqwdUL3PZBbXyJmvYtPJNHSEuly0pFa6eRWANTJth-f6nKDN21hPXrmrrOenJ8LegtllL8N53t_dyybeApYL6DTESk"/>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-square shadow-sm">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Pink flamingos standing peacefully in the calm waters of Souss Massa river mouth during sundown near Agadir." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGtxaS-YbA3dYHBdcm87-FbIW_OavSeVzxUU9PllBtSPVhe1B5WDt5FG8kQdsg5mq39hVaXWm9dmCpPK1iJjMyx5-NIlxlh1Mvl7bDmpk3qlW6Helgt9S_BXD-8dGAWWQhzEHRzWS2y1-sBtmggpW9zj7k_sY3mf69x45lLEKPTC3MXzwQEF-Muntmgpd_GBObn9sIEraxkAfslWSiopKELYTubXh2UwRhgUGIZSK2epZHLudGIWY"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Direct Booking / Contact CTA Section -->
+<section class="w-full py-24 bg-surface-container-low relative overflow-hidden" id="contact">
+<div class="max-w-5xl mx-auto px-6 lg:px-12 text-center space-y-8 relative z-10">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-fixed text-primary font-label-md text-label-md uppercase tracking-widest font-semibold">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+        Instant Confirmation
+      </span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight max-w-3xl mx-auto">
+        READY FOR YOUR AGADIR ADVENTURE?
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Reserve in 2 minutes. No advance payment required — pay comfortably on pickup. Call, WhatsApp, or request pickup right here.
+      </p>
+<!-- Direct Contact Highlight -->
+<div class="inline-flex flex-wrap items-center justify-center gap-4 py-3.5 px-6 rounded-2xl bg-surface-container-lowest shadow-sm mx-auto font-body-md text-body-md text-on-surface">
+<span class="flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Direct Phone &amp; WhatsApp: 0619017615</span>
+</span>
+<span class="hidden sm:inline text-outline-variant">|</span>
+<span class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+<span>Instagram: @AgadirCamelExperience</span>
+</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+<a class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-wider transition-all shadow-[0_12px_32px_-4px_rgba(194,106,24,0.35)] hover:-translate-y-0.5" href="https://wa.me/212619017615?text=Hello%21%20I%20would%20like%20to%20reserve%20an%20Agadir%20experience.">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>BOOK NOW VIA WHATSAPP</span>
+</a>
+<a class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg uppercase tracking-wider transition-all shadow-sm" href="#quick-booking">
+<span class="material-symbols-outlined text-[20px]">edit_calendar</span>
+<span>BOOK ONLINE FORM</span>
+</a>
+</div>
+</div>
+</section>
+</div></div></main><footer class="w-full bg-inverse-surface text-inverse-on-surface pt-16 pb-12 relative overflow-hidden"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12"><div class="space-y-4"><div class="flex items-center gap-3"><img alt="Agadir Camel Experience Logo" class="h-8 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD7gHw7vFgWaIijxlf9blF_fSx8m1-aZ9jo__ECUb6DZOm1pnCBQsDofCjN8751_fqa5STOQUyzsW-X0ibdD8r0vlEadhuw_0-7ypjY1ehM3SgiR9tT9wcJ2ehO1kVk8tnuk-iox5Ngp0sfluc-SmrYK70LOkjQSwoHPaxAXEdesg54rlWqZeifzmOS64SaRbemE4Wup2LMtP1IpQSaTK880_fPSll3RxDdx8MhMYaV_RWnVV6zBU"/><div class="flex flex-col"><span class="font-headline-md text-title-md text-surface-container-lowest leading-tight">Agadir Camel Experience</span><span class="font-label-md text-label-md text-tertiary-fixed-dim uppercase tracking-wider">Coastal &amp; Desert Escapes</span></div></div><p class="font-body-sm text-body-sm text-surface-variant max-w-sm">Discover Agadir. Live the authentic Moroccan experience with desert sunset treks, scenic dunes, and coastal ocean paths.</p><div class="pt-2 space-y-2 text-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary-fixed text-[18px]">call</span><a class="hover:text-primary-fixed transition-colors" href="tel:0619017615">0619017615</a></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary-fixed text-[18px]">photo_camera</span><span class="hover:text-primary-fixed transition-colors">@AgadirCamelExperience</span></div></div></div><div class="space-y-3"><h4 class="font-title-md text-title-md text-primary-fixed tracking-wide">Core Experiences</h4><ul class="space-y-2 font-body-sm text-body-sm text-surface-variant"><li class="hover:text-surface-container-lowest transition-colors"><a data-path="experiences" href="#">Camel Sunset Experience</a></li><li class="hover:text-surface-container-lowest transition-colors"><a data-path="experiences" href="#">Moroccan Dinner Trek</a></li><li class="hover:text-surface-container-lowest transition-colors"><a data-path="experiences" href="#">Horse Riding Forest &amp; Beach</a></li><li class="hover:text-surface-container-lowest transition-colors"><a data-path="experiences" href="#">Sunrise Camel Tour</a></li></ul></div><div class="space-y-3"><h4 class="font-title-md text-title-md text-primary-fixed tracking-wide">Adventures &amp; Excursions</h4><ul class="space-y-2 font-body-sm text-body-sm text-surface-variant"><li class="hover:text-surface-container-lowest transition-colors"><a data-path="activities" href="#">Quad &amp; Buggy Safari</a></li><li class="hover:text-surface-container-lowest transition-colors"><a data-path="activities" href="#">Surf &amp; Ocean Sports</a></li><li class="hover:text-surface-container-lowest transition-colors"><a data-path="tours" href="#">Paradise Valley Day Trip</a></li><li class="hover:text-surface-container-lowest transition-colors"><a data-path="tours" href="#">Essaouira Coastal Tour</a></li><li class="hover:text-surface-container-lowest transition-colors"><a data-path="tours" href="#">Marrakech Heritage Excursion</a></li></ul></div><div class="space-y-3"><h4 class="font-title-md text-title-md text-primary-fixed tracking-wide">Trust &amp; Assurance</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-surface-variant"><li class="flex items-start gap-2"><span class="material-symbols-outlined text-tertiary-fixed text-[18px] shrink-0 mt-0.5">verified</span><span>Free Hotel Pickup in Agadir &amp; Taghazout</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-tertiary-fixed text-[18px] shrink-0 mt-0.5">verified</span><span>Professional Local Guides</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-tertiary-fixed text-[18px] shrink-0 mt-0.5">verified</span><span>No Advance Deposit Required</span></li><li class="flex items-start gap-2"><span class="material-symbols-outlined text-tertiary-fixed text-[18px] shrink-0 mt-0.5">verified</span><span>100% Authentic Moroccan Hospitality</span></li></ul></div></div><div class="my-8 bg-surface-container-highest/20 h-px w-full"></div><div class="flex flex-col md:flex-row items-center justify-between gap-4 py-4 rounded-xl bg-surface-container-lowest/5 px-6 font-body-sm text-body-sm"><div class="flex flex-wrap items-center gap-6"><span class="text-tertiary-fixed font-semibold">Daily Operations: 7:00 AM - 9:00 PM</span><span class="text-surface-variant">Direct WhatsApp &amp; Reservation Desk Active</span></div><div class="flex items-center gap-4"><a class="inline-flex items-center gap-1.5 text-surface-container-lowest hover:text-primary-fixed transition-colors" href="tel:0619017615"><span class="material-symbols-outlined text-[16px]">call</span> Call Desk</a><a class="inline-flex items-center gap-1.5 text-surface-container-lowest hover:text-primary-fixed transition-colors" href="https://wa.me/212619017615"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp Chat</a></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-surface-variant font-body-sm text-body-sm"><p>© 2025 Agadir Camel Experience. All rights reserved. Souss-Massa, Morocco.</p><div class="flex items-center gap-6"><a class="hover:text-surface-container-lowest transition-colors" data-path="contact" href="#">Privacy Policy</a><a class="hover:text-surface-container-lowest transition-colors" data-path="contact" href="#">Terms of Service</a><a class="hover:text-surface-container-lowest transition-colors" data-path="contact" href="#">Pickup Locations</a></div></div></div></footer></body></html>
