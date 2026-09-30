@@ -28,14 +28,14 @@ export default function Hero() {
 
   return (
     <section className="relative w-full overflow-hidden min-h-[85vh] lg:min-h-[920px] flex flex-col justify-end pt-20">
-      {/* Parallax / Zoom Background Image */}
+      {/* Background Image using real guest photo */}
       <motion.div
         initial={{ scale: 1.15, opacity: 0.8 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.8, ease: 'easeOut' }}
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeHxH2hKGfCluEWWudOlnViajg3WXqchPnpXG9MboGq3OBi8IDVCoiwxVdTWVsRPXTKRvMe6mfy_wESlQkSBTtBNw2PAc0X1cTz_QOHI6sdBlerXd0iD_rZ003ChrRzc-GqK-y5hoankQ2oidTeMAGw42kJ_dLn2KTFRjKc5HipTR5aFJO4PXhQEHK6QlXkGtiBMh63pT5tYZWGXGFPWStVKO77FWKqIvTNOmcCIQIvF2Ig8Zul5c')`
+          backgroundImage: `url('/images/WhatsApp Image 2026-09-30 at 16.14.09.jpeg')`
         }}
       ></motion.div>
 
@@ -112,7 +112,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Docked Booking Widget with 3D Float */}
+      {/* Docked Booking Widget */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full -mb-12 sm:-mb-10" id="quick-booking">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

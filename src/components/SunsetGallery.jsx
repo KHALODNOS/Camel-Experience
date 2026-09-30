@@ -3,22 +3,38 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import Card3D from './Card3D';
 
-const photos = [
+const realPhotos = [
   {
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCwZDarksyVVJIk04sMc58TmyxpY-v3-10zdcPig988WoOT1sSOEN3guTPxTpXfkAx1fsyyPz5UzggBJazL9M0QzfltKMl-7H-wMbAJG7sGHrNiN2i1PO_IkjkhBqAwddqgc1PJz1EhInscfoBmSSG-4Rxrg6h9bGKlyx9O19EzAIIe3Zpe7XO-VTZtHyATtUPP1Q-OgYNwNYQlm7BiJdCSc25qvamLPk1_pJ0uibmbc7JjW8YirlQ',
-    alt: 'Camel leader and caravan at sunset on wet beach sands'
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.09.jpeg',
+    alt: 'Traditional Moroccan camel caravan guided through golden Souss dunes at sunset'
   },
   {
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAT4fHLXW6tb9GP6NDFj3Pd09mY4QUkTBclLiwC33LBb899-Ni2kVsn4IhQHRGxFSEzIOT2zgDAeZdL85jvarjbCWoSJbMzUS8KzvJ-oQowqfwCS53zKsOCGaU-W-04pLXPf0m33uomeI03QszirkNSYUQvOmb3gFk2eaavHpO8aEV8nnI_ty3rwOF7jvL1MimHcPAX9vzwOcjVs9H5hUKvqoU9fEPE21eEWkDKXXMhno22h-WzGrA',
-    alt: 'Couple riding camels at golden hour on Agadir beach'
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.10.jpeg',
+    alt: 'Riders enjoying camel ride on Agadir coastal sand beach'
   },
   {
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDKylWppBCKglwYLXxnZIIrEmoFs4DHe2Mvi0_nZG7PJUpo0xT7l4yrh4OJUpAavLPNOGc229FDFPMx84pVFDRBcQ1nAVdN3fZx80eY6lCysX9vP56_jxerYyzHd6R1DMovEJMlwaYFbCA4saiH-MbQZqZwTRqwdUL3PZBbXyJmvYtPJNHSEuly0pFa6eRWANTJth-f6nKDN21hPXrmrrOenJ8LegtllL8N53t_dyybeApYL6DTESk',
-    alt: 'Traditional Moroccan mint tea pouring into glasses at sunset'
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (1).jpeg',
+    alt: 'Sunset view over Atlantic ocean shoreline with camel riders'
   },
   {
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGtxaS-YbA3dYHBdcm87-FbIW_OavSeVzxUU9PllBtSPVhe1B5WDt5FG8kQdsg5mq39hVaXWm9dmCpPK1iJjMyx5-NIlxlh1Mvl7bDmpk3qlW6Helgt9S_BXD-8dGAWWQhzEHRzWS2y1-sBtmggpW9zj7k_sY3mf69x45lLEKPTC3MXzwQEF-Muntmgpd_GBObn9sIEraxkAfslWSiopKELYTubXh2UwRhgUGIZSK2epZHLudGIWY',
-    alt: 'Flamingos at Souss Massa river mouth'
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (2).jpeg',
+    alt: 'Happy guest on camel trek near eucalyptus forest'
+  },
+  {
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (3).jpeg',
+    alt: 'Close-up of gentle camels on dune path'
+  },
+  {
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (4).jpeg',
+    alt: 'Group camel tour along Agadir estuary river'
+  },
+  {
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.09 (1).jpeg',
+    alt: 'Beautiful Berber sunset silhouette'
+  },
+  {
+    src: '/images/WhatsApp Image 2026-09-30 at 16.14.09 (2).jpeg',
+    alt: 'Equestrian horse ride on golden beach'
   }
 ];
 
@@ -50,13 +66,13 @@ export default function SunsetGallery() {
 
         {/* Gallery Grid with 3D Tilt */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {photos.map((item, idx) => (
+          {realPhotos.map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
             >
               <Card3D>
                 <div className="rounded-2xl overflow-hidden aspect-square shadow-sm bg-[#eee7e3] border border-[#e9e1dd] group cursor-pointer">

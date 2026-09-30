@@ -11,11 +11,13 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img
-                alt="Agadir Camel Experience Logo"
-                className="h-8 w-auto object-contain brightness-110"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD7gHw7vFgWaIijxlf9blF_fSx8m1-aZ9jo__ECUb6DZOm1pnCBQsDofCjN8751_fqa5STOQUyzsW-X0ibdD8r0vlEadhuw_0-7ypjY1ehM3SgiR9tT9wcJ2ehO1kVk8tnuk-iox5Ngp0sfluc-SmrYK70LOkjQSwoHPaxAXEdesg54rlWqZeifzmOS64SaRbemE4Wup2LMtP1IpQSaTK880_fPSll3RxDdx8MhMYaV_RWnVV6zBU"
-              />
+              <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center overflow-hidden border border-[#ffb77d] shadow-sm">
+                <img
+                  alt="Agadir Camel Experience Logo"
+                  className="w-full h-full object-cover"
+                  src="/images/logo.jpg"
+                />
+              </div>
               <div className="flex flex-col">
                 <span className="font-serif text-base font-bold text-white leading-tight">
                   Agadir Camel Experience

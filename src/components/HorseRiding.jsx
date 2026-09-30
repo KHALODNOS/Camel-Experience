@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function HorseRiding() {
@@ -13,8 +14,8 @@ export default function HorseRiding() {
             <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] bg-[#eee7e3] border border-[#e9e1dd]">
               <img
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                alt="A smiling woman with Moroccan headscarf riding an elegant dappled grey Arabian-Barb horse cantering along a scenic sand trail through eucalyptus trees."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADOA33HKhec1NO_Ow2M8xL7e6gMPLtpBW0DqFYoA8FbbkDb072Z9SI2lO0K1OBVW4Mzm7WZT2G-k8tQE_QvstGT2uTv00J4PADa0unut5lDF_Fhie80w7-t-GqyMJGKcGwFpRCMfKGhdCePld8NVgH2AnlgpsRtKKZkYpQzaJxPFmxFijqKKxugj_5g5_AUvhm-dvuUQza95pJ7jMpmOwMneioGzmuu0CyATst5sZCANJzgu0sy48"
+                alt="Agadir Horse Riding Excursion on Sunset Beach"
+                src="/images/WhatsApp Image 2026-09-30 at 16.14.09 (2).jpeg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#33302d]/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">

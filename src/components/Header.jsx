@@ -9,11 +9,13 @@ export default function Header() {
       <div className="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4">
         {/* Logo & Title */}
         <a href="#" className="flex items-center gap-3 shrink-0 group">
-          <img
-            alt="Agadir Camel Experience Logo"
-            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD7gHw7vFgWaIijxlf9blF_fSx8m1-aZ9jo__ECUb6DZOm1pnCBQsDofCjN8751_fqa5STOQUyzsW-X0ibdD8r0vlEadhuw_0-7ypjY1ehM3SgiR9tT9wcJ2ehO1kVk8tnuk-iox5Ngp0sfluc-SmrYK70LOkjQSwoHPaxAXEdesg54rlWqZeifzmOS64SaRbemE4Wup2LMtP1IpQSaTK880_fPSll3RxDdx8MhMYaV_RWnVV6zBU"
-          />
+          <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center overflow-hidden border border-[#8f4900] shadow-sm">
+            <img
+              alt="Agadir Camel Experience Logo"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              src="/images/logo.jpg"
+            />
+          </div>
           <div className="flex flex-col">
             <span className="font-serif text-lg font-bold text-[#1e1b19] tracking-tight leading-tight group-hover:text-[#8f4900] transition-colors">
               Agadir Camel Experience
