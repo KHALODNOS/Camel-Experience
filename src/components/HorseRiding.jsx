@@ -15,7 +15,7 @@ export default function HorseRiding() {
               <img
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 alt="Agadir Horse Riding Excursion on Sunset Beach"
-                src="/images/WhatsApp Image 2026-09-30 at 16.14.09 (2).jpeg"
+                src="/images/WhatsApp Image 2026-09-30 at 16.14.10 (4).jpeg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#33302d]/80 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
@@ -28,16 +28,6 @@ export default function HorseRiding() {
               </div>
             </div>
 
-            {/* Accent Floating Badge */}
-            <div className="absolute -top-3 -right-3 sm:-right-4 bg-white px-3 py-2 rounded-xl shadow-lg border border-[#e9e1dd] flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#ffdcc5] flex items-center justify-center text-[#8f4900]">
-                <span className="material-symbols-outlined text-[16px]">sports_score</span>
-              </div>
-              <div>
-                <span className="block font-bold text-xs sm:text-sm text-[#1e1b19] leading-tight">{t('horse_levels')}</span>
-                <span className="text-[10px] sm:text-xs text-[#554337] leading-tight">{t('horse_levels_sub')}</span>
-              </div>
-            </div>
           </div>
 
           {/* Story & Pricing Right */}

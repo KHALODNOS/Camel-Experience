@@ -8,6 +8,7 @@ import RouteTimeline from './components/RouteTimeline';
 import HorseRiding from './components/HorseRiding';
 import MoreAdventures from './components/MoreAdventures';
 import DayTours from './components/DayTours';
+import PricingPlans from './components/PricingPlans';
 import SunsetGallery from './components/SunsetGallery';
 import AboutUs from './components/AboutUs';
 import ContactCTA from './components/ContactCTA';
@@ -31,13 +32,14 @@ export default function App() {
           <MoreAdventures />
           <DayTours />
           <SunsetGallery />
+          <PricingPlans />
           <AboutUs />
           <ContactCTA />
         </main>
 
         {/* Footer */}
         <Footer />
-        
+
         {/* Fixed Floating Icons */}
         <FloatingSocials />
       </div>

@@ -10,6 +10,9 @@ export const translations = {
     nav_activities: "ACTIVITIES",
     nav_tours: "TOURS",
     nav_gallery: "GALLERY",
+    nav_pricing: "PRICING",
+    nav_route: "ROUTE",
+    nav_horse_riding: "HORSES",
     nav_about: "ABOUT US",
     nav_contact: "CONTACT",
     book_experience: "BOOK EXPERIENCE",
@@ -79,6 +82,44 @@ export const translations = {
     timeline_badge: "The 8-Step Itinerary",
     timeline_title: "HOW YOUR SUNSET JOURNEY UNFOLDS",
     timeline_desc: "Every minute is planned so you relax, savor the coastal air, and capture stunning portraits.",
+
+    // Route Timeline — info cards
+    route_card_title: "Route",
+    route_card_desc: "Trails wind past the royal palace area, eucalyptus woods, and the Souss River estuary where pink flamingos and migratory birds are often visible.",
+    duration_card_title: "Duration",
+    duration_card_desc: "About 2 hours total, which includes roughly 45 to 60 minutes of actual riding time plus hotel transfers and a welcome break.",
+    inclusions_card_title: "Inclusions",
+    inclusions_card_desc: "Most standard bookings feature hotel pickup and drop-off in an air-conditioned vehicle, a local guide, the camel trek, and traditional Moroccan mint tea with cookies.",
+    inclusions_item_1: "Air-conditioned hotel transfer",
+    inclusions_item_2: "Local guide",
+    inclusions_item_3: "Camel trek",
+    inclusions_item_4: "Moroccan mint tea & cookies",
+    safety_card_title: "Safety",
+    safety_card_desc: "No prior experience is required. The pace is slow and calm, and local handlers lead the animals by foot the entire way.",
+    safety_tag_1: "Beginners welcome",
+    safety_tag_2: "Gentle pace",
+    safety_tag_3: "Local handlers",
+    safety_tag_4: "Family-friendly",
+
+    // What to Wear
+    what_to_wear_title: "What to Wear",
+    what_to_wear_desc: "Comfortable casual clothing, closed-toe shoes or secure sandals, sunglasses, and a sun hat.",
+    what_to_wear_item_1: "Comfortable casual clothing",
+    what_to_wear_item_2: "Closed-toe shoes or secure sandals",
+    what_to_wear_item_3: "Sunglasses",
+    what_to_wear_item_4: "Sun hat",
+
+    // Family Suitability
+    family_suit_title: "Family Suitability",
+    family_suit_desc: "Great for kids. Toddlers under 3 usually ride with an adult, while children ages 4 to 8 can ride on a led animal next to a handler.",
+    family_suit_item_1: "Great for kids of all ages",
+    family_suit_item_2: "Toddlers under 3 ride with an adult",
+    family_suit_item_3: "Ages 4–8 ride led animal with handler",
+    family_suit_item_4: "Safe & supervised at all times",
+
+    pill_duration: "Total Duration: ~2 Hours",
+    pill_transfer: "Round-trip Transfer Included",
+    pill_photos: "Complimentary Photos",
 
     // Horse Riding
     horse_badge: "Coastal Equestrian Excursions",
@@ -255,7 +296,45 @@ export const translations = {
     faq_4_q: "How do I pay? Do I need to pay in advance?",
     faq_4_a: "No prepayment or credit card is required to book. You can reserve your spot online or via WhatsApp and pay in cash (Euros, Dirhams, or Dollars) directly to your driver upon pickup.",
     faq_5_q: "Can children participate in these activities?",
-    faq_5_a: "Absolutely. Our activities are very family-friendly. Children under a certain age can ride the same camel with an adult. We ensure extra safety measures for our younger guests."
+    faq_5_a: "Absolutely. Our activities are very family-friendly. Children under a certain age can ride the same camel with an adult. We ensure extra safety measures for our younger guests.",
+
+    // Pricing Plans
+    pricing_badge: "Popular Options & Pricing",
+    pricing_title: "TRANSPARENT PRICING FOR EVERY ADVENTURE",
+    pricing_desc: "No hidden fees. No surprises. Choose the experience that fits your style and budget — pay comfortably on pickup.",
+    pricing_per_adult: "/ adult",
+    pricing_popular_badge: "MOST POPULAR",
+
+    pricing_standard_sub: "Forest & River Trek",
+    pricing_standard_title: "Standard Camel Ride",
+    pricing_standard_price: "$12–$17",
+    pricing_standard_desc: "Our classic coastal trek through the aromatic eucalyptus forest to the Souss River estuary, paired with traditional Moroccan mint tea and sweet snacks.",
+    pricing_standard_f1: "Eucalyptus forest & river trail",
+    pricing_standard_f2: "Moroccan mint tea & snacks included",
+    pricing_standard_f3: "Hotel pickup & drop-off",
+    pricing_standard_btn: "Book Standard Ride",
+
+    pricing_sunset_sub: "Gourmet Sunset Experience",
+    pricing_sunset_title: "Sunset Ride + BBQ Dinner",
+    pricing_sunset_price: "$17–$29",
+    pricing_sunset_desc: "Our premier evening package — a full sunset camel trek followed by an authentic Moroccan barbecue and traditional couscous under the open sky.",
+    pricing_sunset_f1: "Full sunset camel trek",
+    pricing_sunset_f2: "Moroccan BBQ & couscous dinner",
+    pricing_sunset_f3: "Hotel transfers included",
+    pricing_sunset_btn: "Book Sunset + Dinner",
+
+    pricing_combo_sub: "Desert & Beach Action",
+    pricing_combo_title: "Quad Bike + Camel Combo",
+    pricing_combo_price: "$19–$33",
+    pricing_combo_desc: "The ultimate Agadir adventure — conquer the coastal dunes on a 250cc quad then switch to a camel for a serene sunset trot along the ocean shoreline.",
+    pricing_combo_f1: "Quad biking on coastal dunes",
+    pricing_combo_f2: "Camel ride along the shoreline",
+    pricing_combo_f3: "Combined discount package",
+    pricing_combo_btn: "Book Combo Package",
+
+    pricing_trust_1: "No advance payment required",
+    pricing_trust_2: "Pay in cash on pickup (€, $, MAD)",
+    pricing_trust_3: "Free hotel pickup included"
   },
   fr: {
     // Header
@@ -264,6 +343,9 @@ export const translations = {
     nav_activities: "ACTIVITÉS",
     nav_tours: "EXCURSIONS",
     nav_gallery: "GALERIE",
+    nav_pricing: "TARIFS",
+    nav_route: "PARCOURS",
+    nav_horse_riding: "CHEVAUX",
     nav_about: "À PROPOS",
     nav_contact: "CONTACT",
     book_experience: "RÉSERVER",
@@ -325,7 +407,7 @@ export const translations = {
     select_10: "Choisir l'offre €10",
     package_15_title: "2h + Dîner Marocain",
     package_15_sub: "Coucher de soleil & Festin",
-    package_15_desc: "Notre soirée vedette. 2 heures de balade suivies d'un dîner tajine marocain authentique (poulet/viande), pain frais et fruits sous tente berbère.",
+    package_15_desc: "Notre soirée vedette. 2 heures de balade suivies d'un dîner  marocain authentique (poulet/viande), pain frais et fruits sous tente berbère.",
     select_15: "Choisir l'offre €15 Dîner",
     most_popular: "LE PLUS POPULAIRE",
 
@@ -333,6 +415,44 @@ export const translations = {
     timeline_badge: "Itinéraire en 8 Étapes",
     timeline_title: "DÉROULEMENT DE VOTRE EXPÉRIENCE",
     timeline_desc: "Chaque minute est organisée pour vous détendre, savourer l'air marin et capturer de superbes photos.",
+
+    // Route Timeline — info cards
+    route_card_title: "Le Parcours",
+    route_card_desc: "Les sentiers serpentent autour du palais royal, traversent les forêts d'eucalyptus et longent l'estuaire du Souss où flamants roses et oiseaux migrateurs sont souvent visibles.",
+    duration_card_title: "Durée",
+    duration_card_desc: "Environ 2 heures au total, dont 45 à 60 minutes de randonnée effective, plus les transferts hôteliers et une pause de bienvenue.",
+    inclusions_card_title: "Inclus",
+    inclusions_card_desc: "La plupart des réservations standard comprennent le transfert hôtel aller-retour en véhicule climatisé, un guide local, la balade à dos de chameau, et le thé à la menthe marocain avec des gâteaux.",
+    inclusions_item_1: "Transfert hôtel climatisé",
+    inclusions_item_2: "Guide local",
+    inclusions_item_3: "Balade à dos de chameau",
+    inclusions_item_4: "Thé à la menthe & gâteaux",
+    safety_card_title: "Sécurité",
+    safety_card_desc: "Aucune expérience préalable n'est requise. L'allure est lente et calme, et des accompagnateurs locaux guident les animaux à pied tout au long du parcours.",
+    safety_tag_1: "Débutants bienvenus",
+    safety_tag_2: "Rythme doux",
+    safety_tag_3: "Encadreurs locaux",
+    safety_tag_4: "Adapté aux familles",
+
+    // What to Wear
+    what_to_wear_title: "Tenue Recommandée",
+    what_to_wear_desc: "Vêtements décontractés et confortables, chaussures fermées ou sandales stables, lunettes de soleil et chapeau.",
+    what_to_wear_item_1: "Vêtements décontractés et confortables",
+    what_to_wear_item_2: "Chaussures fermées ou sandales stables",
+    what_to_wear_item_3: "Lunettes de soleil",
+    what_to_wear_item_4: "Chapeau de soleil",
+
+    // Family Suitability
+    family_suit_title: "Adapté aux Familles",
+    family_suit_desc: "Idéal pour les enfants. Les tout-petits de moins de 3 ans montent généralement avec un adulte, et les enfants de 4 à 8 ans peuvent monter sur un animal guidé avec un accompagnateur.",
+    family_suit_item_1: "Idéal pour les enfants de tout âge",
+    family_suit_item_2: "Moins de 3 ans : monter avec un adulte",
+    family_suit_item_3: "4–8 ans : animal guidé avec accompagnateur",
+    family_suit_item_4: "Sécurisé et encadré à tout moment",
+
+    pill_duration: "Durée totale : ~2 heures",
+    pill_transfer: "Transfert aller-retour inclus",
+    pill_photos: "Photos offertes",
 
     // Horse Riding
     horse_badge: "Excursions Équestres Côtières",
@@ -345,7 +465,7 @@ export const translations = {
     guide_escort: "Accompagnement Guide",
     guide_desc: "Un guide dédié chevauche à vos côtés.",
     horse_10: "2 Heures Équitation",
-    horse_15: "2 Heures + Dîner Tajine",
+    horse_15: "2 Heures + Dîner ",
     book_for_10: "Réserver pour €10",
     book_for_15: "Réserver pour €15",
 
@@ -509,7 +629,45 @@ export const translations = {
     faq_4_q: "Comment puis-je payer ? Dois-je payer à l'avance ?",
     faq_4_a: "Aucun prépaiement n'est requis. Vous pouvez réserver votre place en ligne ou par WhatsApp et payer en espèces (Euros, Dirhams ou Dollars) directement à votre chauffeur lors du ramassage.",
     faq_5_q: "Les enfants peuvent-ils participer à ces activités ?",
-    faq_5_a: "Absolument. Nos activités sont parfaites pour les familles. Les jeunes enfants peuvent monter sur le même chameau qu'un adulte, et nous prenons des mesures de sécurité supplémentaires pour eux."
+    faq_5_a: "Absolument. Nos activités sont parfaites pour les familles. Les jeunes enfants peuvent monter sur le même chameau qu'un adulte, et nous prenons des mesures de sécurité supplémentaires pour eux.",
+
+    // Pricing Plans
+    pricing_badge: "Options Populaires & Tarifs",
+    pricing_title: "TARIFS TRANSPARENTS POUR CHAQUE AVENTURE",
+    pricing_desc: "Aucun frais caché. Aucune surprise. Choisissez l'expérience qui correspond à votre style et votre budget — payez confortablement lors du ramassage.",
+    pricing_per_adult: "/ adulte",
+    pricing_popular_badge: "LE PLUS POPULAIRE",
+
+    pricing_standard_sub: "Trek Forêt & Rivière",
+    pricing_standard_title: "Balade Chameau Standard",
+    pricing_standard_price: "12–17$",
+    pricing_standard_desc: "Notre trek côtier classique à travers la forêt d'eucalyptus jusqu'à l'estuaire du Souss, accompagné d'un thé à la menthe marocain et de sucreries traditionnelles.",
+    pricing_standard_f1: "Forêt d'eucalyptus & sentier de la rivière",
+    pricing_standard_f2: "Thé à la menthe & snacks inclus",
+    pricing_standard_f3: "Transfert hôtel aller-retour",
+    pricing_standard_btn: "Réserver la Balade Standard",
+
+    pricing_sunset_sub: "Expérience Coucher de Soleil Gourmet",
+    pricing_sunset_title: "Coucher de Soleil + Dîner BBQ",
+    pricing_sunset_price: "17–29$",
+    pricing_sunset_desc: "Notre formule soirée phare — un trek chameau complet au coucher du soleil suivi d'un barbecue marocain authentique et d'un couscous traditionnel sous le ciel étoilé.",
+    pricing_sunset_f1: "Trek chameau au coucher du soleil",
+    pricing_sunset_f2: "BBQ marocain & couscous",
+    pricing_sunset_f3: "Transferts hôtel inclus",
+    pricing_sunset_btn: "Réserver Coucher de Soleil + Dîner",
+
+    pricing_combo_sub: "Désert & Plage",
+    pricing_combo_title: "Combo Quad + Chameau",
+    pricing_combo_price: "19–33$",
+    pricing_combo_desc: "L'aventure ultime à Agadir — dominez les dunes côtières sur un quad 250cc puis passez au chameau pour une tranquille balade au coucher du soleil le long du rivage.",
+    pricing_combo_f1: "Quad sur les dunes côtières",
+    pricing_combo_f2: "Balade chameau au bord de l'océan",
+    pricing_combo_f3: "Tarif réduit package combiné",
+    pricing_combo_btn: "Réserver le Package Combo",
+
+    pricing_trust_1: "Aucun paiement d'avance requis",
+    pricing_trust_2: "Paiement en espèces au ramassage (€, $, MAD)",
+    pricing_trust_3: "Transfert hôtel gratuit inclus"
   }
 };
 
