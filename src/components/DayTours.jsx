@@ -12,7 +12,7 @@ export default function DayTours() {
       price: '€15',
       timingKey: 'tour_paradise_timing',
       descKey: 'tour_paradise_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCTUFvLz1oOVT6MAMTe7TZWE6VYXkwRtH81uX9v0lRwIDZbuHR9H4A7_qNctEx_uEcc8iwM4FGZs-MA3Qy57dF6ZVi44ez4NGYulewl2iw-DwOMUxxQamw9zf5Pqme83guEhj4d_Lqxg0y05wmsHlU-8g6Qevb9QpJAm96HQwHTtrcIa9b9QoxcRHmD4RZshMeRlxyrnogeoAH-dksRFGyuJ1gH6YlCJB5Nz_-IxBwYZClkikdWxLA',
+      img: '/images/paradise.png',
       alt: 'Paradise valley turquoise rock pools'
     },
     {
@@ -20,24 +20,24 @@ export default function DayTours() {
       price: '€25',
       timingKey: 'tour_massa_timing',
       descKey: 'tour_massa_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0EdmbhB87aUbJJrHOlGNP0fDGwQ8-BnEzpBpe-2_9dtZ4JCSD1dnP1ejwpbsAfZFRFv3NMBxPUynkJFD6X82OS8809IG-0_yrVEbnPJiEZLiM56SKpXnjCDn2y5Gd5Q_wW6AD7DzmGIlrv0_hdqz8WKLSlzHl_HNDBiuSSKp1Zm3NgeyPMCJiI2sPPAkz0vMSlodwFK2CkUhAh4pEo4xP5nhYiM87-z8SxU4W1UjbZdWyTNmXKpw',
-      alt: 'Tiznit red fortress walls'
+      img: '/images/tiznit.png',
+      alt: 'Massa and Tiznit red fortress walls'
     },
     {
       titleKey: 'tour_tiout_title',
       price: '€25',
       timingKey: 'tour_tiout_timing',
       descKey: 'tour_tiout_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQDVP01rTKL3wWdjZry5Oa-nTZOaRt-QBvYCOiO2ECuMoKWHvs1sjrKglv4UNaFqdIqlaS-22JC2lla4vWN7EBF4dUcu0NVA1j070NCb7Fc1LitiZJOGUwjlN5ocEvafG6U54F5PCv9mjF7QiDSDh7AbKK_9maWvj-59Mwp8OVk29AnbMxTlOENtDuWxRs4Q4DL-cYCSuBDhH_9L0AKXtxjdQNRiL8L9IxunywQI-6DrUMjs6a-Zg',
-      alt: 'Taroudant mud brick ramparts'
+      img: '/images/taroudantt.png',
+      alt: 'Taroudant mud brick ramparts and Tiout oasis'
     },
     {
       titleKey: 'tour_essaouira_title',
       price: '€30',
       timingKey: 'tour_essaouira_timing',
       descKey: 'tour_essaouira_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCFURuSiaUFn3RZhz-D6b55s7MD6i8n8c5w5brrx2q1oACECCXbHG3m5599vXBK0FRGnYl0TYaS8Wfa5HuH_R-gvqLUVYAZpi8ZGIIwSjhrTAjALt1VrT4tWzE8qCm904r7hUVX_0pivAs1kiElGzJx887yQadfpFcd0mmJaEhLYZqD96adk7sqUqjX_k00WnShyR8UFoF2WRoBTvskBUxuKsRlhIxVQwwQR6StOFZJ8bexga_XyxA',
-      alt: 'Essaouira harbor blue fishing boats'
+      img: '/images/essaouira.png',
+      alt: 'Essaouira harbor and historic medina'
     },
     {
       titleKey: 'tour_marrakech_title',
@@ -52,8 +52,8 @@ export default function DayTours() {
       price: '€35',
       timingKey: 'tour_legzira_timing',
       descKey: 'tour_legzira_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxITOd1XMhD2wDDWAIs8VWjOCNWn_v4HEBHs7kSUs04Ih86WW0TTVcrjTAMVf7-gMvTacUVz2K-moVQw7CQxeuSS9shUJdt99Yv9UTSnnzhIzqwu48x-xPVWmRA9MOSq96771_2rXAapXxcRr-nCWLo3sFz1NkRu5DoG-Zir5n6unJSBJmvMjGeznQR3cjjmfevb0Yk8Hjdg_gd6YUeBIwelN5odKpT5a36kFXovm4WclBJebNUyg',
-      alt: 'Legzira red sandstone arch'
+      img: '/images/lgzira.png',
+      alt: 'Legzira red sandstone ocean arch'
     }
   ];
 

@@ -1,7 +1,99 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import Card3D from './Card3D';
+
+function ActivityImageSlider({ images, alt, durationText }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const currentSrc = images[currentIndex] || images[0];
+
+  return (
+    <div className="h-52 w-full overflow-hidden relative bg-[#eee7e3] select-none group/slider">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentSrc}
+          src={currentSrc}
+          alt={alt}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35 }}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      </AnimatePresence>
+
+      {/* Dark gradient overlay on bottom for text readability */}
+      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+
+      {/* Duration Badge */}
+      <span className="absolute top-3 right-3 bg-[#33302d]/85 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm z-10 border border-white/10">
+        {durationText}
+      </span>
+
+      {/* Pagination arrows (if more than 1 image) */}
+      {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={prevImage}
+            aria-label="Previous photo"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/85 hover:bg-white text-[#1e1b19] shadow-md flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover/slider:opacity-100 hover:scale-110 active:scale-95 z-20"
+          >
+            <span className="material-symbols-outlined text-[18px]">chevron_left</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={nextImage}
+            aria-label="Next photo"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/85 hover:bg-white text-[#1e1b19] shadow-md flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover/slider:opacity-100 hover:scale-110 active:scale-95 z-20"
+          >
+            <span className="material-symbols-outlined text-[18px]">chevron_right</span>
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="absolute bottom-2.5 inset-x-0 flex items-center justify-center gap-1.5 z-10 pointer-events-auto">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  setCurrentIndex(idx);
+                }}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`transition-all duration-300 rounded-full ${
+                  idx === currentIndex
+                    ? 'w-4 h-1.5 bg-white shadow-sm'
+                    : 'w-1.5 h-1.5 bg-white/60 hover:bg-white/90'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Counter Badge */}
+          <span className="absolute bottom-2.5 right-3 text-[10px] font-mono text-white/90 bg-black/45 backdrop-blur-sm px-1.5 py-0.5 rounded z-10 pointer-events-none border border-white/10">
+            {currentIndex + 1}/{images.length}
+          </span>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function MoreAdventures() {
   const { t } = useLanguage();
@@ -12,7 +104,11 @@ export default function MoreAdventures() {
       durationKey: 'act_quad_duration',
       price: '€25',
       descKey: 'act_quad_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDpBHBBwSc0o95A6xjmhKxo6ZDN4adKyjfZ3laOf8A3-vQLgPI4pETUvUfV6pmZcF7T_dWzG-IIeHpDGcke8VvXfa67QeFF0OxpFH4Jj2vrRp9RVhVeQzD8i9fl6EEz3wi-LnYwnn5wMBCyKtg-zhXPu-_yTF53mnuJZkNWolHI0TP94yt9xzM5txGK0iIHD37VfZfL79bAjG0CGTzBNsuMenqu6PGrjiPCZff_8D-zvcRNPLEywvc',
+      images: [
+        '/images/quad.png',
+        '/images/quad2.png',
+        '/images/quad5.png'
+      ],
       alt: 'Quad biking safari on sand dunes',
       msg: 'Quad Biking Safari'
     },
@@ -21,7 +117,10 @@ export default function MoreAdventures() {
       durationKey: 'act_buggy_duration',
       price: '€45',
       descKey: 'act_buggy_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB135cU_2dyULKP8bGX0nSm0P-5GoqCaO2hnGnb58PlSWIFXJwGhcY_G6V7NykwWhv1KrG5vUbklEYEVsUTu-kPNLVdEzAWjeHRcXm3qP5TKZs3dY3yLYa9xmi1yel0_VVCeoxRqujgr5NzhjM40WDhbkjy5uKIarhFEia7kiUof42-JShCWJT6OdfVzePHm-4XcYZfVXsCQFE8E8MCa-jcLZi_CtLdA6UqPsUxHeRW3Dv4C9LRyEw',
+      images: [
+        '/images/tomobilat.png',
+        '/images/tomobilat2.png'
+      ],
       alt: 'Buggy safari on dunes',
       msg: 'Buggy Safari'
     },
@@ -30,7 +129,11 @@ export default function MoreAdventures() {
       durationKey: 'act_surf_duration',
       price: '€20',
       descKey: 'act_surf_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2fEVH3HhoJfXQzwAT7yJ6W6rDcoT02Xy2TvPBCzxjluSzTcl6dUkabHpWU1uCN7pNMxKKw-E_3RUVRgTKpW3OED5ZfvidI5qzXVJkHmzrkKFRS8BJptHkOjb8e-bcReFFq3UoJ1VS5vMHJl2hkNFVJo-3qYZ5FcZzxUiiewgIfzZ-U-JpPQUX0mo_s4fj8zMzfowLUKjbYxG9UVuune5DQrxEyOUR1NU3g5-Uo7MzdtdNJQtojSU',
+      images: [
+        '/images/surf.png',
+        '/images/surf2.png',
+        '/images/surf3.png'
+      ],
       alt: 'Surfer catching ocean wave in Taghazout',
       msg: 'Surf Lessons'
     },
@@ -39,7 +142,9 @@ export default function MoreAdventures() {
       durationKey: 'act_jetski_duration',
       price: '€35',
       descKey: 'act_jetski_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6KBQrVL3TNqoJcZKoh4ZTriVp8iqQ3X_pHT1nvW-LKYdQV7UV8aoppJjLBqYTdl_1g1mmJnioEZzz6x8pNT7qiXOw_xn2K_PC7i3bwaJKh0Fg6kfMWvc0-NvNKkZvKzNXm3w4ss-YHYGIDID7cPq4e8bPHs5tnErnXalaCNCKgnxDbe8i7KJ4YHgZaFVwcFvDfbFR1oL33LVSuRDvG_WLGJlmZkEjGJwVDA2rMm0GNXOWDneaVKU',
+      images: [
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuD6KBQrVL3TNqoJcZKoh4ZTriVp8iqQ3X_pHT1nvW-LKYdQV7UV8aoppJjLBqYTdl_1g1mmJnioEZzz6x8pNT7qiXOw_xn2K_PC7i3bwaJKh0Fg6kfMWvc0-NvNKkZvKzNXm3w4ss-YHYGIDID7cPq4e8bPHs5tnErnXalaCNCKgnxDbe8i7KJ4YHgZaFVwcFvDfbFR1oL33LVSuRDvG_WLGJlmZkEjGJwVDA2rMm0GNXOWDneaVKU'
+      ],
       alt: 'Jet ski in Agadir bay',
       msg: 'Jet Ski Marina Thrill'
     },
@@ -48,7 +153,11 @@ export default function MoreAdventures() {
       durationKey: 'act_boat_duration',
       price: '€30',
       descKey: 'act_boat_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCbz_BydzhiXVmiTYN94hYaHHhdU2DMxjIyuOVSxIVuqs9cMHlLzlX4aL0A0hjqP5EZkBPE9PBBZHY1Zq37AQS61qK2FZkKayfD8Ew8LGi_PGgugSG7htaPvQH2kQ1m5FJun3sldgzxo43ovgHcfTa0_fFIEV7uv1tqkrQDRREmelvxJvyQe5nMEISrcQt6OhgMaPM8QLybtpjNk7EGWVPvQ72KjGLwQBzswozLkei-o7oZ7sR6-Zw',
+      images: [
+        '/images/fishing.png',
+        '/images/fishing2.png',
+        '/images/fishing3.png'
+      ],
       alt: 'Boat cruise in Agadir ocean',
       msg: 'Boat Cruise & Fishing'
     },
@@ -57,7 +166,10 @@ export default function MoreAdventures() {
       durationKey: 'act_city_duration',
       price: '€15',
       descKey: 'act_city_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAc_2kqN9mVtWhc_kEmwasBqN2bNnissxltElMcF7-38N_0IpX6FicAfDPY9PtZI-ROhZ4WP9C2Zm_42leqbB435QtxBi08fkqIS4j_ExAY0a3PmVUMp3FCLfd9zZvuFRTqXnRlrIykPcmG0mvvbuTiJnWCqrqEEqDgajQHPOb-UJXptgvp8ImatXDO-h47AaboaDBo_zThW4PLKtJtspwR4UU2yiIDAB8Gc_HXjjaLbQGGj35VxS0',
+      images: [
+        '/images/agadir.png',
+        '/images/agadir2.png'
+      ],
       alt: 'Agadir Kasbah Oufella viewpoint',
       msg: 'Agadir City Tour'
     },
@@ -66,7 +178,11 @@ export default function MoreAdventures() {
       durationKey: 'act_berber_duration',
       price: '€20',
       descKey: 'act_berber_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC33li4q5wZWPKBau-d-icLb2GuDopCujA9W4WBK5AtGhGtnBfs3Vha9lYkEoSbpRLUm3g2oiJTH2NVRo0LspKikyT2S6b-3U0t-U0h2pmi8cZo25SfR2U1ATtS9YBp1slHv0UwNSZLPVdUYDqalCvcssMTsRJTpOF-CaztkylWsyufgd1CbWyHOJvsOmqW4rQ8sQxSp-dylqhL1GzFtSH7-kiqzBCbt8gShl5cMJVOKv0Q0E1xddQ',
+      images: [
+        '/images/berber.png',
+        '/images/berber2.png',
+        '/images/berber3.png'
+      ],
       alt: 'Berber mountain countryside village',
       msg: 'Berber Country Tour'
     },
@@ -75,7 +191,9 @@ export default function MoreAdventures() {
       durationKey: 'act_bike_duration',
       price: '€10',
       descKey: 'act_bike_desc',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCUiBAr0f7-sEmB6SorVygqLKpgePytbDL3X_wvigCQhRMNakgkNEbJIQd8k1MBfCHUEZCwF1yBgutmr5c2PjdLUFQrXECOwlEBgbG2qeipBJl3fUFeQJKgRakYv9uf39h6if0nhplvgFnxLMx8KFWriTNHmYDuBFVXaNmETzUqZM9I3heZ_MfEx1mRB_UEQnr_0YFJYXEFlgqlnEewSE2hap8-0lxCBHwNW6SRHN9LxqUe4Bl0SSA',
+      images: [
+        '/images/biking.png'
+      ],
       alt: 'Traveler riding e-bike on Agadir beach corniche',
       msg: 'Bicycle & E-Bike Rental'
     }
@@ -119,16 +237,11 @@ export default function MoreAdventures() {
               <Card3D className="h-full">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between border border-[#e9e1dd] group h-full cursor-pointer">
                   <div>
-                    <div className="h-48 w-full overflow-hidden relative bg-[#eee7e3]">
-                      <img
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        src={act.img}
-                        alt={act.alt}
-                      />
-                      <span className="absolute top-3 right-3 bg-[#33302d]/85 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
-                        {t(act.durationKey)}
-                      </span>
-                    </div>
+                    <ActivityImageSlider
+                      images={act.images}
+                      alt={act.alt}
+                      durationText={t(act.durationKey)}
+                    />
                     <div className="p-5 space-y-2">
                       <h3 className="font-serif text-lg font-bold text-[#1e1b19] group-hover:text-[#8f4900] transition-colors">
                         {t(act.titleKey)}

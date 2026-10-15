@@ -9,25 +9,77 @@ export default function HorseRiding() {
     <section className="w-full py-20 sm:py-24 bg-[#fff8f5]" id="horse-riding">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Visual Left */}
+          {/* Visual Left: 2 Full-Image Showcase */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] bg-[#eee7e3] border border-[#e9e1dd]">
-              <img
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                alt="Agadir Horse Riding Excursion on Sunset Beach"
-                src="/images/WhatsApp Image 2026-09-30 at 16.14.10 (4).jpeg"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#33302d]/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                <span className="text-xs font-semibold text-[#ffdcc5] uppercase tracking-wider block">
-                  {t('horse_stables')}
-                </span>
-                <p className="font-serif text-base sm:text-lg italic">
-                  {t('horse_quote')}
-                </p>
-              </div>
-            </div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {/* Image 1: Main Horse Image (Full Portrait View) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl aspect-[822/1280] bg-[#221e1b] border border-[#e9e1dd] group cursor-pointer"
+              >
+                <img
+                  className="w-full h-full object-cover sm:object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Agadir Equestrian Experience - Purebred Arabian-Barb Horse"
+                  src="/images/horse.png"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1e1b19]/90 via-transparent to-black/20 pointer-events-none"></div>
 
+                {/* Top Badge */}
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#8f4900] text-[10px] sm:text-xs font-semibold shadow-sm border border-white/50">
+                    <span className="material-symbols-outlined text-[14px]">pets</span>
+                    {t('horse_stables')}
+                  </span>
+                </div>
+
+                {/* Bottom Caption */}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                  <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#ffdcc5] font-semibold block">
+                    Purebred Steed
+                  </span>
+                  <p className="font-serif text-xs sm:text-sm italic leading-snug drop-shadow-sm text-white/95 mt-0.5 line-clamp-3">
+                    {t('horse_quote')}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Image 2: Sunset Beach Riding (Full Portrait View) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl aspect-[822/1280] bg-[#221e1b] border border-[#e9e1dd] group cursor-pointer mt-4 sm:mt-6"
+              >
+                <img
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Agadir Horse Riding Excursion on Sunset Beach"
+                  src="/images/WhatsApp Image 2026-09-30 at 16.14.10 (4).jpeg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1e1b19]/90 via-transparent to-black/20 pointer-events-none"></div>
+
+                {/* Top Badge */}
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#9e421f] text-[10px] sm:text-xs font-semibold shadow-sm border border-white/50">
+                    <span className="material-symbols-outlined text-[14px]">wb_twilight</span>
+                    Sunset Beach
+                  </span>
+                </div>
+
+                {/* Bottom Caption */}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                  <span className="text-[10px] sm:text-xs uppercase tracking-wider text-[#ffdcc5] font-semibold block">
+                    Atlantic Coastline
+                  </span>
+                  <p className="font-serif text-xs sm:text-sm text-white/90 mt-0.5 leading-snug">
+                    Golden hour ride on open sands
+                  </p>
+                </div>
+              </motion.div>
+            </div>
           </div>
 
           {/* Story & Pricing Right */}

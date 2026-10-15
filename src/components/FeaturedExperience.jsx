@@ -1,7 +1,127 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import Card3D from './Card3D';
+
+const galleryImages = [
+  { src: '/images/camel1.png', alt: 'Camel Sunset 1', tag: 'Desert Glow' },
+  { src: '/images/camel2.png', alt: 'Camel Sunset 2', tag: 'Golden Dunes' },
+  { src: '/images/camel3.png', alt: 'Camel Sunset 3', tag: 'Caravan Trail' },
+  { src: '/images/camel4.png', alt: 'Camel Sunset 4', tag: 'Agadir Horizon' },
+  { src: '/images/camel5.png', alt: 'Camel Sunset 5', tag: 'Sunset Solitude' },
+  { src: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (2).jpeg', alt: 'Camel Experience 6', tag: 'Authentic Ride' },
+  { src: '/images/WhatsApp Image 2026-09-30 at 16.14.09 (2).jpeg', alt: 'Camel Experience 7', tag: 'Beach & Dunes' },
+  { src: '/images/WhatsApp Image 2026-09-30 at 16.14.09.jpeg', alt: 'Camel Experience 8', tag: 'Peaceful Views' },
+  { src: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (1).jpeg', alt: 'Camel Experience 9', tag: 'Unforgettable Moments' },
+];
+
+function ExperienceGallery() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  };
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <div className="w-full mb-8 select-none">
+      {/* Main Showcase Image Frame */}
+      <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/10] sm:aspect-[16/11] bg-black/5 group border border-[#e9e1dd]">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={galleryImages[currentIndex].src}
+            src={galleryImages[currentIndex].src}
+            alt={galleryImages[currentIndex].alt}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="w-full h-full object-cover"
+          />
+        </AnimatePresence>
+
+        {/* Ambient Dark Gradient on bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
+
+        {/* Badge & Caption */}
+        <div className="absolute bottom-3 sm:bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+          <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-medium tracking-wide border border-white/20">
+            {galleryImages[currentIndex].tag}
+          </span>
+          <span className="text-white/90 text-xs font-mono bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+            {currentIndex + 1} / {galleryImages.length}
+          </span>
+        </div>
+
+        {/* Prev Button */}
+        <button
+          type="button"
+          onClick={prevImage}
+          aria-label="Previous image"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/80 hover:bg-white text-[#1e1b19] shadow-lg backdrop-blur-sm flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 hover:scale-105 active:scale-95 focus:outline-none"
+        >
+          <span className="material-symbols-outlined text-[20px] sm:text-[24px]">chevron_left</span>
+        </button>
+
+        {/* Next Button */}
+        <button
+          type="button"
+          onClick={nextImage}
+          aria-label="Next image"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/80 hover:bg-white text-[#1e1b19] shadow-lg backdrop-blur-sm flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 hover:scale-105 active:scale-95 focus:outline-none"
+        >
+          <span className="material-symbols-outlined text-[20px] sm:text-[24px]">chevron_right</span>
+        </button>
+      </div>
+
+      {/* Pagination Thumbnails Row */}
+      <div className="flex items-center gap-2 mt-3 overflow-x-auto pb-2 pt-1 scrollbar-thin scrollbar-thumb-orange-200">
+        {galleryImages.map((img, idx) => {
+          const isActive = idx === currentIndex;
+          return (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setCurrentIndex(idx)}
+              aria-label={`Go to image ${idx + 1}`}
+              className={`relative shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden transition-all duration-300 focus:outline-none ${
+                isActive
+                  ? 'ring-2 ring-[#8f4900] ring-offset-2 scale-105 shadow-md'
+                  : 'opacity-55 hover:opacity-100'
+              }`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover"
+              />
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Pagination Dots indicator */}
+      <div className="flex items-center justify-center gap-1.5 mt-2">
+        {galleryImages.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={() => setCurrentIndex(idx)}
+            aria-label={`Select slide ${idx + 1}`}
+            className={`transition-all duration-300 rounded-full ${
+              idx === currentIndex
+                ? 'w-6 h-1.5 bg-[#8f4900]'
+                : 'w-1.5 h-1.5 bg-[#d8c3b7] hover:bg-[#8f4900]/50'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function FeaturedExperience() {
   const { t } = useLanguage();
@@ -31,59 +151,8 @@ export default function FeaturedExperience() {
 
           {/* Highlights List */}
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-10">
-            {/* Left Column (Images 1 & 2) */}
-            <div className="flex flex-col gap-4 sm:gap-6">
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.4 }}
-                className="rounded-3xl overflow-hidden shadow-lg aspect-square"
-              >
-                <img
-                  src="/images/WhatsApp Image 2026-09-30 at 16.14.10 (2).jpeg"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  alt="Camel Ride Agadir 1"
-                />
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.4 }}
-                className="rounded-3xl overflow-hidden shadow-lg aspect-[4/5]"
-              >
-                <img
-                  src="/images/WhatsApp Image 2026-09-30 at 16.14.09 (2).jpeg"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  alt="Camel Ride Agadir 2"
-                />
-              </motion.div>
-            </div>
-
-            {/* Right Column (Images 3 & 4 - Offset Downwards) */}
-            <div className="flex flex-col gap-4 sm:gap-6 mt-8 sm:mt-12">
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.4 }}
-                className="rounded-3xl overflow-hidden shadow-lg aspect-[4/5]"
-              >
-                <img
-                  src="/images/WhatsApp Image 2026-09-30 at 16.14.09.jpeg"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  alt="Camel Ride Agadir 3"
-                />
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.4 }}
-                className="rounded-3xl overflow-hidden shadow-lg aspect-square"
-              >
-                <img
-                  src="/images/WhatsApp Image 2026-09-30 at 16.14.10 (1).jpeg"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  alt="Camel Ride Agadir 4"
-                />
-              </motion.div>
-            </div>
-          </div>
+          {/* Interactive Paginated Gallery */}
+          <ExperienceGallery />
 
 
 
