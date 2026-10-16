@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import Card3D from './Card3D';
 
-function ActivityImageSlider({ images, alt, durationText }) {
+function ActivityImageSlider({ images, alt }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevImage = (e) => {
@@ -37,11 +37,6 @@ function ActivityImageSlider({ images, alt, durationText }) {
 
       {/* Dark gradient overlay on bottom for text readability */}
       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
-
-      {/* Duration Badge */}
-      <span className="absolute top-3 right-3 bg-[#33302d]/85 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm z-10 border border-white/10">
-        {durationText}
-      </span>
 
       {/* Pagination arrows (if more than 1 image) */}
       {images.length > 1 && (
@@ -240,7 +235,6 @@ export default function MoreAdventures() {
                     <ActivityImageSlider
                       images={act.images}
                       alt={act.alt}
-                      durationText={t(act.durationKey)}
                     />
                     <div className="p-5 space-y-2">
                       <h3 className="font-serif text-lg font-bold text-[#1e1b19] group-hover:text-[#8f4900] transition-colors">
@@ -252,13 +246,9 @@ export default function MoreAdventures() {
                     </div>
                   </div>
 
-                  <div className="p-5 pt-0 flex items-center justify-between mt-auto">
-                    <div>
-                      <span className="text-[10px] text-[#554337] uppercase tracking-wider block font-semibold">{t('act_from')}</span>
-                      <span className="font-sans text-xl font-bold text-[#8f4900]">{act.price}</span>
-                    </div>
+                  <div className="p-5 pt-0 flex items-center justify-end mt-auto">
                     <a
-                      className="px-4 py-2 rounded-xl bg-[#f4ece8] hover:bg-[#8f4900] hover:text-white text-[#1e1b19] text-xs font-semibold transition-all border border-[#e9e1dd]"
+                      className="w-full text-center px-4 py-2.5 rounded-xl bg-[#f4ece8] hover:bg-[#8f4900] hover:text-white text-[#1e1b19] text-xs font-semibold transition-all border border-[#e9e1dd]"
                       href={`https://wa.me/212619017615?text=${encodeURIComponent(`Hello, I want to inquire about ${act.msg}`)}`}
                       target="_blank"
                       rel="noreferrer"

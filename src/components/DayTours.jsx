@@ -95,9 +95,6 @@ export default function DayTours() {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#33302d]/70 via-transparent to-transparent"></div>
                       <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-white">
                         <h3 className="font-serif text-xl font-bold">{t(tour.titleKey)}</h3>
-                        <span className="font-sans text-xl font-bold text-[#ffdcc5]">
-                          {tour.price} <span className="text-xs font-normal text-white/80">{t('per_person_short')}</span>
-                        </span>
                       </div>
                     </div>
 
@@ -108,13 +105,9 @@ export default function DayTours() {
                     </div>
                   </div>
 
-                  <div className="p-6 pt-0 flex items-center justify-between text-[#554337] text-xs font-medium border-t border-[#e9e1dd]/50 mt-2">
-                    <span className="flex items-center gap-1.5 pt-3">
-                      <span className="material-symbols-outlined text-[#8f4900] text-[18px]">schedule</span>
-                      {t(tour.timingKey)}
-                    </span>
+                  <div className="p-6 pt-0 flex items-center justify-end text-[#554337] text-xs font-medium border-t border-[#e9e1dd]/50 mt-2">
                     <a
-                      className="text-[#8f4900] font-bold hover:underline pt-3 group-hover:translate-x-1 transition-transform"
+                      className="w-full text-center py-2.5 rounded-xl bg-[#f4ece8] hover:bg-[#8f4900] hover:text-white text-[#1e1b19] font-bold text-xs uppercase tracking-wider transition-all border border-[#e9e1dd] mt-3"
                       href={`https://wa.me/212619017615?text=${encodeURIComponent(`Hello, I want to book ${t(tour.titleKey)}`)}`}
                       target="_blank"
                       rel="noreferrer"

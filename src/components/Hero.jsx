@@ -145,7 +145,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all border border-white/20"
-              href="#activities"
+              href="#experiences"
             >
               <span className="material-symbols-outlined text-[18px]">explore</span>
               <span>{t('btn_explore')}</span>

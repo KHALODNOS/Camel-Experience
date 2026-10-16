@@ -1,70 +1,86 @@
-﻿import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const STEPS = [
   {
-    num: '01', icon: 'car_rental',
-    title: 'Hotel Pickup', titleFr: 'Prise en Charge HÃ´tel',
-    desc: 'Air-conditioned Mercedes van collects you directly from your hotel lobby in Agadir or Taghazout.',
-    descFr: "Un van Mercedes climatisÃ© vous rÃ©cupÃ¨re directement Ã  la rÃ©ception de votre hÃ´tel.",
-    time: '15â€“20 Mins Prior', timeFr: '15â€“20 Min avant',
+    num: '01', icon: 'directions_bus',
+    title: 'Hotel Pickup', titleFr: 'Prise en Charge Hôtel',
+    desc: 'Air-conditioned Mercedes transfer directly collects you from your hotel lobby in Agadir or Taghazout.',
+    descFr: "Un van Mercedes climatisé vous récupère directement à la réception de votre hôtel à Agadir ou Taghazout.",
+    time: '15–20 Mins Prior', timeFr: '15–20 Min avant',
     dot: '#f97316', color: '#b45309', bg: '#fff7ed', border: '#fed7aa',
+    img: '/images/tomobilat2.png',
+    camelTouch: 'Door-to-door comfort'
   },
   {
     num: '02', icon: 'pets',
-    title: 'Camel Station', titleFr: 'Station des Chameaux',
-    desc: 'Meet our friendly gentle camels, safety briefing & comfortable saddle mounting.',
-    descFr: "Rencontrez nos chameaux amicaux, participez au briefing et montez confortablement.",
-    time: 'Ranch Arrival', timeFr: 'ArrivÃ©e au Ranch',
+    title: 'Camel Ranch Welcome', titleFr: 'Accueil au Ranch des Chameaux',
+    desc: 'Meet our friendly, gentle camels. Moroccan welcome, safety briefing & traditional handcrafted leather saddle mounting.',
+    descFr: "Rencontrez nos chameaux dociles et amicaux. Briefing de sécurité et montage sur selles traditionnelles en cuir berbère.",
+    time: 'Ranch Arrival', timeFr: 'Arrivée au Ranch',
     dot: '#d97706', color: '#92400e', bg: '#fffbeb', border: '#fde68a',
+    img: '/images/camel1.png',
+    camelTouch: 'Handcrafted Berber saddles'
   },
   {
     num: '03', icon: 'forest',
-    title: 'Eucalyptus Forest', titleFr: "ForÃªt d'Eucalyptus",
-    desc: 'Serene quiet ride through scented tall trees sheltering you from Atlantic winds.',
-    descFr: "Balade calme Ã  travers des arbres parfumÃ©s qui vous protÃ¨gent des vents atlantiques.",
-    time: 'First 30 Mins', timeFr: '30 PremiÃ¨res Min',
-    dot: '#22c55e', color: '#166534', bg: '#f0fdf4', border: '#bbf7d0',
+    title: 'Eucalyptus Forest Ride', titleFr: "Traversée Forêt d'Eucalyptus",
+    desc: 'Serene gentle stride on camelback through scented tall eucalyptus groves sheltering you with fresh coastal breeze.',
+    descFr: "Rythme paisible à dos de chameau à travers les bois d'eucalyptus parfumés bercés par la brise atlantique.",
+    time: 'First 30 Mins', timeFr: '30 Premières Min',
+    dot: '#16a34a', color: '#166534', bg: '#f0fdf4', border: '#bbf7d0',
+    img: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (2).jpeg',
+    camelTouch: 'Calm rhythm & pine scent'
   },
   {
     num: '04', icon: 'fort',
-    title: 'Royal Palace Views', titleFr: 'Vue sur le Palais Royal',
-    desc: 'Glance at the majestic Moroccan architectural gates and manicured palace gardens.',
-    descFr: "Admirez les majestueuses portes marocaines et les jardins soigneusement entretenus.",
+    title: 'Royal Palace Perimeter', titleFr: 'Palais Royal & Jardins',
+    desc: 'Perched high atop your camel, gaze upon majestic Moroccan palace architecture, carved ornate gates and royal gardens.',
+    descFr: "Haut perché sur votre monture, admirez les majestueuses portes en bois ciselé et jardins du Palais Royal.",
     time: 'Mid-Route', timeFr: 'Mi-Parcours',
     dot: '#f59e0b', color: '#b45309', bg: '#fff7ed', border: '#fed7aa',
+    img: '/images/agadir.png',
+    camelTouch: 'High panoramic viewpoint'
   },
   {
-    num: '05', icon: 'sports_golf',
-    title: 'Golf Dunes Path', titleFr: 'Chemin des Dunes Golf',
-    desc: 'Lush green contrasts against coastal golden sands as the trail widens toward the ocean.',
-    descFr: "Les fairways verts contrastent avec les dunes dorÃ©es vers l'ocÃ©an.",
+    num: '05', icon: 'landscape',
+    title: 'Coastal Dunes Trail', titleFr: 'Dunes Dorées du Littoral',
+    desc: 'Soft golden dunes meet the sea breeze as your camel caravan paces gently across wild Atlantic sand trails.',
+    descFr: "Votre caravane de chameaux avance en cadence sur les crêtes des dunes dorées avec l'océan à l'horizon.",
     time: 'Hour 1.0', timeFr: 'Heure 1.0',
     dot: '#0ea5e9', color: '#0c4a6e', bg: '#f0f9ff', border: '#bae6fd',
+    img: '/images/camel3.png',
+    camelTouch: 'Authentic caravan trail'
   },
   {
     num: '06', icon: 'water',
-    title: 'Souss Estuary', titleFr: 'Estuaire du Souss',
-    desc: 'Observe migratory wild flamingos feeding calmly in the shallow coastal waters.',
-    descFr: "Observez les flamants roses migrateurs dans les eaux cÃ´tiÃ¨res calmes.",
+    title: 'Souss Estuary & Flamingos', titleFr: 'Estuaire du Souss & Flamants',
+    desc: 'Arrive at the famous national park river mouth where wild pink flamingos and migratory birds feed at low tide.',
+    descFr: "Contemplez les flamants roses sauvages et échassiers migrateurs se nourrissant paisiblement dans l'estuaire du Souss.",
     time: 'Hour 1.3', timeFr: 'Heure 1.3',
     dot: '#ec4899', color: '#be185d', bg: '#fdf2f8', border: '#fbcfe8',
+    img: '/images/WhatsApp Image 2026-09-30 at 16.14.10 (3).jpeg',
+    camelTouch: 'Wildlife sanctuary by camel'
   },
   {
     num: '07', icon: 'wb_twilight',
-    title: 'Golden Sunset', titleFr: 'Coucher de Soleil DorÃ©',
-    desc: 'Watch the blazing sun melt into the Atlantic while mounted high on your camel â€” pure magic.',
-    descFr: "Regardez le soleil plonger dans l'Atlantique depuis le dos de votre chameau.",
-    time: 'Peak Magic', timeFr: 'Moment Magique',
+    title: 'Sunset Over The Atlantic', titleFr: 'Coucher de Soleil Atlantique',
+    desc: 'The signature moment: watching the glowing golden sun sink into the ocean while seated atop your desert companion.',
+    descFr: "La signature du voyage : le soleil doré plongeant dans l'Atlantique, vécu du haut de votre chameau — pure émotion.",
+    time: 'Peak Golden Hour', timeFr: 'Heure Dorée Magique',
     dot: '#ea580c', color: '#c2410c', bg: '#fff7ed', border: '#fed7aa',
+    img: '/images/camel2.png',
+    camelTouch: 'The iconic golden silhouette'
   },
   {
-    num: '08', icon: 'photo_camera',
-    title: 'Photos & Tea / Dinner', titleFr: 'Photos & ThÃ© / DÃ®ner',
-    desc: 'Berber mint tea, silhouette photos, and optional hot chicken tagine under the stars.',
-    descFr: "ThÃ© Ã  la menthe berbÃ¨re, photos de silhouettes et tagine sous les Ã©toiles.",
-    time: 'Return & Feast', timeFr: 'Retour & Festin',
+    num: '08', icon: 'local_cafe',
+    title: 'Berber Tea & Feast', titleFr: 'Thé Berbère & Festin Tajine',
+    desc: 'Hot Moroccan mint tea poured with high foam, sweet pastries, memorable souvenir photos, and optional fresh tagine.',
+    descFr: "Thé à la menthe servi à la marocaine, biscuits aux amandes, séance photos souvenir et succulent tajine sous la tente.",
+    time: 'Return & Feast', timeFr: 'Retour & Saveurs',
     dot: '#a855f7', color: '#6b21a8', bg: '#faf5ff', border: '#e9d5ff',
+    img: '/images/camel5.png',
+    camelTouch: 'Warm Berber hospitality'
   },
 ];
 
@@ -302,17 +318,27 @@ export default function RouteTimeline() {
       style={{ background: 'linear-gradient(180deg, #eee7e3 0%, #ffffff 40%, #eee7e3 100%)' }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header with authentic camel signature */}
         <div className="text-center mb-16 space-y-3">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#fff1e6] text-[#b45309] text-xs font-bold uppercase tracking-widest border border-[#fcd9a4]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffdcc5] text-[#301400] text-xs font-bold uppercase tracking-widest border border-[#fcd9a4]">
+            <span className="material-symbols-outlined text-[#8f4900] text-[16px]">pets</span>
             {t('timeline_badge')}
-          </span>
+          </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1e1b19]">
             {t('timeline_title')}
           </h2>
-          <p className="text-sm sm:text-base text-[#554337] max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-[#554337] max-w-2xl mx-auto leading-relaxed">
             {t('timeline_desc')}
           </p>
+
+          <div className="flex items-center justify-center gap-3 pt-1">
+            <span className="h-px w-14 bg-gradient-to-r from-transparent to-[#d4916b]" />
+            <span className="text-xs uppercase tracking-widest font-bold text-[#8f4900] bg-[#fff1e6] px-3 py-1 rounded-full border border-[#fed7aa] flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[14px]">wb_sunny</span>
+              Authentic Berber Trail Experience
+            </span>
+            <span className="h-px w-14 bg-gradient-to-l from-transparent to-[#d4916b]" />
+          </div>
         </div>
 
         {/* DESKTOP: Alternating Timeline */}
@@ -345,32 +371,55 @@ export default function RouteTimeline() {
                   {/* Card */}
                   <div className={`w-[calc(50%-2.5rem)] ${isLeft ? 'pr-6' : 'pl-6'}`}>
                     <div
-                      className="relative rounded-2xl p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                      className="group relative rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                       style={{ background: step.bg, border: `1.5px solid ${step.border}` }}
                     >
-                      {/* Time badge */}
-                      <span
-                        className="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3"
-                        style={{ background: step.border, color: step.color }}
-                      >
-                        {time}
-                      </span>
+                      <div className="flex items-start gap-4">
+                        {/* Image Preview with Camel stamp */}
+                        <div className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-black/5 shadow-inner hidden sm:block">
+                          <img
+                            src={step.img}
+                            alt={title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                          <span className="absolute bottom-1 right-1 material-symbols-outlined text-[13px] text-[#ffdcc5]">
+                            pets
+                          </span>
+                        </div>
 
-                      <div className={`flex items-center gap-2 mb-2 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
-                        <span
-                          className="material-symbols-outlined text-[22px] shrink-0"
-                          style={{ color: step.dot }}
-                        >
-                          {step.icon}
-                        </span>
-                        <h3 className="font-serif text-base sm:text-lg font-bold text-[#1e1b19] leading-tight">
-                          {title}
-                        </h3>
+                        <div className="flex-1 min-w-0">
+                          {/* Time badge & Camel touch */}
+                          <div className={`flex items-center gap-2 mb-2 flex-wrap ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                            <span
+                              className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest"
+                              style={{ background: step.border, color: step.color }}
+                            >
+                              {time}
+                            </span>
+                            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#8f4900] bg-white/70 px-2 py-0.5 rounded-full border border-[#f0ded5]">
+                              <span className="material-symbols-outlined text-[11px] text-[#8f4900]">pets</span>
+                              {step.camelTouch}
+                            </span>
+                          </div>
+
+                          <div className={`flex items-center gap-2 mb-1.5 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+                            <span
+                              className="material-symbols-outlined text-[20px] shrink-0"
+                              style={{ color: step.dot }}
+                            >
+                              {step.icon}
+                            </span>
+                            <h3 className="font-serif text-base sm:text-lg font-bold text-[#1e1b19] leading-tight">
+                              {title}
+                            </h3>
+                          </div>
+
+                          <p className={`text-xs sm:text-sm text-[#554337] leading-relaxed ${isLeft ? 'text-left' : 'text-right'}`}>
+                            {desc}
+                          </p>
+                        </div>
                       </div>
-
-                      <p className={`text-xs sm:text-sm text-[#554337] leading-relaxed ${isLeft ? 'text-left' : 'text-right'}`}>
-                        {desc}
-                      </p>
 
                       {/* Connector arrow */}
                       <div
@@ -383,7 +432,7 @@ export default function RouteTimeline() {
                   {/* Center dot */}
                   <div className="relative z-10 flex items-center justify-center w-20 shrink-0">
                     <div
-                      className="w-14 h-14 rounded-full flex flex-col items-center justify-center shadow-lg border-4 border-white"
+                      className="w-14 h-14 rounded-full flex flex-col items-center justify-center shadow-lg border-4 border-white transition-transform duration-300 hover:scale-110"
                       style={{ background: `linear-gradient(135deg, ${step.dot}, ${step.color})` }}
                     >
                       <span className="text-white font-bold text-[10px] leading-none">{step.num}</span>
@@ -407,7 +456,7 @@ export default function RouteTimeline() {
             className="absolute left-6 top-0 bottom-0 w-0.5 rounded-full"
             style={{ background: 'linear-gradient(to bottom, transparent, #f97316 8%, #ea580c 92%, transparent)' }}
           />
-          <div className="flex flex-col gap-7">
+          <div className="flex flex-col gap-6">
             {STEPS.map((step, idx) => {
               const isVis = visible.includes(idx);
               const title = lang === 'fr' ? step.titleFr : step.title;
@@ -417,7 +466,7 @@ export default function RouteTimeline() {
                 <div
                   key={idx}
                   data-index={idx}
-                  className="flex items-start gap-4"
+                  className="flex items-start gap-3.5"
                   style={{
                     opacity: isVis ? 1 : 0,
                     transform: isVis ? 'translateX(0)' : 'translateX(-20px)',
@@ -436,17 +485,32 @@ export default function RouteTimeline() {
                     </div>
                   </div>
                   <div
-                    className="flex-1 rounded-2xl p-4 shadow-sm"
+                    className="flex-1 rounded-2xl p-4 shadow-sm overflow-hidden"
                     style={{ background: step.bg, border: `1.5px solid ${step.border}` }}
                   >
-                    <span
-                      className="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest mb-2"
-                      style={{ background: step.border, color: step.color }}
-                    >
-                      {time}
-                    </span>
-                    <h3 className="font-serif text-sm font-bold text-[#1e1b19] mb-1">{title}</h3>
-                    <p className="text-xs text-[#554337] leading-relaxed">{desc}</p>
+                    <div className="flex items-center gap-3 mb-2.5">
+                      <img
+                        src={step.img}
+                        alt={title}
+                        className="w-14 h-14 rounded-xl object-cover shrink-0 border border-black/5"
+                      />
+                      <div>
+                        <div className="flex items-center gap-1.5 flex-wrap mb-1">
+                          <span
+                            className="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest"
+                            style={{ background: step.border, color: step.color }}
+                          >
+                            {time}
+                          </span>
+                        </div>
+                        <h3 className="font-serif text-sm font-bold text-[#1e1b19] leading-snug">{title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-xs text-[#554337] leading-relaxed mb-2">{desc}</p>
+                    <div className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#8f4900] bg-white/80 px-2.5 py-0.5 rounded-full border border-[#f0ded5]">
+                      <span className="material-symbols-outlined text-[12px] text-[#8f4900]">pets</span>
+                      {step.camelTouch}
+                    </div>
                   </div>
                 </div>
               );

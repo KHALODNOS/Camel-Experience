@@ -5,11 +5,12 @@ import { useLanguage } from "../context/LanguageContext";
 const plans = [
   {
     key: "standard",
-    icon: "local_cafe",
-    badge: null,
+    icon: "pets",
+    badge: "Authentic Ride",
+    image: "/images/camel1.png",
     accentClass: "border border-[#e9e1dd]",
     priceColor: "text-[#8f4900]",
-    badgeBg: "",
+    badgeBg: "bg-[#8f4900]",
     btnClass:
       "bg-[#f4ece8] hover:bg-[#eee7e3] text-[#1e1b19] border border-[#e9e1dd]",
     cardBg: "bg-white",
@@ -22,11 +23,13 @@ const plans = [
     btnKey: "pricing_standard_btn",
     iconDone: "done",
     waText: "Hello%2C%20I%20am%20interested%20in%20the%20Standard%20Camel%20Ride",
+    highlightNote: "Gentle trek with Berber tea",
   },
   {
     key: "sunset",
-    icon: "dinner_dining",
+    icon: "wb_twilight",
     badge: "pricing_popular_badge",
+    image: "/images/camel2.png",
     accentClass: "border-2 border-[#9e421f]",
     priceColor: "text-[#9e421f]",
     badgeBg: "bg-[#9e421f]",
@@ -41,14 +44,16 @@ const plans = [
     btnKey: "pricing_sunset_btn",
     iconDone: "done_all",
     waText: "Hello%2C%20I%20am%20interested%20in%20the%20Sunset%20Camel%20Ride%20with%20BBQ%20Dinner",
+    highlightNote: "Most loved sunset & hot tagine feast",
   },
   {
     key: "combo",
-    icon: "two_wheeler",
-    badge: null,
+    icon: "sports_motorsports",
+    badge: "Best Value",
+    image: "/images/camel4.png",
     accentClass: "border border-[#e9e1dd]",
     priceColor: "text-[#8f4900]",
-    badgeBg: "",
+    badgeBg: "bg-[#301400]",
     btnClass: "bg-[#f4ece8] hover:bg-[#eee7e3] text-[#1e1b19] border border-[#e9e1dd]",
     cardBg: "bg-white",
     glowClass: "",
@@ -60,6 +65,7 @@ const plans = [
     btnKey: "pricing_combo_btn",
     iconDone: "done",
     waText: "Hello%2C%20I%20am%20interested%20in%20the%20Combined%20Quad%20%2B%20Camel%20Adventure",
+    highlightNote: "Dune adrenaline + peaceful camel ride",
   },
 ];
 
@@ -98,8 +104,8 @@ export default function PricingPlans() {
           transition={{ duration: 0.65 }}
           className="text-center mb-14 space-y-4"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ffdcc5] text-[#301400] text-xs uppercase tracking-widest font-semibold">
-            <span className="material-symbols-outlined text-[16px] text-[#8f4900]">sell</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffdcc5] text-[#301400] text-xs uppercase tracking-widest font-semibold border border-[#fcd9a4]">
+            <span className="material-symbols-outlined text-[16px] text-[#8f4900]">pets</span>
             {t("pricing_badge")}
           </div>
 
@@ -113,7 +119,10 @@ export default function PricingPlans() {
 
           <div className="flex items-center justify-center gap-3 pt-1">
             <span className="h-px w-16 bg-gradient-to-r from-transparent to-[#d4916b]" />
-            <span className="material-symbols-outlined text-[#9e421f] text-[18px]">pets</span>
+            <span className="text-xs uppercase tracking-widest font-bold text-[#8f4900] bg-[#fff1e6] px-3.5 py-1 rounded-full border border-[#fed7aa] flex items-center gap-1.5 shadow-sm">
+              <span className="material-symbols-outlined text-[#8f4900] text-[15px]">pets</span>
+              Authentic Agadir Camel Packages • Pay on Pickup
+            </span>
             <span className="h-px w-16 bg-gradient-to-l from-transparent to-[#d4916b]" />
           </div>
         </motion.div>
@@ -145,34 +154,46 @@ export default function PricingPlans() {
                     : "0 4px 20px -2px rgba(180,83,9,0.07)",
               }}
             >
-              {plan.badge && (
-                <div
-                  className={`absolute top-0 right-0 ${plan.badgeBg} text-white px-4 py-1 rounded-bl-xl text-[10px] sm:text-xs uppercase tracking-wider font-bold shadow-md`}
-                >
-                  {t(plan.badge)}
-                </div>
-              )}
+              {/* Card Photo Header with Camel imprint */}
+              <div className="relative h-44 w-full overflow-hidden bg-black/10">
+                <img
+                  src={plan.image}
+                  alt={t(plan.titleKey)}
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-              {/* Top accent bar */}
-              <div
-                className="h-1 w-full"
-                style={{
-                  background:
-                    plan.key === "sunset"
-                      ? "linear-gradient(90deg, #9e421f, #e86a2a, #9e421f)"
-                      : "linear-gradient(90deg, #c9a07a, #8f4900, #c9a07a)",
-                }}
-              />
-
-              <div className="p-7 flex flex-col flex-1 space-y-5">
-                {/* Icon */}
-                <div className="space-y-2">
+                {plan.badge && (
                   <div
-                    className={`inline-flex items-center justify-center w-11 h-11 rounded-xl ${
-                      plan.key === "sunset" ? "bg-[#9e421f] text-white" : "bg-[#f4ece8] text-[#8f4900]"
-                    } shadow-sm`}
+                    className={`absolute top-3 right-3 ${plan.badgeBg} text-white px-3 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-bold shadow-md flex items-center gap-1`}
                   >
-                    <span className="material-symbols-outlined text-[22px]">{plan.icon}</span>
+                    <span className="material-symbols-outlined text-[13px]">pets</span>
+                    {t(plan.badge)}
+                  </div>
+                )}
+
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                  <span className="text-xs font-medium tracking-wide bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/20 flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[13px] text-[#ffdcc5]">pets</span>
+                    {plan.highlightNote}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-7 flex flex-col flex-1 space-y-5">
+                {/* Icon & Subtitle */}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div
+                      className={`inline-flex items-center justify-center w-10 h-10 rounded-xl ${
+                        plan.key === "sunset" ? "bg-[#9e421f] text-white" : "bg-[#f4ece8] text-[#8f4900]"
+                      } shadow-sm`}
+                    >
+                      <span className="material-symbols-outlined text-[20px]">{plan.icon}</span>
+                    </div>
+                    <span className="text-[11px] font-bold text-[#8f4900] bg-[#fff1e6] px-2.5 py-0.5 rounded-full border border-[#fed7aa] uppercase tracking-wider">
+                      Agadir Souss
+                    </span>
                   </div>
 
                   <span
