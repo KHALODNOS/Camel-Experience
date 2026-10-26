@@ -140,14 +140,14 @@ export default function SunsetGallery() {
                 transition={{ duration: 0.4, delay: (idx % 8) * 0.05 }}
               >
                 <Card3D>
-                  <div className="rounded-2xl overflow-hidden aspect-square shadow-sm bg-[#eee7e3] border border-[#e9e1dd] group cursor-pointer relative">
+                  <div className="rounded-2xl overflow-hidden aspect-square shadow-sm bg-[#fdf8f4] border border-[#e9e1dd] group cursor-pointer relative">
                     <img
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
                       src={item.src}
                       alt={item.alt}
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 pointer-events-none">
                       <span className="text-white text-[11px] font-medium line-clamp-2 drop-shadow-sm">
                         {item.alt}
                       </span>

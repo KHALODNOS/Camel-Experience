@@ -29,7 +29,7 @@ function ExperienceGallery() {
   return (
     <div className="w-full mb-8 select-none">
       {/* Main Showcase Image Frame */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/10] sm:aspect-[16/11] bg-black/5 group border border-[#e9e1dd]">
+      <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/10] sm:aspect-[16/11] bg-[#fdf8f4] group border border-[#e9e1dd]">
         <AnimatePresence mode="wait">
           <motion.img
             key={galleryImages[currentIndex].src}
@@ -38,20 +38,17 @@ function ExperienceGallery() {
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="w-full h-full object-cover"
+            transition={{ duration: 0.35 }}
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </AnimatePresence>
 
-        {/* Ambient Dark Gradient on bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
-
         {/* Badge & Caption */}
-        <div className="absolute bottom-3 sm:bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-          <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-medium tracking-wide border border-white/20">
+        <div className="absolute bottom-3 sm:bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
+          <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[#301400] text-xs font-semibold tracking-wide shadow-md border border-white/60">
             {galleryImages[currentIndex].tag}
           </span>
-          <span className="text-white/90 text-xs font-mono bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
+          <span className="text-[#301400] text-xs font-mono bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/60 font-semibold shadow-md">
             {currentIndex + 1} / {galleryImages.length}
           </span>
         </div>
@@ -61,7 +58,7 @@ function ExperienceGallery() {
           type="button"
           onClick={prevImage}
           aria-label="Previous image"
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/80 hover:bg-white text-[#1e1b19] shadow-lg backdrop-blur-sm flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 hover:scale-105 active:scale-95 focus:outline-none"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/85 hover:bg-white text-[#1e1b19] shadow-lg backdrop-blur-sm flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 hover:scale-105 active:scale-95 focus:outline-none"
         >
           <span className="material-symbols-outlined text-[20px] sm:text-[24px]">chevron_left</span>
         </button>
@@ -71,7 +68,7 @@ function ExperienceGallery() {
           type="button"
           onClick={nextImage}
           aria-label="Next image"
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/80 hover:bg-white text-[#1e1b19] shadow-lg backdrop-blur-sm flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 hover:scale-105 active:scale-95 focus:outline-none"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/85 hover:bg-white text-[#1e1b19] shadow-lg backdrop-blur-sm flex items-center justify-center transition-all opacity-80 sm:opacity-0 group-hover:opacity-100 hover:scale-105 active:scale-95 focus:outline-none"
         >
           <span className="material-symbols-outlined text-[20px] sm:text-[24px]">chevron_right</span>
         </button>
