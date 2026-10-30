@@ -152,7 +152,7 @@ export const translations = {
     // Gallery & Contact
     gallery_badge: "Real Guests, Real Magic",
     gallery_title: "SUNSET GALLERY PREVIEW",
-    insta_follow: "Follow @AgadirCamelExperience",
+    insta_follow: "Follow @agadir_camel_experience",
     instant_confirm: "Instant Confirmation",
     ready_title: "READY FOR YOUR AGADIR ADVENTURE?",
     ready_desc: "Reserve in 2 minutes. No advance payment required — pay comfortably on pickup. Call, WhatsApp, or request pickup right here.",
@@ -485,7 +485,7 @@ export const translations = {
     // Gallery & Contact
     gallery_badge: "Vrais Clients, Vraie Magie",
     gallery_title: "APERÇU DE LA GALERIE",
-    insta_follow: "Suivre @AgadirCamelExperience",
+    insta_follow: "Suivre @agadir_camel_experience",
     instant_confirm: "Confirmation Immédiate",
     ready_title: "PRÊT POUR VOTRE AVENTURE À AGADIR ?",
     ready_desc: "Réservez en 2 minutes. Aucun paiement d'avance requis — payez directement au ramassage. Appelez ou envoyez un message WhatsApp.",

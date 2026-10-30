@@ -112,11 +112,10 @@ export default function SunsetGallery() {
                   setActiveTab(tab.key);
                   setShowAll(false);
                 }}
-                className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
-                  isActive
+                className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${isActive
                     ? 'bg-[#8f4900] text-white shadow-sm'
                     : 'bg-white hover:bg-[#f4ece8] text-[#554337] border border-[#e9e1dd]'
-                }`}
+                  }`}
               >
                 {tab.label}
               </button>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function FloatingSocials() {
   const whatsappUrl = "https://wa.me/212619017615";
-  const instagramUrl = "https://instagram.com/AgadirCamelExperience";
+  const instagramUrl = "https://www.instagram.com/agadir_camel_experience";
 
   return (
     <>
